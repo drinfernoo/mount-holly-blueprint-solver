@@ -1,0 +1,88 @@
+{
+  "redPath": {
+    "startId": "g(vC1)",
+    "endId": "C9",
+    "lantern": {
+      "allowedColors": [
+        "red"
+      ]
+    },
+    "minSteps": 1,
+    "maxSteps": 240
+  },
+  "orangePath": {
+    "startId": "g(vC1)",
+    "endId": "C9",
+    "lantern": {
+      "allowedColors": [
+        "orange"
+      ]
+    },
+    "minSteps": 1,
+    "maxSteps": 240
+  },
+  "purplePath": {
+    "startId": "g(vC1)",
+    "endId": "C9",
+    "lantern": {
+      "allowedColors": [
+        "purple"
+      ]
+    },
+    "minSteps": 1,
+    "maxSteps": 240
+  },
+  "truePath": {
+    "startId": "g(vC1)",
+    "endId": "E8",
+    "lantern": {
+      "startColor": "blue",
+      "turnRules": {
+        "blue": "left",
+        "red": "left",
+        "orange": "right",
+        "purple": "straight"
+      }
+    },
+    "maxSteps": 180
+  },
+  "orderedLetters": {
+    "startId": "g(vC1)",
+    "endId": "C9",
+    "letterMode": "ordered",
+    "mustUseLetters": [
+      "M",
+      "P",
+      "T",
+      "Y",
+      "E"
+    ],
+    "maxSteps": 180
+  },
+  "simulationExample": {
+    "mode": "simulate",
+    "startId": "g(vC1)",
+    "endId": "g(D3-E3)",
+    "maxSteps": 120,
+    "simulation": {
+      "initialHeading": "N",
+      "stopOnLoop": true
+    },
+    "lantern": {
+      "allowedColors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple"
+      ],
+      "turnRules": {
+        "intersection": "any",
+        "red": "left",
+        "orange": "right",
+        "purple": "straight"
+      }
+    }
+  }
+}

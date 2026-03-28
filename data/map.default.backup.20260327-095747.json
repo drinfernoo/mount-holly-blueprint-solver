@@ -1,0 +1,5793 @@
+{
+  "name": "Mount Holly Blueprint (digital overlay extraction v2) (ILR lattice model)",
+  "coordinateSystem": {
+    "files": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "note": "Node types: room (R), lantern gap (L), intersection (I). IDs: room=A1.., lantern=g(...), intersection=i(x,y)."
+  },
+  "startId": "C0",
+  "nodes": {
+    "A1": {
+      "id": "A1",
+      "neighbors": {
+        "N": "g(A1-A2)",
+        "E": "g(A1-B1)",
+        "W": "g(<A1)"
+      },
+      "kind": "room",
+      "roomId": "A1",
+      "letter": "B",
+      "x": 1,
+      "y": 1,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E"
+      ]
+    },
+    "B1": {
+      "id": "B1",
+      "neighbors": {
+        "N": "g(B1-B2)",
+        "E": "g(B1-C1)",
+        "W": "g(A1-B1)",
+        "S": "B0"
+      },
+      "kind": "room",
+      "roomId": "B1",
+      "letter": "L",
+      "x": 3,
+      "y": 1,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "W"
+      ]
+    },
+    "C1": {
+      "id": "C1",
+      "neighbors": {
+        "N": "g(C1-C2)",
+        "E": "g(C1-D1)",
+        "W": "g(B1-C1)",
+        "S": "C0"
+      },
+      "kind": "room",
+      "roomId": "C1",
+      "letter": "E",
+      "x": 5,
+      "y": 1,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "D1": {
+      "id": "D1",
+      "neighbors": {
+        "N": "g(D1-D2)",
+        "E": "g(D1-E1)",
+        "W": "g(C1-D1)",
+        "S": "D0"
+      },
+      "kind": "room",
+      "roomId": "D1",
+      "letter": "S",
+      "x": 7,
+      "y": 1,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E1": {
+      "id": "E1",
+      "neighbors": {
+        "N": "g(E1-E2)",
+        "E": "g(E1>)",
+        "W": "g(D1-E1)",
+        "S": "E0"
+      },
+      "kind": "room",
+      "roomId": "E1",
+      "letter": "T",
+      "x": 9,
+      "y": 1,
+      "active": true,
+      "enabledDirs": [
+        "E"
+      ]
+    },
+    "A2": {
+      "id": "A2",
+      "neighbors": {
+        "N": "g(A2-A3)",
+        "E": "g(A2-B2)",
+        "S": "g(A1-A2)",
+        "W": "g(<A2)"
+      },
+      "kind": "room",
+      "roomId": "A2",
+      "letter": "H",
+      "x": 1,
+      "y": 3,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E"
+      ]
+    },
+    "B2": {
+      "id": "B2",
+      "neighbors": {
+        "N": "g(B2-B3)",
+        "E": "g(B2-C2)",
+        "S": "g(B1-B2)",
+        "W": "g(A2-B2)"
+      },
+      "kind": "room",
+      "roomId": "B2",
+      "letter": "E",
+      "x": 3,
+      "y": 3,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "C2": {
+      "id": "C2",
+      "neighbors": {
+        "N": "g(C2-C3)",
+        "E": "g(C2-D2)",
+        "S": "g(C1-C2)",
+        "W": "g(B2-C2)"
+      },
+      "kind": "room",
+      "roomId": "C2",
+      "letter": "W",
+      "x": 5,
+      "y": 3,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "S"
+      ]
+    },
+    "D2": {
+      "id": "D2",
+      "neighbors": {
+        "N": "g(D2-D3)",
+        "E": "g(D2-E2)",
+        "S": "g(D1-D2)",
+        "W": "g(C2-D2)"
+      },
+      "kind": "room",
+      "roomId": "D2",
+      "letter": "A",
+      "x": 7,
+      "y": 3,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E2": {
+      "id": "E2",
+      "neighbors": {
+        "N": "g(E2-E3)",
+        "E": "g(E2>)",
+        "S": "g(E1-E2)",
+        "W": "g(D2-E2)"
+      },
+      "kind": "room",
+      "roomId": "E2",
+      "letter": "M",
+      "x": 9,
+      "y": 3,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "A3": {
+      "id": "A3",
+      "neighbors": {
+        "N": "g(A3-A4)",
+        "E": "g(A3-B3)",
+        "S": "g(A2-A3)",
+        "W": "g(<A3)"
+      },
+      "kind": "room",
+      "roomId": "A3",
+      "letter": "A",
+      "x": 1,
+      "y": 5,
+      "active": true,
+      "enabledDirs": [
+        "W"
+      ]
+    },
+    "B3": {
+      "id": "B3",
+      "neighbors": {
+        "N": "g(B3-B4)",
+        "E": "g(B3-C3)",
+        "S": "g(B2-B3)",
+        "W": "g(A3-B3)"
+      },
+      "kind": "room",
+      "roomId": "B3",
+      "letter": "M",
+      "x": 3,
+      "y": 5,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "C3": {
+      "id": "C3",
+      "neighbors": {
+        "N": "g(C3-C4)",
+        "E": "g(C3-D3)",
+        "S": "g(C2-C3)",
+        "W": "g(B3-C3)"
+      },
+      "kind": "room",
+      "roomId": "C3",
+      "letter": "O",
+      "x": 5,
+      "y": 5,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "D3": {
+      "id": "D3",
+      "neighbors": {
+        "N": "g(D3-D4)",
+        "E": "g(D3-E3)",
+        "S": "g(D2-D3)",
+        "W": "g(C3-D3)"
+      },
+      "kind": "room",
+      "roomId": "D3",
+      "letter": "N",
+      "x": 7,
+      "y": 5,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E3": {
+      "id": "E3",
+      "neighbors": {
+        "N": "g(E3-E4)",
+        "E": "g(E3>)",
+        "S": "g(E2-E3)",
+        "W": "g(D3-E3)"
+      },
+      "kind": "room",
+      "roomId": "E3",
+      "letter": "G",
+      "x": 9,
+      "y": 5,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "A4": {
+      "id": "A4",
+      "neighbors": {
+        "N": "g(A4-A5)",
+        "E": "g(A4-B4)",
+        "S": "g(A3-A4)",
+        "W": "g(<A4)"
+      },
+      "kind": "room",
+      "roomId": "A4",
+      "letter": "C",
+      "x": 1,
+      "y": 7,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "W"
+      ]
+    },
+    "B4": {
+      "id": "B4",
+      "neighbors": {
+        "N": "g(B4-B5)",
+        "E": "g(B4-C4)",
+        "S": "g(B3-B4)",
+        "W": "g(A4-B4)"
+      },
+      "kind": "room",
+      "roomId": "B4",
+      "letter": "R",
+      "x": 3,
+      "y": 7,
+      "active": true,
+      "enabledDirs": [
+        "S",
+        "W"
+      ]
+    },
+    "C4": {
+      "id": "C4",
+      "neighbors": {
+        "N": "g(C4-C5)",
+        "E": "g(C4-D4)",
+        "S": "g(C3-C4)",
+        "W": "g(B4-C4)"
+      },
+      "kind": "room",
+      "roomId": "C4",
+      "letter": "E",
+      "x": 5,
+      "y": 7,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "D4": {
+      "id": "D4",
+      "neighbors": {
+        "N": "g(D4-D5)",
+        "E": "g(D4-E4)",
+        "S": "g(D3-D4)",
+        "W": "g(C4-D4)"
+      },
+      "kind": "room",
+      "roomId": "D4",
+      "letter": "S",
+      "x": 7,
+      "y": 7,
+      "active": true,
+      "enabledDirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E4": {
+      "id": "E4",
+      "neighbors": {
+        "N": "g(E4-E5)",
+        "E": "g(E4>)",
+        "S": "g(E3-E4)",
+        "W": "g(D4-E4)"
+      },
+      "kind": "room",
+      "roomId": "E4",
+      "letter": "T",
+      "x": 9,
+      "y": 7,
+      "active": true,
+      "enabledDirs": [
+        "S"
+      ]
+    },
+    "A5": {
+      "id": "A5",
+      "neighbors": {
+        "N": "g(A5-A6)",
+        "E": "g(A5-B5)",
+        "S": "g(A4-A5)",
+        "W": "g(<A5)"
+      },
+      "kind": "room",
+      "roomId": "A5",
+      "letter": "B",
+      "x": 1,
+      "y": 9,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "S"
+      ]
+    },
+    "B5": {
+      "id": "B5",
+      "neighbors": {
+        "N": "g(B5-B6)",
+        "E": "g(B5-C5)",
+        "S": "g(B4-B5)",
+        "W": "g(A5-B5)"
+      },
+      "kind": "room",
+      "roomId": "B5",
+      "letter": "A",
+      "x": 3,
+      "y": 9,
+      "active": true,
+      "enabledDirs": [
+        "S",
+        "W"
+      ]
+    },
+    "C5": {
+      "id": "C5",
+      "neighbors": {
+        "N": "g(C5-C6)",
+        "E": "g(C5-D5)",
+        "S": "g(C4-C5)",
+        "W": "g(B5-C5)"
+      },
+      "kind": "room",
+      "roomId": "C5",
+      "letter": "R",
+      "x": 5,
+      "y": 9,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "D5": {
+      "id": "D5",
+      "neighbors": {
+        "N": "g(D5-D6)",
+        "E": "g(D5-E5)",
+        "S": "g(D4-D5)",
+        "W": "g(C5-D5)"
+      },
+      "kind": "room",
+      "roomId": "D5",
+      "letter": "O",
+      "x": 7,
+      "y": 9,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "E5": {
+      "id": "E5",
+      "neighbors": {
+        "N": "g(E5-E6)",
+        "E": "g(E5>)",
+        "S": "g(E4-E5)",
+        "W": "g(D5-E5)"
+      },
+      "kind": "room",
+      "roomId": "E5",
+      "letter": "N",
+      "x": 9,
+      "y": 9,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "A6": {
+      "id": "A6",
+      "neighbors": {
+        "N": "g(A6-A7)",
+        "E": "g(A6-B6)",
+        "S": "g(A5-A6)",
+        "W": "g(<A6)"
+      },
+      "kind": "room",
+      "roomId": "A6",
+      "letter": "F",
+      "x": 1,
+      "y": 11,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "B6": {
+      "id": "B6",
+      "neighbors": {
+        "N": "g(B6-B7)",
+        "E": "g(B6-C6)",
+        "S": "g(B5-B6)",
+        "W": "g(A6-B6)"
+      },
+      "kind": "room",
+      "roomId": "B6",
+      "letter": "O",
+      "x": 3,
+      "y": 11,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "C6": {
+      "id": "C6",
+      "neighbors": {
+        "N": "g(C6-C7)",
+        "E": "g(C6-D6)",
+        "S": "g(C5-C6)",
+        "W": "g(B6-C6)"
+      },
+      "kind": "room",
+      "roomId": "C6",
+      "letter": "R",
+      "x": 5,
+      "y": 11,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "D6": {
+      "id": "D6",
+      "neighbors": {
+        "N": "g(D6-D7)",
+        "E": "g(D6-E6)",
+        "S": "g(D5-D6)",
+        "W": "g(C6-D6)"
+      },
+      "kind": "room",
+      "roomId": "D6",
+      "letter": "G",
+      "x": 7,
+      "y": 11,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E6": {
+      "id": "E6",
+      "neighbors": {
+        "N": "g(E6-E7)",
+        "E": "g(E6>)",
+        "S": "g(E5-E6)",
+        "W": "g(D6-E6)"
+      },
+      "kind": "room",
+      "roomId": "E6",
+      "letter": "E",
+      "x": 9,
+      "y": 11,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "A7": {
+      "id": "A7",
+      "neighbors": {
+        "N": "g(A7-A8)",
+        "E": "g(A7-B7)",
+        "S": "g(A6-A7)",
+        "W": "g(<A7)"
+      },
+      "kind": "room",
+      "roomId": "A7",
+      "letter": "P",
+      "x": 1,
+      "y": 13,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "B7": {
+      "id": "B7",
+      "neighbors": {
+        "N": "g(B7-B8)",
+        "E": "g(B7-C7)",
+        "S": "g(B6-B7)",
+        "W": "g(A7-B7)"
+      },
+      "kind": "room",
+      "roomId": "B7",
+      "letter": "L",
+      "x": 3,
+      "y": 13,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "C7": {
+      "id": "C7",
+      "neighbors": {
+        "N": "g(C7-C8)",
+        "E": "g(C7-D7)",
+        "S": "g(C6-C7)",
+        "W": "g(B7-C7)"
+      },
+      "kind": "room",
+      "roomId": "C7",
+      "letter": "A",
+      "x": 5,
+      "y": 13,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "D7": {
+      "id": "D7",
+      "neighbors": {
+        "N": "g(D7-D8)",
+        "E": "g(D7-E7)",
+        "S": "g(D6-D7)",
+        "W": "g(C7-D7)"
+      },
+      "kind": "room",
+      "roomId": "D7",
+      "letter": "N",
+      "x": 7,
+      "y": 13,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E7": {
+      "id": "E7",
+      "neighbors": {
+        "N": "g(E7-E8)",
+        "E": "g(E7>)",
+        "S": "g(E6-E7)",
+        "W": "g(D7-E7)"
+      },
+      "kind": "room",
+      "roomId": "E7",
+      "letter": "S",
+      "x": 9,
+      "y": 13,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "A8": {
+      "id": "A8",
+      "neighbors": {
+        "N": "g(A8-A9)",
+        "E": "g(A8-B8)",
+        "S": "g(A7-A8)",
+        "W": "g(<A8)"
+      },
+      "kind": "room",
+      "roomId": "A8",
+      "letter": "V",
+      "x": 1,
+      "y": 15,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "B8": {
+      "id": "B8",
+      "neighbors": {
+        "N": "g(B8-B9)",
+        "E": "g(B8-C8)",
+        "S": "g(B7-B8)",
+        "W": "g(A8-B8)"
+      },
+      "kind": "room",
+      "roomId": "B8",
+      "letter": "Y",
+      "x": 3,
+      "y": 15,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "C8": {
+      "id": "C8",
+      "neighbors": {
+        "N": "g(C8-C9)",
+        "E": "g(C8-D8)",
+        "S": "g(C7-C8)",
+        "W": "g(B8-C8)"
+      },
+      "kind": "room",
+      "roomId": "C8",
+      "letter": "I",
+      "x": 5,
+      "y": 15,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "D8": {
+      "id": "D8",
+      "neighbors": {
+        "N": "g(D8-D9)",
+        "E": "g(D8-E8)",
+        "S": "g(D7-D8)",
+        "W": "g(C8-D8)"
+      },
+      "kind": "room",
+      "roomId": "D8",
+      "letter": "N",
+      "x": 7,
+      "y": 15,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E8": {
+      "id": "E8",
+      "neighbors": {
+        "N": "g(E8-E9)",
+        "E": "g(E8>)",
+        "S": "g(E7-E8)",
+        "W": "g(D8-E8)"
+      },
+      "kind": "room",
+      "roomId": "E8",
+      "letter": "G",
+      "x": 9,
+      "y": 15,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "A9": {
+      "id": "A9",
+      "neighbors": {
+        "N": "g(^A9)",
+        "E": "g(A9-B9)",
+        "S": "g(A8-A9)",
+        "W": "g(<A9)"
+      },
+      "kind": "room",
+      "roomId": "A9",
+      "letter": "T",
+      "x": 1,
+      "y": 17,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "B9": {
+      "id": "B9",
+      "neighbors": {
+        "N": "g(^B9)",
+        "E": "g(B9-C9)",
+        "S": "g(B8-B9)",
+        "W": "g(A9-B9)"
+      },
+      "kind": "room",
+      "roomId": "B9",
+      "letter": "H",
+      "x": 3,
+      "y": 17,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "C9": {
+      "id": "C9",
+      "neighbors": {
+        "N": "g(^C9)",
+        "E": "g(C9-D9)",
+        "S": "g(C8-C9)",
+        "W": "g(B9-C9)"
+      },
+      "kind": "room",
+      "roomId": "C9",
+      "letter": "E",
+      "x": 5,
+      "y": 17,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "D9": {
+      "id": "D9",
+      "neighbors": {
+        "N": "g(^D9)",
+        "E": "g(D9-E9)",
+        "S": "g(D8-D9)",
+        "W": "g(C9-D9)"
+      },
+      "kind": "room",
+      "roomId": "D9",
+      "letter": "S",
+      "x": 7,
+      "y": 17,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E9": {
+      "id": "E9",
+      "neighbors": {
+        "N": "g(^E9)",
+        "E": "g(E9>)",
+        "S": "g(E8-E9)",
+        "W": "g(D9-E9)"
+      },
+      "kind": "room",
+      "roomId": "E9",
+      "letter": "E",
+      "x": 9,
+      "y": 17,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "g(A1-A2)": {
+      "id": "g(A1-A2)",
+      "neighbors": {
+        "S": "A1",
+        "N": "A2",
+        "W": "i(0,2)",
+        "E": "i(2,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A1-A2)",
+      "lantern": "green",
+      "lanternRef": "g(A1-A2)",
+      "active": true,
+      "x": 1,
+      "y": 2,
+      "rooms": [
+        "A1",
+        "A2"
+      ],
+      "sides": [
+        "A1:N",
+        "A2:S"
+      ],
+      "conflicts": []
+    },
+    "g(A1-B1)": {
+      "id": "g(A1-B1)",
+      "neighbors": {
+        "W": "A1",
+        "E": "B1",
+        "S": "i(2,0)",
+        "N": "i(2,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A1-B1)",
+      "lantern": "purple",
+      "lanternRef": "g(A1-B1)",
+      "active": true,
+      "x": 2,
+      "y": 1,
+      "rooms": [
+        "A1",
+        "B1"
+      ],
+      "sides": [
+        "A1:E",
+        "B1:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A1)": {
+      "id": "g(<A1)",
+      "neighbors": {
+        "E": "A1",
+        "S": "i(0,0)",
+        "N": "i(0,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(<A1)",
+      "lantern": "green",
+      "lanternRef": "g(<A1)",
+      "active": true,
+      "x": 0,
+      "y": 1,
+      "rooms": [
+        "A1"
+      ],
+      "sides": [
+        "A1:W"
+      ],
+      "conflicts": []
+    },
+    "g(B1-B2)": {
+      "id": "g(B1-B2)",
+      "neighbors": {
+        "S": "B1",
+        "N": "B2",
+        "W": "i(2,2)",
+        "E": "i(4,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B1-B2)",
+      "lantern": "purple",
+      "lanternRef": "g(B1-B2)",
+      "active": true,
+      "x": 3,
+      "y": 2,
+      "rooms": [
+        "B1",
+        "B2"
+      ],
+      "sides": [
+        "B1:N",
+        "B2:S"
+      ],
+      "conflicts": []
+    },
+    "g(B1-C1)": {
+      "id": "g(B1-C1)",
+      "neighbors": {
+        "W": "B1",
+        "E": "C1",
+        "S": "i(4,0)",
+        "N": "i(4,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B1-C1)",
+      "lantern": "yellow",
+      "lanternRef": "g(B1-C1)",
+      "active": true,
+      "x": 4,
+      "y": 1,
+      "rooms": [
+        "B1",
+        "C1"
+      ],
+      "sides": [
+        "B1:E",
+        "C1:W"
+      ],
+      "conflicts": []
+    },
+    "g(C1-C2)": {
+      "id": "g(C1-C2)",
+      "neighbors": {
+        "S": "C1",
+        "N": "C2",
+        "W": "i(4,2)",
+        "E": "i(6,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C1-C2)",
+      "lantern": "orange",
+      "lanternRef": "g(C1-C2)",
+      "active": true,
+      "x": 5,
+      "y": 2,
+      "rooms": [
+        "C1",
+        "C2"
+      ],
+      "sides": [
+        "C1:N",
+        "C2:S"
+      ],
+      "conflicts": []
+    },
+    "g(C1-D1)": {
+      "id": "g(C1-D1)",
+      "neighbors": {
+        "W": "C1",
+        "E": "D1",
+        "S": "i(6,0)",
+        "N": "i(6,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C1-D1)",
+      "lantern": "red",
+      "lanternRef": "g(C1-D1)",
+      "active": true,
+      "x": 6,
+      "y": 1,
+      "rooms": [
+        "C1",
+        "D1"
+      ],
+      "sides": [
+        "C1:E",
+        "D1:W"
+      ],
+      "conflicts": []
+    },
+    "g(D1-D2)": {
+      "id": "g(D1-D2)",
+      "neighbors": {
+        "S": "D1",
+        "N": "D2",
+        "W": "i(6,2)",
+        "E": "i(8,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D1-D2)",
+      "lantern": "red",
+      "lanternRef": "g(D1-D2)",
+      "active": true,
+      "x": 7,
+      "y": 2,
+      "rooms": [
+        "D1",
+        "D2"
+      ],
+      "sides": [
+        "D1:N",
+        "D2:S"
+      ],
+      "conflicts": []
+    },
+    "g(D1-E1)": {
+      "id": "g(D1-E1)",
+      "neighbors": {
+        "W": "D1",
+        "E": "E1",
+        "S": "i(8,0)",
+        "N": "i(8,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D1-E1)",
+      "lantern": "blue",
+      "lanternRef": "g(D1-E1)",
+      "active": true,
+      "x": 8,
+      "y": 1,
+      "rooms": [
+        "D1",
+        "E1"
+      ],
+      "sides": [
+        "D1:E",
+        "E1:W"
+      ],
+      "conflicts": []
+    },
+    "g(E1-E2)": {
+      "id": "g(E1-E2)",
+      "neighbors": {
+        "S": "E1",
+        "N": "E2",
+        "W": "i(8,2)",
+        "E": "i(10,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E1-E2)",
+      "lantern": "orange",
+      "lanternRef": "g(E1-E2)",
+      "active": true,
+      "x": 9,
+      "y": 2,
+      "rooms": [
+        "E1",
+        "E2"
+      ],
+      "sides": [
+        "E1:N",
+        "E2:S"
+      ],
+      "conflicts": []
+    },
+    "g(E1>)": {
+      "id": "g(E1>)",
+      "neighbors": {
+        "W": "E1",
+        "S": "i(10,0)",
+        "N": "i(10,2)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E1>)",
+      "lantern": "orange",
+      "lanternRef": "g(E1>)",
+      "active": true,
+      "x": 10,
+      "y": 1,
+      "rooms": [
+        "E1"
+      ],
+      "sides": [
+        "E1:E"
+      ],
+      "conflicts": []
+    },
+    "g(A2-A3)": {
+      "id": "g(A2-A3)",
+      "neighbors": {
+        "S": "A2",
+        "N": "A3",
+        "W": "i(0,4)",
+        "E": "i(2,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A2-A3)",
+      "lantern": "purple",
+      "lanternRef": "g(A2-A3)",
+      "active": true,
+      "x": 1,
+      "y": 4,
+      "rooms": [
+        "A2",
+        "A3"
+      ],
+      "sides": [
+        "A2:N",
+        "A3:S"
+      ],
+      "conflicts": []
+    },
+    "g(A2-B2)": {
+      "id": "g(A2-B2)",
+      "neighbors": {
+        "W": "A2",
+        "E": "B2",
+        "S": "i(2,2)",
+        "N": "i(2,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A2-B2)",
+      "lantern": "green",
+      "lanternRef": "g(A2-B2)",
+      "active": true,
+      "x": 2,
+      "y": 3,
+      "rooms": [
+        "A2",
+        "B2"
+      ],
+      "sides": [
+        "A2:E",
+        "B2:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A2)": {
+      "id": "g(<A2)",
+      "neighbors": {
+        "E": "A2",
+        "S": "i(0,2)",
+        "N": "i(0,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(<A2)",
+      "lantern": "green",
+      "lanternRef": "g(<A2)",
+      "active": true,
+      "x": 0,
+      "y": 3,
+      "rooms": [
+        "A2"
+      ],
+      "sides": [
+        "A2:W"
+      ],
+      "conflicts": []
+    },
+    "g(B2-B3)": {
+      "id": "g(B2-B3)",
+      "neighbors": {
+        "S": "B2",
+        "N": "B3",
+        "W": "i(2,4)",
+        "E": "i(4,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B2-B3)",
+      "lantern": "purple",
+      "lanternRef": "g(B2-B3)",
+      "active": true,
+      "x": 3,
+      "y": 4,
+      "rooms": [
+        "B2",
+        "B3"
+      ],
+      "sides": [
+        "B2:N",
+        "B3:S"
+      ],
+      "conflicts": []
+    },
+    "g(B2-C2)": {
+      "id": "g(B2-C2)",
+      "neighbors": {
+        "W": "B2",
+        "E": "C2",
+        "S": "i(4,2)",
+        "N": "i(4,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B2-C2)",
+      "lantern": "yellow",
+      "lanternRef": "g(B2-C2)",
+      "active": true,
+      "x": 4,
+      "y": 3,
+      "rooms": [
+        "B2",
+        "C2"
+      ],
+      "sides": [
+        "B2:E",
+        "C2:W"
+      ],
+      "conflicts": []
+    },
+    "g(C2-C3)": {
+      "id": "g(C2-C3)",
+      "neighbors": {
+        "S": "C2",
+        "N": "C3",
+        "W": "i(4,4)",
+        "E": "i(6,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C2-C3)",
+      "lantern": "orange",
+      "lanternRef": "g(C2-C3)",
+      "active": true,
+      "x": 5,
+      "y": 4,
+      "rooms": [
+        "C2",
+        "C3"
+      ],
+      "sides": [
+        "C2:N",
+        "C3:S"
+      ],
+      "conflicts": []
+    },
+    "g(C2-D2)": {
+      "id": "g(C2-D2)",
+      "neighbors": {
+        "W": "C2",
+        "E": "D2",
+        "S": "i(6,2)",
+        "N": "i(6,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C2-D2)",
+      "lantern": "yellow",
+      "lanternRef": "g(C2-D2)",
+      "active": true,
+      "x": 6,
+      "y": 3,
+      "rooms": [
+        "C2",
+        "D2"
+      ],
+      "sides": [
+        "C2:E",
+        "D2:W"
+      ],
+      "conflicts": []
+    },
+    "g(D2-D3)": {
+      "id": "g(D2-D3)",
+      "neighbors": {
+        "S": "D2",
+        "N": "D3",
+        "W": "i(6,4)",
+        "E": "i(8,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D2-D3)",
+      "lantern": "orange",
+      "lanternRef": "g(D2-D3)",
+      "active": true,
+      "x": 7,
+      "y": 4,
+      "rooms": [
+        "D2",
+        "D3"
+      ],
+      "sides": [
+        "D2:N",
+        "D3:S"
+      ],
+      "conflicts": []
+    },
+    "g(D2-E2)": {
+      "id": "g(D2-E2)",
+      "neighbors": {
+        "W": "D2",
+        "E": "E2",
+        "S": "i(8,2)",
+        "N": "i(8,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D2-E2)",
+      "lantern": "red",
+      "lanternRef": "g(D2-E2)",
+      "active": true,
+      "x": 8,
+      "y": 3,
+      "rooms": [
+        "D2",
+        "E2"
+      ],
+      "sides": [
+        "D2:E",
+        "E2:W"
+      ],
+      "conflicts": []
+    },
+    "g(E2-E3)": {
+      "id": "g(E2-E3)",
+      "neighbors": {
+        "S": "E2",
+        "N": "E3",
+        "W": "i(8,4)",
+        "E": "i(10,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E2-E3)",
+      "lantern": "orange",
+      "lanternRef": "g(E2-E3)",
+      "active": true,
+      "x": 9,
+      "y": 4,
+      "rooms": [
+        "E2",
+        "E3"
+      ],
+      "sides": [
+        "E2:N",
+        "E3:S"
+      ],
+      "conflicts": []
+    },
+    "g(E2>)": {
+      "id": "g(E2>)",
+      "neighbors": {
+        "W": "E2",
+        "S": "i(10,2)",
+        "N": "i(10,4)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E2>)",
+      "lantern": "red",
+      "lanternRef": "g(E2>)",
+      "active": true,
+      "x": 10,
+      "y": 3,
+      "rooms": [
+        "E2"
+      ],
+      "sides": [
+        "E2:E"
+      ],
+      "conflicts": []
+    },
+    "g(A3-A4)": {
+      "id": "g(A3-A4)",
+      "neighbors": {
+        "S": "A3",
+        "N": "A4",
+        "W": "i(0,6)",
+        "E": "i(2,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A3-A4)",
+      "lantern": "purple",
+      "lanternRef": "g(A3-A4)",
+      "active": true,
+      "x": 1,
+      "y": 6,
+      "rooms": [
+        "A3",
+        "A4"
+      ],
+      "sides": [
+        "A3:N",
+        "A4:S"
+      ],
+      "conflicts": []
+    },
+    "g(A3-B3)": {
+      "id": "g(A3-B3)",
+      "neighbors": {
+        "W": "A3",
+        "E": "B3",
+        "S": "i(2,4)",
+        "N": "i(2,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A3-B3)",
+      "lantern": "green",
+      "lanternRef": "g(A3-B3)",
+      "active": true,
+      "x": 2,
+      "y": 5,
+      "rooms": [
+        "A3",
+        "B3"
+      ],
+      "sides": [
+        "A3:E",
+        "B3:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A3)": {
+      "id": "g(<A3)",
+      "neighbors": {
+        "E": "A3",
+        "S": "i(0,4)",
+        "N": "i(0,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(<A3)",
+      "lantern": "purple",
+      "lanternRef": "g(<A3)",
+      "active": true,
+      "x": 0,
+      "y": 5,
+      "rooms": [
+        "A3"
+      ],
+      "sides": [
+        "A3:W"
+      ],
+      "conflicts": []
+    },
+    "g(B3-B4)": {
+      "id": "g(B3-B4)",
+      "neighbors": {
+        "S": "B3",
+        "N": "B4",
+        "W": "i(2,6)",
+        "E": "i(4,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B3-B4)",
+      "lantern": "green",
+      "lanternRef": "g(B3-B4)",
+      "active": true,
+      "x": 3,
+      "y": 6,
+      "rooms": [
+        "B3",
+        "B4"
+      ],
+      "sides": [
+        "B3:N",
+        "B4:S"
+      ],
+      "conflicts": []
+    },
+    "g(B3-C3)": {
+      "id": "g(B3-C3)",
+      "neighbors": {
+        "W": "B3",
+        "E": "C3",
+        "S": "i(4,4)",
+        "N": "i(4,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B3-C3)",
+      "lantern": "orange",
+      "lanternRef": "g(B3-C3)",
+      "active": true,
+      "x": 4,
+      "y": 5,
+      "rooms": [
+        "B3",
+        "C3"
+      ],
+      "sides": [
+        "B3:E",
+        "C3:W"
+      ],
+      "conflicts": []
+    },
+    "g(C3-C4)": {
+      "id": "g(C3-C4)",
+      "neighbors": {
+        "S": "C3",
+        "N": "C4",
+        "W": "i(4,6)",
+        "E": "i(6,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C3-C4)",
+      "lantern": "orange",
+      "lanternRef": "g(C3-C4)",
+      "active": true,
+      "x": 5,
+      "y": 6,
+      "rooms": [
+        "C3",
+        "C4"
+      ],
+      "sides": [
+        "C3:N",
+        "C4:S"
+      ],
+      "conflicts": []
+    },
+    "g(C3-D3)": {
+      "id": "g(C3-D3)",
+      "neighbors": {
+        "W": "C3",
+        "E": "D3",
+        "S": "i(6,4)",
+        "N": "i(6,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C3-D3)",
+      "lantern": "red",
+      "lanternRef": "g(C3-D3)",
+      "active": true,
+      "x": 6,
+      "y": 5,
+      "rooms": [
+        "C3",
+        "D3"
+      ],
+      "sides": [
+        "C3:E",
+        "D3:W"
+      ],
+      "conflicts": []
+    },
+    "g(D3-D4)": {
+      "id": "g(D3-D4)",
+      "neighbors": {
+        "S": "D3",
+        "N": "D4",
+        "W": "i(6,6)",
+        "E": "i(8,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D3-D4)",
+      "lantern": "purple",
+      "lanternRef": "g(D3-D4)",
+      "active": true,
+      "x": 7,
+      "y": 6,
+      "rooms": [
+        "D3",
+        "D4"
+      ],
+      "sides": [
+        "D3:N",
+        "D4:S"
+      ],
+      "conflicts": []
+    },
+    "g(D3-E3)": {
+      "id": "g(D3-E3)",
+      "neighbors": {
+        "W": "D3",
+        "E": "E3",
+        "S": "i(8,4)",
+        "N": "i(8,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D3-E3)",
+      "lantern": "red",
+      "lanternRef": "g(D3-E3)",
+      "active": true,
+      "x": 8,
+      "y": 5,
+      "rooms": [
+        "D3",
+        "E3"
+      ],
+      "sides": [
+        "D3:E",
+        "E3:W"
+      ],
+      "conflicts": []
+    },
+    "g(E3-E4)": {
+      "id": "g(E3-E4)",
+      "neighbors": {
+        "S": "E3",
+        "N": "E4",
+        "W": "i(8,6)",
+        "E": "i(10,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E3-E4)",
+      "lantern": "purple",
+      "lanternRef": "g(E3-E4)",
+      "active": true,
+      "x": 9,
+      "y": 6,
+      "rooms": [
+        "E3",
+        "E4"
+      ],
+      "sides": [
+        "E3:N",
+        "E4:S"
+      ],
+      "conflicts": []
+    },
+    "g(E3>)": {
+      "id": "g(E3>)",
+      "neighbors": {
+        "W": "E3",
+        "S": "i(10,4)",
+        "N": "i(10,6)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E3>)",
+      "lantern": "red",
+      "lanternRef": "g(E3>)",
+      "active": true,
+      "x": 10,
+      "y": 5,
+      "rooms": [
+        "E3"
+      ],
+      "sides": [
+        "E3:E"
+      ],
+      "conflicts": []
+    },
+    "g(A4-A5)": {
+      "id": "g(A4-A5)",
+      "neighbors": {
+        "S": "A4",
+        "N": "A5",
+        "W": "i(0,8)",
+        "E": "i(2,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A4-A5)",
+      "lantern": "orange",
+      "lanternRef": "g(A4-A5)",
+      "active": true,
+      "x": 1,
+      "y": 8,
+      "rooms": [
+        "A4",
+        "A5"
+      ],
+      "sides": [
+        "A4:N",
+        "A5:S"
+      ],
+      "conflicts": []
+    },
+    "g(A4-B4)": {
+      "id": "g(A4-B4)",
+      "neighbors": {
+        "W": "A4",
+        "E": "B4",
+        "S": "i(2,6)",
+        "N": "i(2,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A4-B4)",
+      "lantern": "purple",
+      "lanternRef": "g(A4-B4)",
+      "active": true,
+      "x": 2,
+      "y": 7,
+      "rooms": [
+        "A4",
+        "B4"
+      ],
+      "sides": [
+        "A4:E",
+        "B4:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A4)": {
+      "id": "g(<A4)",
+      "neighbors": {
+        "E": "A4",
+        "S": "i(0,6)",
+        "N": "i(0,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(<A4)",
+      "lantern": "green",
+      "lanternRef": "g(<A4)",
+      "active": true,
+      "x": 0,
+      "y": 7,
+      "rooms": [
+        "A4"
+      ],
+      "sides": [
+        "A4:W"
+      ],
+      "conflicts": []
+    },
+    "g(B4-B5)": {
+      "id": "g(B4-B5)",
+      "neighbors": {
+        "S": "B4",
+        "N": "B5",
+        "W": "i(2,8)",
+        "E": "i(4,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B4-B5)",
+      "lantern": "orange",
+      "lanternRef": "g(B4-B5)",
+      "active": true,
+      "x": 3,
+      "y": 8,
+      "rooms": [
+        "B4",
+        "B5"
+      ],
+      "sides": [
+        "B4:N",
+        "B5:S"
+      ],
+      "conflicts": []
+    },
+    "g(B4-C4)": {
+      "id": "g(B4-C4)",
+      "neighbors": {
+        "W": "B4",
+        "E": "C4",
+        "S": "i(4,6)",
+        "N": "i(4,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B4-C4)",
+      "lantern": "green",
+      "lanternRef": "g(B4-C4)",
+      "active": true,
+      "x": 4,
+      "y": 7,
+      "rooms": [
+        "B4",
+        "C4"
+      ],
+      "sides": [
+        "B4:E",
+        "C4:W"
+      ],
+      "conflicts": []
+    },
+    "g(C4-C5)": {
+      "id": "g(C4-C5)",
+      "neighbors": {
+        "S": "C4",
+        "N": "C5",
+        "W": "i(4,8)",
+        "E": "i(6,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C4-C5)",
+      "lantern": "red",
+      "lanternRef": "g(C4-C5)",
+      "active": true,
+      "x": 5,
+      "y": 8,
+      "rooms": [
+        "C4",
+        "C5"
+      ],
+      "sides": [
+        "C4:N",
+        "C5:S"
+      ],
+      "conflicts": []
+    },
+    "g(C4-D4)": {
+      "id": "g(C4-D4)",
+      "neighbors": {
+        "W": "C4",
+        "E": "D4",
+        "S": "i(6,6)",
+        "N": "i(6,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C4-D4)",
+      "lantern": "orange",
+      "lanternRef": "g(C4-D4)",
+      "active": true,
+      "x": 6,
+      "y": 7,
+      "rooms": [
+        "C4",
+        "D4"
+      ],
+      "sides": [
+        "C4:E",
+        "D4:W"
+      ],
+      "conflicts": []
+    },
+    "g(D4-D5)": {
+      "id": "g(D4-D5)",
+      "neighbors": {
+        "S": "D4",
+        "N": "D5",
+        "W": "i(6,8)",
+        "E": "i(8,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D4-D5)",
+      "lantern": "yellow",
+      "lanternRef": "g(D4-D5)",
+      "active": true,
+      "x": 7,
+      "y": 8,
+      "rooms": [
+        "D4",
+        "D5"
+      ],
+      "sides": [
+        "D4:N",
+        "D5:S"
+      ],
+      "conflicts": []
+    },
+    "g(D4-E4)": {
+      "id": "g(D4-E4)",
+      "neighbors": {
+        "W": "D4",
+        "E": "E4",
+        "S": "i(8,6)",
+        "N": "i(8,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D4-E4)",
+      "lantern": "purple",
+      "lanternRef": "g(D4-E4)",
+      "active": true,
+      "x": 8,
+      "y": 7,
+      "rooms": [
+        "D4",
+        "E4"
+      ],
+      "sides": [
+        "D4:E",
+        "E4:W"
+      ],
+      "conflicts": []
+    },
+    "g(E4-E5)": {
+      "id": "g(E4-E5)",
+      "neighbors": {
+        "S": "E4",
+        "N": "E5",
+        "W": "i(8,8)",
+        "E": "i(10,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E4-E5)",
+      "lantern": "yellow",
+      "lanternRef": "g(E4-E5)",
+      "active": true,
+      "x": 9,
+      "y": 8,
+      "rooms": [
+        "E4",
+        "E5"
+      ],
+      "sides": [
+        "E4:N",
+        "E5:S"
+      ],
+      "conflicts": []
+    },
+    "g(E4>)": {
+      "id": "g(E4>)",
+      "neighbors": {
+        "W": "E4",
+        "S": "i(10,6)",
+        "N": "i(10,8)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E4>)",
+      "lantern": "red",
+      "lanternRef": "g(E4>)",
+      "active": true,
+      "x": 10,
+      "y": 7,
+      "rooms": [
+        "E4"
+      ],
+      "sides": [
+        "E4:E"
+      ],
+      "conflicts": []
+    },
+    "g(A5-A6)": {
+      "id": "g(A5-A6)",
+      "neighbors": {
+        "S": "A5",
+        "N": "A6",
+        "W": "i(0,10)",
+        "E": "i(2,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A5-A6)",
+      "lantern": "purple",
+      "lanternRef": "g(A5-A6)",
+      "active": true,
+      "x": 1,
+      "y": 10,
+      "rooms": [
+        "A5",
+        "A6"
+      ],
+      "sides": [
+        "A5:N",
+        "A6:S"
+      ],
+      "conflicts": []
+    },
+    "g(A5-B5)": {
+      "id": "g(A5-B5)",
+      "neighbors": {
+        "W": "A5",
+        "E": "B5",
+        "S": "i(2,8)",
+        "N": "i(2,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A5-B5)",
+      "lantern": "purple",
+      "lanternRef": "g(A5-B5)",
+      "active": true,
+      "x": 2,
+      "y": 9,
+      "rooms": [
+        "A5",
+        "B5"
+      ],
+      "sides": [
+        "A5:E",
+        "B5:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A5)": {
+      "id": "g(<A5)",
+      "neighbors": {
+        "E": "A5",
+        "S": "i(0,8)",
+        "N": "i(0,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(<A5)",
+      "lantern": "orange",
+      "lanternRef": "g(<A5)",
+      "active": true,
+      "x": 0,
+      "y": 9,
+      "rooms": [
+        "A5"
+      ],
+      "sides": [
+        "A5:W"
+      ],
+      "conflicts": []
+    },
+    "g(B5-B6)": {
+      "id": "g(B5-B6)",
+      "neighbors": {
+        "S": "B5",
+        "N": "B6",
+        "W": "i(2,10)",
+        "E": "i(4,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B5-B6)",
+      "lantern": "purple",
+      "lanternRef": "g(B5-B6)",
+      "active": true,
+      "x": 3,
+      "y": 10,
+      "rooms": [
+        "B5",
+        "B6"
+      ],
+      "sides": [
+        "B5:N",
+        "B6:S"
+      ],
+      "conflicts": []
+    },
+    "g(B5-C5)": {
+      "id": "g(B5-C5)",
+      "neighbors": {
+        "W": "B5",
+        "E": "C5",
+        "S": "i(4,8)",
+        "N": "i(4,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B5-C5)",
+      "lantern": "orange",
+      "lanternRef": "g(B5-C5)",
+      "active": true,
+      "x": 4,
+      "y": 9,
+      "rooms": [
+        "B5",
+        "C5"
+      ],
+      "sides": [
+        "B5:E",
+        "C5:W"
+      ],
+      "conflicts": []
+    },
+    "g(C5-C6)": {
+      "id": "g(C5-C6)",
+      "neighbors": {
+        "S": "C5",
+        "N": "C6",
+        "W": "i(4,10)",
+        "E": "i(6,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C5-C6)",
+      "lantern": "purple",
+      "lanternRef": "g(C5-C6)",
+      "active": true,
+      "x": 5,
+      "y": 10,
+      "rooms": [
+        "C5",
+        "C6"
+      ],
+      "sides": [
+        "C5:N",
+        "C6:S"
+      ],
+      "conflicts": []
+    },
+    "g(C5-D5)": {
+      "id": "g(C5-D5)",
+      "neighbors": {
+        "W": "C5",
+        "E": "D5",
+        "S": "i(6,8)",
+        "N": "i(6,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C5-D5)",
+      "lantern": "orange",
+      "lanternRef": "g(C5-D5)",
+      "active": true,
+      "x": 6,
+      "y": 9,
+      "rooms": [
+        "C5",
+        "D5"
+      ],
+      "sides": [
+        "C5:E",
+        "D5:W"
+      ],
+      "conflicts": []
+    },
+    "g(D5-D6)": {
+      "id": "g(D5-D6)",
+      "neighbors": {
+        "S": "D5",
+        "N": "D6",
+        "W": "i(6,10)",
+        "E": "i(8,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D5-D6)",
+      "lantern": "red",
+      "lanternRef": "g(D5-D6)",
+      "active": true,
+      "x": 7,
+      "y": 10,
+      "rooms": [
+        "D5",
+        "D6"
+      ],
+      "sides": [
+        "D5:N",
+        "D6:S"
+      ],
+      "conflicts": []
+    },
+    "g(D5-E5)": {
+      "id": "g(D5-E5)",
+      "neighbors": {
+        "W": "D5",
+        "E": "E5",
+        "S": "i(8,8)",
+        "N": "i(8,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D5-E5)",
+      "lantern": "purple",
+      "lanternRef": "g(D5-E5)",
+      "active": true,
+      "x": 8,
+      "y": 9,
+      "rooms": [
+        "D5",
+        "E5"
+      ],
+      "sides": [
+        "D5:E",
+        "E5:W"
+      ],
+      "conflicts": []
+    },
+    "g(E5-E6)": {
+      "id": "g(E5-E6)",
+      "neighbors": {
+        "S": "E5",
+        "N": "E6",
+        "W": "i(8,10)",
+        "E": "i(10,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E5-E6)",
+      "lantern": "red",
+      "lanternRef": "g(E5-E6)",
+      "active": true,
+      "x": 9,
+      "y": 10,
+      "rooms": [
+        "E5",
+        "E6"
+      ],
+      "sides": [
+        "E5:N",
+        "E6:S"
+      ],
+      "conflicts": []
+    },
+    "g(E5>)": {
+      "id": "g(E5>)",
+      "neighbors": {
+        "W": "E5",
+        "S": "i(10,8)",
+        "N": "i(10,10)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E5>)",
+      "lantern": "red",
+      "lanternRef": "g(E5>)",
+      "active": true,
+      "x": 10,
+      "y": 9,
+      "rooms": [
+        "E5"
+      ],
+      "sides": [
+        "E5:E"
+      ],
+      "conflicts": []
+    },
+    "g(A6-A7)": {
+      "id": "g(A6-A7)",
+      "neighbors": {
+        "S": "A6",
+        "N": "A7",
+        "W": "i(0,12)",
+        "E": "i(2,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A6-A7)",
+      "lantern": "orange",
+      "lanternRef": "g(A6-A7)",
+      "active": true,
+      "x": 1,
+      "y": 12,
+      "rooms": [
+        "A6",
+        "A7"
+      ],
+      "sides": [
+        "A6:N",
+        "A7:S"
+      ],
+      "conflicts": []
+    },
+    "g(A6-B6)": {
+      "id": "g(A6-B6)",
+      "neighbors": {
+        "W": "A6",
+        "E": "B6",
+        "S": "i(2,10)",
+        "N": "i(2,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A6-B6)",
+      "lantern": "purple",
+      "lanternRef": "g(A6-B6)",
+      "active": true,
+      "x": 2,
+      "y": 11,
+      "rooms": [
+        "A6",
+        "B6"
+      ],
+      "sides": [
+        "A6:E",
+        "B6:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A6)": {
+      "id": "g(<A6)",
+      "neighbors": {
+        "E": "A6",
+        "S": "i(0,10)",
+        "N": "i(0,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(<A6)",
+      "lantern": "orange",
+      "lanternRef": "g(<A6)",
+      "active": true,
+      "x": 0,
+      "y": 11,
+      "rooms": [
+        "A6"
+      ],
+      "sides": [
+        "A6:W"
+      ],
+      "conflicts": []
+    },
+    "g(B6-B7)": {
+      "id": "g(B6-B7)",
+      "neighbors": {
+        "S": "B6",
+        "N": "B7",
+        "W": "i(2,12)",
+        "E": "i(4,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B6-B7)",
+      "lantern": "yellow",
+      "lanternRef": "g(B6-B7)",
+      "active": true,
+      "x": 3,
+      "y": 12,
+      "rooms": [
+        "B6",
+        "B7"
+      ],
+      "sides": [
+        "B6:N",
+        "B7:S"
+      ],
+      "conflicts": []
+    },
+    "g(B6-C6)": {
+      "id": "g(B6-C6)",
+      "neighbors": {
+        "W": "B6",
+        "E": "C6",
+        "S": "i(4,10)",
+        "N": "i(4,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B6-C6)",
+      "lantern": "yellow",
+      "lanternRef": "g(B6-C6)",
+      "active": true,
+      "x": 4,
+      "y": 11,
+      "rooms": [
+        "B6",
+        "C6"
+      ],
+      "sides": [
+        "B6:E",
+        "C6:W"
+      ],
+      "conflicts": []
+    },
+    "g(C6-C7)": {
+      "id": "g(C6-C7)",
+      "neighbors": {
+        "S": "C6",
+        "N": "C7",
+        "W": "i(4,12)",
+        "E": "i(6,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C6-C7)",
+      "lantern": "yellow",
+      "lanternRef": "g(C6-C7)",
+      "active": true,
+      "x": 5,
+      "y": 12,
+      "rooms": [
+        "C6",
+        "C7"
+      ],
+      "sides": [
+        "C6:N",
+        "C7:S"
+      ],
+      "conflicts": []
+    },
+    "g(C6-D6)": {
+      "id": "g(C6-D6)",
+      "neighbors": {
+        "W": "C6",
+        "E": "D6",
+        "S": "i(6,10)",
+        "N": "i(6,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C6-D6)",
+      "lantern": "purple",
+      "lanternRef": "g(C6-D6)",
+      "active": true,
+      "x": 6,
+      "y": 11,
+      "rooms": [
+        "C6",
+        "D6"
+      ],
+      "sides": [
+        "C6:E",
+        "D6:W"
+      ],
+      "conflicts": []
+    },
+    "g(D6-D7)": {
+      "id": "g(D6-D7)",
+      "neighbors": {
+        "S": "D6",
+        "N": "D7",
+        "W": "i(6,12)",
+        "E": "i(8,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D6-D7)",
+      "lantern": "purple",
+      "lanternRef": "g(D6-D7)",
+      "active": true,
+      "x": 7,
+      "y": 12,
+      "rooms": [
+        "D6",
+        "D7"
+      ],
+      "sides": [
+        "D6:N",
+        "D7:S"
+      ],
+      "conflicts": []
+    },
+    "g(D6-E6)": {
+      "id": "g(D6-E6)",
+      "neighbors": {
+        "W": "D6",
+        "E": "E6",
+        "S": "i(8,10)",
+        "N": "i(8,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D6-E6)",
+      "lantern": "red",
+      "lanternRef": "g(D6-E6)",
+      "active": true,
+      "x": 8,
+      "y": 11,
+      "rooms": [
+        "D6",
+        "E6"
+      ],
+      "sides": [
+        "D6:E",
+        "E6:W"
+      ],
+      "conflicts": []
+    },
+    "g(E6-E7)": {
+      "id": "g(E6-E7)",
+      "neighbors": {
+        "S": "E6",
+        "N": "E7",
+        "W": "i(8,12)",
+        "E": "i(10,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E6-E7)",
+      "lantern": "purple",
+      "lanternRef": "g(E6-E7)",
+      "active": true,
+      "x": 9,
+      "y": 12,
+      "rooms": [
+        "E6",
+        "E7"
+      ],
+      "sides": [
+        "E6:N",
+        "E7:S"
+      ],
+      "conflicts": []
+    },
+    "g(E6>)": {
+      "id": "g(E6>)",
+      "neighbors": {
+        "W": "E6",
+        "S": "i(10,10)",
+        "N": "i(10,12)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E6>)",
+      "lantern": "purple",
+      "lanternRef": "g(E6>)",
+      "active": true,
+      "x": 10,
+      "y": 11,
+      "rooms": [
+        "E6"
+      ],
+      "sides": [
+        "E6:E"
+      ],
+      "conflicts": []
+    },
+    "g(A7-A8)": {
+      "id": "g(A7-A8)",
+      "neighbors": {
+        "S": "A7",
+        "N": "A8",
+        "W": "i(0,14)",
+        "E": "i(2,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A7-A8)",
+      "lantern": "red",
+      "lanternRef": "g(A7-A8)",
+      "active": true,
+      "x": 1,
+      "y": 14,
+      "rooms": [
+        "A7",
+        "A8"
+      ],
+      "sides": [
+        "A7:N",
+        "A8:S"
+      ],
+      "conflicts": []
+    },
+    "g(A7-B7)": {
+      "id": "g(A7-B7)",
+      "neighbors": {
+        "W": "A7",
+        "E": "B7",
+        "S": "i(2,12)",
+        "N": "i(2,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A7-B7)",
+      "lantern": "orange",
+      "lanternRef": "g(A7-B7)",
+      "active": true,
+      "x": 2,
+      "y": 13,
+      "rooms": [
+        "A7",
+        "B7"
+      ],
+      "sides": [
+        "A7:E",
+        "B7:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A7)": {
+      "id": "g(<A7)",
+      "neighbors": {
+        "E": "A7",
+        "S": "i(0,12)",
+        "N": "i(0,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(<A7)",
+      "lantern": "red",
+      "lanternRef": "g(<A7)",
+      "active": true,
+      "x": 0,
+      "y": 13,
+      "rooms": [
+        "A7"
+      ],
+      "sides": [
+        "A7:W"
+      ],
+      "conflicts": []
+    },
+    "g(B7-B8)": {
+      "id": "g(B7-B8)",
+      "neighbors": {
+        "S": "B7",
+        "N": "B8",
+        "W": "i(2,14)",
+        "E": "i(4,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B7-B8)",
+      "lantern": "red",
+      "lanternRef": "g(B7-B8)",
+      "active": true,
+      "x": 3,
+      "y": 14,
+      "rooms": [
+        "B7",
+        "B8"
+      ],
+      "sides": [
+        "B7:N",
+        "B8:S"
+      ],
+      "conflicts": []
+    },
+    "g(B7-C7)": {
+      "id": "g(B7-C7)",
+      "neighbors": {
+        "W": "B7",
+        "E": "C7",
+        "S": "i(4,12)",
+        "N": "i(4,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B7-C7)",
+      "lantern": "yellow",
+      "lanternRef": "g(B7-C7)",
+      "active": true,
+      "x": 4,
+      "y": 13,
+      "rooms": [
+        "B7",
+        "C7"
+      ],
+      "sides": [
+        "B7:E",
+        "C7:W"
+      ],
+      "conflicts": []
+    },
+    "g(C7-C8)": {
+      "id": "g(C7-C8)",
+      "neighbors": {
+        "S": "C7",
+        "N": "C8",
+        "W": "i(4,14)",
+        "E": "i(6,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C7-C8)",
+      "lantern": "red",
+      "lanternRef": "g(C7-C8)",
+      "active": true,
+      "x": 5,
+      "y": 14,
+      "rooms": [
+        "C7",
+        "C8"
+      ],
+      "sides": [
+        "C7:N",
+        "C8:S"
+      ],
+      "conflicts": []
+    },
+    "g(C7-D7)": {
+      "id": "g(C7-D7)",
+      "neighbors": {
+        "W": "C7",
+        "E": "D7",
+        "S": "i(6,12)",
+        "N": "i(6,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C7-D7)",
+      "lantern": "yellow",
+      "lanternRef": "g(C7-D7)",
+      "active": true,
+      "x": 6,
+      "y": 13,
+      "rooms": [
+        "C7",
+        "D7"
+      ],
+      "sides": [
+        "C7:E",
+        "D7:W"
+      ],
+      "conflicts": []
+    },
+    "g(D7-D8)": {
+      "id": "g(D7-D8)",
+      "neighbors": {
+        "S": "D7",
+        "N": "D8",
+        "W": "i(6,14)",
+        "E": "i(8,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D7-D8)",
+      "lantern": "red",
+      "lanternRef": "g(D7-D8)",
+      "active": true,
+      "x": 7,
+      "y": 14,
+      "rooms": [
+        "D7",
+        "D8"
+      ],
+      "sides": [
+        "D7:N",
+        "D8:S"
+      ],
+      "conflicts": []
+    },
+    "g(D7-E7)": {
+      "id": "g(D7-E7)",
+      "neighbors": {
+        "W": "D7",
+        "E": "E7",
+        "S": "i(8,12)",
+        "N": "i(8,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D7-E7)",
+      "lantern": "red",
+      "lanternRef": "g(D7-E7)",
+      "active": true,
+      "x": 8,
+      "y": 13,
+      "rooms": [
+        "D7",
+        "E7"
+      ],
+      "sides": [
+        "D7:E",
+        "E7:W"
+      ],
+      "conflicts": []
+    },
+    "g(E7-E8)": {
+      "id": "g(E7-E8)",
+      "neighbors": {
+        "S": "E7",
+        "N": "E8",
+        "W": "i(8,14)",
+        "E": "i(10,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E7-E8)",
+      "lantern": "purple",
+      "lanternRef": "g(E7-E8)",
+      "active": true,
+      "x": 9,
+      "y": 14,
+      "rooms": [
+        "E7",
+        "E8"
+      ],
+      "sides": [
+        "E7:N",
+        "E8:S"
+      ],
+      "conflicts": []
+    },
+    "g(E7>)": {
+      "id": "g(E7>)",
+      "neighbors": {
+        "W": "E7",
+        "S": "i(10,12)",
+        "N": "i(10,14)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E7>)",
+      "lantern": "purple",
+      "lanternRef": "g(E7>)",
+      "active": true,
+      "x": 10,
+      "y": 13,
+      "rooms": [
+        "E7"
+      ],
+      "sides": [
+        "E7:E"
+      ],
+      "conflicts": []
+    },
+    "g(A8-A9)": {
+      "id": "g(A8-A9)",
+      "neighbors": {
+        "S": "A8",
+        "N": "A9",
+        "W": "i(0,16)",
+        "E": "i(2,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A8-A9)",
+      "lantern": "orange",
+      "lanternRef": "g(A8-A9)",
+      "active": true,
+      "x": 1,
+      "y": 16,
+      "rooms": [
+        "A8",
+        "A9"
+      ],
+      "sides": [
+        "A8:N",
+        "A9:S"
+      ],
+      "conflicts": []
+    },
+    "g(A8-B8)": {
+      "id": "g(A8-B8)",
+      "neighbors": {
+        "W": "A8",
+        "E": "B8",
+        "S": "i(2,14)",
+        "N": "i(2,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A8-B8)",
+      "lantern": "orange",
+      "lanternRef": "g(A8-B8)",
+      "active": true,
+      "x": 2,
+      "y": 15,
+      "rooms": [
+        "A8",
+        "B8"
+      ],
+      "sides": [
+        "A8:E",
+        "B8:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A8)": {
+      "id": "g(<A8)",
+      "neighbors": {
+        "E": "A8",
+        "S": "i(0,14)",
+        "N": "i(0,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(<A8)",
+      "lantern": "red",
+      "lanternRef": "g(<A8)",
+      "active": true,
+      "x": 0,
+      "y": 15,
+      "rooms": [
+        "A8"
+      ],
+      "sides": [
+        "A8:W"
+      ],
+      "conflicts": []
+    },
+    "g(B8-B9)": {
+      "id": "g(B8-B9)",
+      "neighbors": {
+        "S": "B8",
+        "N": "B9",
+        "W": "i(2,16)",
+        "E": "i(4,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B8-B9)",
+      "lantern": "red",
+      "lanternRef": "g(B8-B9)",
+      "active": true,
+      "x": 3,
+      "y": 16,
+      "rooms": [
+        "B8",
+        "B9"
+      ],
+      "sides": [
+        "B8:N",
+        "B9:S"
+      ],
+      "conflicts": []
+    },
+    "g(B8-C8)": {
+      "id": "g(B8-C8)",
+      "neighbors": {
+        "W": "B8",
+        "E": "C8",
+        "S": "i(4,14)",
+        "N": "i(4,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B8-C8)",
+      "lantern": "red",
+      "lanternRef": "g(B8-C8)",
+      "active": true,
+      "x": 4,
+      "y": 15,
+      "rooms": [
+        "B8",
+        "C8"
+      ],
+      "sides": [
+        "B8:E",
+        "C8:W"
+      ],
+      "conflicts": []
+    },
+    "g(C8-C9)": {
+      "id": "g(C8-C9)",
+      "neighbors": {
+        "S": "C8",
+        "N": "C9",
+        "W": "i(4,16)",
+        "E": "i(6,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C8-C9)",
+      "lantern": "red",
+      "lanternRef": "g(C8-C9)",
+      "active": true,
+      "x": 5,
+      "y": 16,
+      "rooms": [
+        "C8",
+        "C9"
+      ],
+      "sides": [
+        "C8:N",
+        "C9:S"
+      ],
+      "conflicts": []
+    },
+    "g(C8-D8)": {
+      "id": "g(C8-D8)",
+      "neighbors": {
+        "W": "C8",
+        "E": "D8",
+        "S": "i(6,14)",
+        "N": "i(6,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C8-D8)",
+      "lantern": "yellow",
+      "lanternRef": "g(C8-D8)",
+      "active": true,
+      "x": 6,
+      "y": 15,
+      "rooms": [
+        "C8",
+        "D8"
+      ],
+      "sides": [
+        "C8:E",
+        "D8:W"
+      ],
+      "conflicts": []
+    },
+    "g(D8-D9)": {
+      "id": "g(D8-D9)",
+      "neighbors": {
+        "S": "D8",
+        "N": "D9",
+        "W": "i(6,16)",
+        "E": "i(8,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D8-D9)",
+      "lantern": "purple",
+      "lanternRef": "g(D8-D9)",
+      "active": true,
+      "x": 7,
+      "y": 16,
+      "rooms": [
+        "D8",
+        "D9"
+      ],
+      "sides": [
+        "D8:N",
+        "D9:S"
+      ],
+      "conflicts": []
+    },
+    "g(D8-E8)": {
+      "id": "g(D8-E8)",
+      "neighbors": {
+        "W": "D8",
+        "E": "E8",
+        "S": "i(8,14)",
+        "N": "i(8,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D8-E8)",
+      "lantern": "purple",
+      "lanternRef": "g(D8-E8)",
+      "active": true,
+      "x": 8,
+      "y": 15,
+      "rooms": [
+        "D8",
+        "E8"
+      ],
+      "sides": [
+        "D8:E",
+        "E8:W"
+      ],
+      "conflicts": []
+    },
+    "g(E8-E9)": {
+      "id": "g(E8-E9)",
+      "neighbors": {
+        "S": "E8",
+        "N": "E9",
+        "W": "i(8,16)",
+        "E": "i(10,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E8-E9)",
+      "lantern": "yellow",
+      "lanternRef": "g(E8-E9)",
+      "active": true,
+      "x": 9,
+      "y": 16,
+      "rooms": [
+        "E8",
+        "E9"
+      ],
+      "sides": [
+        "E8:N",
+        "E9:S"
+      ],
+      "conflicts": []
+    },
+    "g(E8>)": {
+      "id": "g(E8>)",
+      "neighbors": {
+        "W": "E8",
+        "S": "i(10,14)",
+        "N": "i(10,16)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E8>)",
+      "lantern": "red",
+      "lanternRef": "g(E8>)",
+      "active": true,
+      "x": 10,
+      "y": 15,
+      "rooms": [
+        "E8"
+      ],
+      "sides": [
+        "E8:E"
+      ],
+      "conflicts": []
+    },
+    "g(^A9)": {
+      "id": "g(^A9)",
+      "neighbors": {
+        "S": "A9",
+        "W": "i(0,18)",
+        "E": "i(2,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(^A9)",
+      "lantern": "orange",
+      "lanternRef": "g(^A9)",
+      "active": true,
+      "x": 1,
+      "y": 18,
+      "rooms": [
+        "A9"
+      ],
+      "sides": [
+        "A9:N"
+      ],
+      "conflicts": []
+    },
+    "g(A9-B9)": {
+      "id": "g(A9-B9)",
+      "neighbors": {
+        "W": "A9",
+        "E": "B9",
+        "S": "i(2,16)",
+        "N": "i(2,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(A9-B9)",
+      "lantern": "red",
+      "lanternRef": "g(A9-B9)",
+      "active": true,
+      "x": 2,
+      "y": 17,
+      "rooms": [
+        "A9",
+        "B9"
+      ],
+      "sides": [
+        "A9:E",
+        "B9:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A9)": {
+      "id": "g(<A9)",
+      "neighbors": {
+        "E": "A9",
+        "S": "i(0,16)",
+        "N": "i(0,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(<A9)",
+      "lantern": "red",
+      "lanternRef": "g(<A9)",
+      "active": true,
+      "x": 0,
+      "y": 17,
+      "rooms": [
+        "A9"
+      ],
+      "sides": [
+        "A9:W"
+      ],
+      "conflicts": []
+    },
+    "g(^B9)": {
+      "id": "g(^B9)",
+      "neighbors": {
+        "S": "B9",
+        "W": "i(2,18)",
+        "E": "i(4,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(^B9)",
+      "lantern": "orange",
+      "lanternRef": "g(^B9)",
+      "active": true,
+      "x": 3,
+      "y": 18,
+      "rooms": [
+        "B9"
+      ],
+      "sides": [
+        "B9:N"
+      ],
+      "conflicts": []
+    },
+    "g(B9-C9)": {
+      "id": "g(B9-C9)",
+      "neighbors": {
+        "W": "B9",
+        "E": "C9",
+        "S": "i(4,16)",
+        "N": "i(4,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(B9-C9)",
+      "lantern": "orange",
+      "lanternRef": "g(B9-C9)",
+      "active": true,
+      "x": 4,
+      "y": 17,
+      "rooms": [
+        "B9",
+        "C9"
+      ],
+      "sides": [
+        "B9:E",
+        "C9:W"
+      ],
+      "conflicts": []
+    },
+    "g(^C9)": {
+      "id": "g(^C9)",
+      "neighbors": {
+        "S": "C9",
+        "W": "i(4,18)",
+        "E": "i(6,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(^C9)",
+      "lantern": null,
+      "lanternRef": "g(^C9)",
+      "active": true,
+      "x": 5,
+      "y": 18,
+      "rooms": [
+        "C9"
+      ],
+      "sides": [
+        "C9:N"
+      ],
+      "conflicts": []
+    },
+    "g(C9-D9)": {
+      "id": "g(C9-D9)",
+      "neighbors": {
+        "W": "C9",
+        "E": "D9",
+        "S": "i(6,16)",
+        "N": "i(6,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(C9-D9)",
+      "lantern": "purple",
+      "lanternRef": "g(C9-D9)",
+      "active": true,
+      "x": 6,
+      "y": 17,
+      "rooms": [
+        "C9",
+        "D9"
+      ],
+      "sides": [
+        "C9:E",
+        "D9:W"
+      ],
+      "conflicts": []
+    },
+    "g(^D9)": {
+      "id": "g(^D9)",
+      "neighbors": {
+        "S": "D9",
+        "W": "i(6,18)",
+        "E": "i(8,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(^D9)",
+      "lantern": "purple",
+      "lanternRef": "g(^D9)",
+      "active": true,
+      "x": 7,
+      "y": 18,
+      "rooms": [
+        "D9"
+      ],
+      "sides": [
+        "D9:N"
+      ],
+      "conflicts": []
+    },
+    "g(D9-E9)": {
+      "id": "g(D9-E9)",
+      "neighbors": {
+        "W": "D9",
+        "E": "E9",
+        "S": "i(8,16)",
+        "N": "i(8,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(D9-E9)",
+      "lantern": "purple",
+      "lanternRef": "g(D9-E9)",
+      "active": true,
+      "x": 8,
+      "y": 17,
+      "rooms": [
+        "D9",
+        "E9"
+      ],
+      "sides": [
+        "D9:E",
+        "E9:W"
+      ],
+      "conflicts": []
+    },
+    "g(^E9)": {
+      "id": "g(^E9)",
+      "neighbors": {
+        "S": "E9",
+        "W": "i(8,18)",
+        "E": "i(10,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(^E9)",
+      "lantern": "red",
+      "lanternRef": "g(^E9)",
+      "active": true,
+      "x": 9,
+      "y": 18,
+      "rooms": [
+        "E9"
+      ],
+      "sides": [
+        "E9:N"
+      ],
+      "conflicts": []
+    },
+    "g(E9>)": {
+      "id": "g(E9>)",
+      "neighbors": {
+        "W": "E9",
+        "S": "i(10,16)",
+        "N": "i(10,18)"
+      },
+      "kind": "lantern",
+      "slotId": "g(E9>)",
+      "lantern": "red",
+      "lanternRef": "g(E9>)",
+      "active": true,
+      "x": 10,
+      "y": 17,
+      "rooms": [
+        "E9"
+      ],
+      "sides": [
+        "E9:E"
+      ],
+      "conflicts": []
+    },
+    "i(0,2)": {
+      "id": "i(0,2)",
+      "neighbors": {
+        "E": "g(A1-A2)",
+        "S": "g(<A1)",
+        "N": "g(<A2)"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 2,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(2,2)": {
+      "id": "i(2,2)",
+      "neighbors": {
+        "W": "g(A1-A2)",
+        "S": "g(A1-B1)",
+        "E": "g(B1-B2)",
+        "N": "g(A2-B2)"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 2,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "i(2,0)": {
+      "id": "i(2,0)",
+      "neighbors": {
+        "N": "g(A1-B1)",
+        "W": "A0",
+        "E": "B0"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(0,0)": {
+      "id": "i(0,0)",
+      "neighbors": {
+        "N": "g(<A1)",
+        "E": "A0"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(4,2)": {
+      "id": "i(4,2)",
+      "neighbors": {
+        "W": "g(B1-B2)",
+        "S": "g(B1-C1)",
+        "E": "g(C1-C2)",
+        "N": "g(B2-C2)"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 2,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "i(4,0)": {
+      "id": "i(4,0)",
+      "neighbors": {
+        "N": "g(B1-C1)",
+        "W": "B0",
+        "E": "C0"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(6,2)": {
+      "id": "i(6,2)",
+      "neighbors": {
+        "W": "g(C1-C2)",
+        "S": "g(C1-D1)",
+        "E": "g(D1-D2)",
+        "N": "g(C2-D2)"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 2,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(6,0)": {
+      "id": "i(6,0)",
+      "neighbors": {
+        "N": "g(C1-D1)",
+        "W": "C0",
+        "E": "D0"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,2)": {
+      "id": "i(8,2)",
+      "neighbors": {
+        "W": "g(D1-D2)",
+        "S": "g(D1-E1)",
+        "E": "g(E1-E2)",
+        "N": "g(D2-E2)"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 2,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,0)": {
+      "id": "i(8,0)",
+      "neighbors": {
+        "N": "g(D1-E1)",
+        "W": "D0",
+        "E": "E0"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(10,2)": {
+      "id": "i(10,2)",
+      "neighbors": {
+        "W": "g(E1-E2)",
+        "S": "g(E1>)",
+        "N": "g(E2>)"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 2,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(10,0)": {
+      "id": "i(10,0)",
+      "neighbors": {
+        "N": "g(E1>)",
+        "W": "E0"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(0,4)": {
+      "id": "i(0,4)",
+      "neighbors": {
+        "E": "g(A2-A3)",
+        "S": "g(<A2)",
+        "N": "g(<A3)"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 4,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E"
+      ]
+    },
+    "i(2,4)": {
+      "id": "i(2,4)",
+      "neighbors": {
+        "W": "g(A2-A3)",
+        "S": "g(A2-B2)",
+        "E": "g(B2-B3)",
+        "N": "g(A3-B3)"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 4,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "i(4,4)": {
+      "id": "i(4,4)",
+      "neighbors": {
+        "W": "g(B2-B3)",
+        "S": "g(B2-C2)",
+        "E": "g(C2-C3)",
+        "N": "g(B3-C3)"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 4,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(6,4)": {
+      "id": "i(6,4)",
+      "neighbors": {
+        "W": "g(C2-C3)",
+        "S": "g(C2-D2)",
+        "E": "g(D2-D3)",
+        "N": "g(C3-D3)"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 4,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,4)": {
+      "id": "i(8,4)",
+      "neighbors": {
+        "W": "g(D2-D3)",
+        "S": "g(D2-E2)",
+        "E": "g(E2-E3)",
+        "N": "g(D3-E3)"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 4,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(10,4)": {
+      "id": "i(10,4)",
+      "neighbors": {
+        "W": "g(E2-E3)",
+        "S": "g(E2>)",
+        "N": "g(E3>)"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 4,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(0,6)": {
+      "id": "i(0,6)",
+      "neighbors": {
+        "E": "g(A3-A4)",
+        "S": "g(<A3)",
+        "N": "g(<A4)"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 6,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(2,6)": {
+      "id": "i(2,6)",
+      "neighbors": {
+        "W": "g(A3-A4)",
+        "S": "g(A3-B3)",
+        "E": "g(B3-B4)",
+        "N": "g(A4-B4)"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 6,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "W"
+      ]
+    },
+    "i(4,6)": {
+      "id": "i(4,6)",
+      "neighbors": {
+        "W": "g(B3-B4)",
+        "S": "g(B3-C3)",
+        "E": "g(C3-C4)",
+        "N": "g(B4-C4)"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 6,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "i(6,6)": {
+      "id": "i(6,6)",
+      "neighbors": {
+        "W": "g(C3-C4)",
+        "S": "g(C3-D3)",
+        "E": "g(D3-D4)",
+        "N": "g(C4-D4)"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 6,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,6)": {
+      "id": "i(8,6)",
+      "neighbors": {
+        "W": "g(D3-D4)",
+        "S": "g(D3-E3)",
+        "E": "g(E3-E4)",
+        "N": "g(D4-E4)"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 6,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "i(10,6)": {
+      "id": "i(10,6)",
+      "neighbors": {
+        "W": "g(E3-E4)",
+        "S": "g(E3>)",
+        "N": "g(E4>)"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 6,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(0,8)": {
+      "id": "i(0,8)",
+      "neighbors": {
+        "E": "g(A4-A5)",
+        "S": "g(<A4)",
+        "N": "g(<A5)"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 8,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(2,8)": {
+      "id": "i(2,8)",
+      "neighbors": {
+        "W": "g(A4-A5)",
+        "S": "g(A4-B4)",
+        "E": "g(B4-B5)",
+        "N": "g(A5-B5)"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 8,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(4,8)": {
+      "id": "i(4,8)",
+      "neighbors": {
+        "W": "g(B4-B5)",
+        "S": "g(B4-C4)",
+        "E": "g(C4-C5)",
+        "N": "g(B5-C5)"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 8,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "i(6,8)": {
+      "id": "i(6,8)",
+      "neighbors": {
+        "W": "g(C4-C5)",
+        "S": "g(C4-D4)",
+        "E": "g(D4-D5)",
+        "N": "g(C5-D5)"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 8,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,8)": {
+      "id": "i(8,8)",
+      "neighbors": {
+        "W": "g(D4-D5)",
+        "S": "g(D4-E4)",
+        "E": "g(E4-E5)",
+        "N": "g(D5-E5)"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 8,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "W"
+      ]
+    },
+    "i(10,8)": {
+      "id": "i(10,8)",
+      "neighbors": {
+        "W": "g(E4-E5)",
+        "S": "g(E4>)",
+        "N": "g(E5>)"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 8,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(0,10)": {
+      "id": "i(0,10)",
+      "neighbors": {
+        "E": "g(A5-A6)",
+        "S": "g(<A5)",
+        "N": "g(<A6)"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 10,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(2,10)": {
+      "id": "i(2,10)",
+      "neighbors": {
+        "W": "g(A5-A6)",
+        "S": "g(A5-B5)",
+        "E": "g(B5-B6)",
+        "N": "g(A6-B6)"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 10,
+      "active": true,
+      "enabledDirs": [
+        "S",
+        "W"
+      ]
+    },
+    "i(4,10)": {
+      "id": "i(4,10)",
+      "neighbors": {
+        "W": "g(B5-B6)",
+        "S": "g(B5-C5)",
+        "E": "g(C5-C6)",
+        "N": "g(B6-C6)"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 10,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "i(6,10)": {
+      "id": "i(6,10)",
+      "neighbors": {
+        "W": "g(C5-C6)",
+        "S": "g(C5-D5)",
+        "E": "g(D5-D6)",
+        "N": "g(C6-D6)"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 10,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,10)": {
+      "id": "i(8,10)",
+      "neighbors": {
+        "W": "g(D5-D6)",
+        "S": "g(D5-E5)",
+        "E": "g(E5-E6)",
+        "N": "g(D6-E6)"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 10,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(10,10)": {
+      "id": "i(10,10)",
+      "neighbors": {
+        "W": "g(E5-E6)",
+        "S": "g(E5>)",
+        "N": "g(E6>)"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 10,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(0,12)": {
+      "id": "i(0,12)",
+      "neighbors": {
+        "E": "g(A6-A7)",
+        "S": "g(<A6)",
+        "N": "g(<A7)"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 12,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(2,12)": {
+      "id": "i(2,12)",
+      "neighbors": {
+        "W": "g(A6-A7)",
+        "S": "g(A6-B6)",
+        "E": "g(B6-B7)",
+        "N": "g(A7-B7)"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 12,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(4,12)": {
+      "id": "i(4,12)",
+      "neighbors": {
+        "W": "g(B6-B7)",
+        "S": "g(B6-C6)",
+        "E": "g(C6-C7)",
+        "N": "g(B7-C7)"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 12,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(6,12)": {
+      "id": "i(6,12)",
+      "neighbors": {
+        "W": "g(C6-C7)",
+        "S": "g(C6-D6)",
+        "E": "g(D6-D7)",
+        "N": "g(C7-D7)"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 12,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,12)": {
+      "id": "i(8,12)",
+      "neighbors": {
+        "W": "g(D6-D7)",
+        "S": "g(D6-E6)",
+        "E": "g(E6-E7)",
+        "N": "g(D7-E7)"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 12,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(10,12)": {
+      "id": "i(10,12)",
+      "neighbors": {
+        "W": "g(E6-E7)",
+        "S": "g(E6>)",
+        "N": "g(E7>)"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 12,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(0,14)": {
+      "id": "i(0,14)",
+      "neighbors": {
+        "E": "g(A7-A8)",
+        "S": "g(<A7)",
+        "N": "g(<A8)"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 14,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(2,14)": {
+      "id": "i(2,14)",
+      "neighbors": {
+        "W": "g(A7-A8)",
+        "S": "g(A7-B7)",
+        "E": "g(B7-B8)",
+        "N": "g(A8-B8)"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 14,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(4,14)": {
+      "id": "i(4,14)",
+      "neighbors": {
+        "W": "g(B7-B8)",
+        "S": "g(B7-C7)",
+        "E": "g(C7-C8)",
+        "N": "g(B8-C8)"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 14,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(6,14)": {
+      "id": "i(6,14)",
+      "neighbors": {
+        "W": "g(C7-C8)",
+        "S": "g(C7-D7)",
+        "E": "g(D7-D8)",
+        "N": "g(C8-D8)"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 14,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,14)": {
+      "id": "i(8,14)",
+      "neighbors": {
+        "W": "g(D7-D8)",
+        "S": "g(D7-E7)",
+        "E": "g(E7-E8)",
+        "N": "g(D8-E8)"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 14,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(10,14)": {
+      "id": "i(10,14)",
+      "neighbors": {
+        "W": "g(E7-E8)",
+        "S": "g(E7>)",
+        "N": "g(E8>)"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 14,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(0,16)": {
+      "id": "i(0,16)",
+      "neighbors": {
+        "E": "g(A8-A9)",
+        "S": "g(<A8)",
+        "N": "g(<A9)"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 16,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(2,16)": {
+      "id": "i(2,16)",
+      "neighbors": {
+        "W": "g(A8-A9)",
+        "S": "g(A8-B8)",
+        "E": "g(B8-B9)",
+        "N": "g(A9-B9)"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 16,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(4,16)": {
+      "id": "i(4,16)",
+      "neighbors": {
+        "W": "g(B8-B9)",
+        "S": "g(B8-C8)",
+        "E": "g(C8-C9)",
+        "N": "g(B9-C9)"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 16,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(6,16)": {
+      "id": "i(6,16)",
+      "neighbors": {
+        "W": "g(C8-C9)",
+        "S": "g(C8-D8)",
+        "E": "g(D8-D9)",
+        "N": "g(C9-D9)"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 16,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,16)": {
+      "id": "i(8,16)",
+      "neighbors": {
+        "W": "g(D8-D9)",
+        "S": "g(D8-E8)",
+        "E": "g(E8-E9)",
+        "N": "g(D9-E9)"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 16,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(10,16)": {
+      "id": "i(10,16)",
+      "neighbors": {
+        "W": "g(E8-E9)",
+        "S": "g(E8>)",
+        "N": "g(E9>)"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 16,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(0,18)": {
+      "id": "i(0,18)",
+      "neighbors": {
+        "E": "g(^A9)",
+        "S": "g(<A9)"
+      },
+      "kind": "intersection",
+      "x": 0,
+      "y": 18,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(2,18)": {
+      "id": "i(2,18)",
+      "neighbors": {
+        "W": "g(^A9)",
+        "S": "g(A9-B9)",
+        "E": "g(^B9)"
+      },
+      "kind": "intersection",
+      "x": 2,
+      "y": 18,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(4,18)": {
+      "id": "i(4,18)",
+      "neighbors": {
+        "W": "g(^B9)",
+        "S": "g(B9-C9)",
+        "E": "g(^C9)"
+      },
+      "kind": "intersection",
+      "x": 4,
+      "y": 18,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(6,18)": {
+      "id": "i(6,18)",
+      "neighbors": {
+        "W": "g(^C9)",
+        "S": "g(C9-D9)",
+        "E": "g(^D9)"
+      },
+      "kind": "intersection",
+      "x": 6,
+      "y": 18,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(8,18)": {
+      "id": "i(8,18)",
+      "neighbors": {
+        "W": "g(^D9)",
+        "S": "g(D9-E9)",
+        "E": "g(^E9)"
+      },
+      "kind": "intersection",
+      "x": 8,
+      "y": 18,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "i(10,18)": {
+      "id": "i(10,18)",
+      "neighbors": {
+        "W": "g(^E9)",
+        "S": "g(E9>)"
+      },
+      "kind": "intersection",
+      "x": 10,
+      "y": 18,
+      "active": true,
+      "enabledDirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "A0": {
+      "id": "A0",
+      "neighbors": {
+        "W": "i(0,0)",
+        "E": "i(2,0)"
+      },
+      "kind": "intersection",
+      "x": 1,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "B0": {
+      "id": "B0",
+      "neighbors": {
+        "W": "i(2,0)",
+        "E": "i(4,0)",
+        "N": "B1"
+      },
+      "kind": "intersection",
+      "x": 3,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "C0": {
+      "id": "C0",
+      "neighbors": {
+        "W": "i(4,0)",
+        "E": "i(6,0)",
+        "N": "C1"
+      },
+      "kind": "intersection",
+      "x": 5,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "D0": {
+      "id": "D0",
+      "neighbors": {
+        "W": "i(6,0)",
+        "E": "i(8,0)",
+        "N": "D1"
+      },
+      "kind": "intersection",
+      "x": 7,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    },
+    "E0": {
+      "id": "E0",
+      "neighbors": {
+        "W": "i(8,0)",
+        "E": "i(10,0)",
+        "N": "E1"
+      },
+      "kind": "intersection",
+      "x": 9,
+      "y": 0,
+      "active": true,
+      "enabledDirs": [
+        "E",
+        "W"
+      ]
+    }
+  },
+  "lanternSlots": {
+    "g(A1-A2)": {
+      "id": "g(A1-A2)",
+      "ref": "g(A1-A2)",
+      "color": "green",
+      "active": true,
+      "sides": [
+        "A1:N",
+        "A2:S"
+      ],
+      "conflicts": []
+    },
+    "g(A1-B1)": {
+      "id": "g(A1-B1)",
+      "ref": "g(A1-B1)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "A1:E",
+        "B1:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A1)": {
+      "id": "g(<A1)",
+      "ref": "g(<A1)",
+      "color": "green",
+      "active": true,
+      "sides": [
+        "A1:W"
+      ],
+      "conflicts": []
+    },
+    "g(B1-B2)": {
+      "id": "g(B1-B2)",
+      "ref": "g(B1-B2)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "B1:N",
+        "B2:S"
+      ],
+      "conflicts": []
+    },
+    "g(B1-C1)": {
+      "id": "g(B1-C1)",
+      "ref": "g(B1-C1)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "B1:E",
+        "C1:W"
+      ],
+      "conflicts": []
+    },
+    "g(C1-C2)": {
+      "id": "g(C1-C2)",
+      "ref": "g(C1-C2)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "C1:N",
+        "C2:S"
+      ],
+      "conflicts": []
+    },
+    "g(C1-D1)": {
+      "id": "g(C1-D1)",
+      "ref": "g(C1-D1)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "C1:E",
+        "D1:W"
+      ],
+      "conflicts": []
+    },
+    "g(D1-D2)": {
+      "id": "g(D1-D2)",
+      "ref": "g(D1-D2)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "D1:N",
+        "D2:S"
+      ],
+      "conflicts": []
+    },
+    "g(D1-E1)": {
+      "id": "g(D1-E1)",
+      "ref": "g(D1-E1)",
+      "color": "blue",
+      "active": true,
+      "sides": [
+        "D1:E",
+        "E1:W"
+      ],
+      "conflicts": []
+    },
+    "g(E1-E2)": {
+      "id": "g(E1-E2)",
+      "ref": "g(E1-E2)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "E1:N",
+        "E2:S"
+      ],
+      "conflicts": []
+    },
+    "g(E1>)": {
+      "id": "g(E1>)",
+      "ref": "g(E1>)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "E1:E"
+      ],
+      "conflicts": []
+    },
+    "g(A2-A3)": {
+      "id": "g(A2-A3)",
+      "ref": "g(A2-A3)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "A2:N",
+        "A3:S"
+      ],
+      "conflicts": []
+    },
+    "g(A2-B2)": {
+      "id": "g(A2-B2)",
+      "ref": "g(A2-B2)",
+      "color": "green",
+      "active": true,
+      "sides": [
+        "A2:E",
+        "B2:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A2)": {
+      "id": "g(<A2)",
+      "ref": "g(<A2)",
+      "color": "green",
+      "active": true,
+      "sides": [
+        "A2:W"
+      ],
+      "conflicts": []
+    },
+    "g(B2-B3)": {
+      "id": "g(B2-B3)",
+      "ref": "g(B2-B3)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "B2:N",
+        "B3:S"
+      ],
+      "conflicts": []
+    },
+    "g(B2-C2)": {
+      "id": "g(B2-C2)",
+      "ref": "g(B2-C2)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "B2:E",
+        "C2:W"
+      ],
+      "conflicts": []
+    },
+    "g(C2-C3)": {
+      "id": "g(C2-C3)",
+      "ref": "g(C2-C3)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "C2:N",
+        "C3:S"
+      ],
+      "conflicts": []
+    },
+    "g(C2-D2)": {
+      "id": "g(C2-D2)",
+      "ref": "g(C2-D2)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "C2:E",
+        "D2:W"
+      ],
+      "conflicts": []
+    },
+    "g(D2-D3)": {
+      "id": "g(D2-D3)",
+      "ref": "g(D2-D3)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "D2:N",
+        "D3:S"
+      ],
+      "conflicts": []
+    },
+    "g(D2-E2)": {
+      "id": "g(D2-E2)",
+      "ref": "g(D2-E2)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "D2:E",
+        "E2:W"
+      ],
+      "conflicts": []
+    },
+    "g(E2-E3)": {
+      "id": "g(E2-E3)",
+      "ref": "g(E2-E3)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "E2:N",
+        "E3:S"
+      ],
+      "conflicts": []
+    },
+    "g(E2>)": {
+      "id": "g(E2>)",
+      "ref": "g(E2>)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "E2:E"
+      ],
+      "conflicts": []
+    },
+    "g(A3-A4)": {
+      "id": "g(A3-A4)",
+      "ref": "g(A3-A4)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "A3:N",
+        "A4:S"
+      ],
+      "conflicts": []
+    },
+    "g(A3-B3)": {
+      "id": "g(A3-B3)",
+      "ref": "g(A3-B3)",
+      "color": "green",
+      "active": true,
+      "sides": [
+        "A3:E",
+        "B3:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A3)": {
+      "id": "g(<A3)",
+      "ref": "g(<A3)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "A3:W"
+      ],
+      "conflicts": []
+    },
+    "g(B3-B4)": {
+      "id": "g(B3-B4)",
+      "ref": "g(B3-B4)",
+      "color": "green",
+      "active": true,
+      "sides": [
+        "B3:N",
+        "B4:S"
+      ],
+      "conflicts": []
+    },
+    "g(B3-C3)": {
+      "id": "g(B3-C3)",
+      "ref": "g(B3-C3)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "B3:E",
+        "C3:W"
+      ],
+      "conflicts": []
+    },
+    "g(C3-C4)": {
+      "id": "g(C3-C4)",
+      "ref": "g(C3-C4)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "C3:N",
+        "C4:S"
+      ],
+      "conflicts": []
+    },
+    "g(C3-D3)": {
+      "id": "g(C3-D3)",
+      "ref": "g(C3-D3)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "C3:E",
+        "D3:W"
+      ],
+      "conflicts": []
+    },
+    "g(D3-D4)": {
+      "id": "g(D3-D4)",
+      "ref": "g(D3-D4)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "D3:N",
+        "D4:S"
+      ],
+      "conflicts": []
+    },
+    "g(D3-E3)": {
+      "id": "g(D3-E3)",
+      "ref": "g(D3-E3)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "D3:E",
+        "E3:W"
+      ],
+      "conflicts": []
+    },
+    "g(E3-E4)": {
+      "id": "g(E3-E4)",
+      "ref": "g(E3-E4)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "E3:N",
+        "E4:S"
+      ],
+      "conflicts": []
+    },
+    "g(E3>)": {
+      "id": "g(E3>)",
+      "ref": "g(E3>)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "E3:E"
+      ],
+      "conflicts": []
+    },
+    "g(A4-A5)": {
+      "id": "g(A4-A5)",
+      "ref": "g(A4-A5)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "A4:N",
+        "A5:S"
+      ],
+      "conflicts": []
+    },
+    "g(A4-B4)": {
+      "id": "g(A4-B4)",
+      "ref": "g(A4-B4)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "A4:E",
+        "B4:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A4)": {
+      "id": "g(<A4)",
+      "ref": "g(<A4)",
+      "color": "green",
+      "active": true,
+      "sides": [
+        "A4:W"
+      ],
+      "conflicts": []
+    },
+    "g(B4-B5)": {
+      "id": "g(B4-B5)",
+      "ref": "g(B4-B5)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "B4:N",
+        "B5:S"
+      ],
+      "conflicts": []
+    },
+    "g(B4-C4)": {
+      "id": "g(B4-C4)",
+      "ref": "g(B4-C4)",
+      "color": "green",
+      "active": true,
+      "sides": [
+        "B4:E",
+        "C4:W"
+      ],
+      "conflicts": []
+    },
+    "g(C4-C5)": {
+      "id": "g(C4-C5)",
+      "ref": "g(C4-C5)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "C4:N",
+        "C5:S"
+      ],
+      "conflicts": []
+    },
+    "g(C4-D4)": {
+      "id": "g(C4-D4)",
+      "ref": "g(C4-D4)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "C4:E",
+        "D4:W"
+      ],
+      "conflicts": []
+    },
+    "g(D4-D5)": {
+      "id": "g(D4-D5)",
+      "ref": "g(D4-D5)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "D4:N",
+        "D5:S"
+      ],
+      "conflicts": []
+    },
+    "g(D4-E4)": {
+      "id": "g(D4-E4)",
+      "ref": "g(D4-E4)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "D4:E",
+        "E4:W"
+      ],
+      "conflicts": []
+    },
+    "g(E4-E5)": {
+      "id": "g(E4-E5)",
+      "ref": "g(E4-E5)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "E4:N",
+        "E5:S"
+      ],
+      "conflicts": []
+    },
+    "g(E4>)": {
+      "id": "g(E4>)",
+      "ref": "g(E4>)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "E4:E"
+      ],
+      "conflicts": []
+    },
+    "g(A5-A6)": {
+      "id": "g(A5-A6)",
+      "ref": "g(A5-A6)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "A5:N",
+        "A6:S"
+      ],
+      "conflicts": []
+    },
+    "g(A5-B5)": {
+      "id": "g(A5-B5)",
+      "ref": "g(A5-B5)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "A5:E",
+        "B5:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A5)": {
+      "id": "g(<A5)",
+      "ref": "g(<A5)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "A5:W"
+      ],
+      "conflicts": []
+    },
+    "g(B5-B6)": {
+      "id": "g(B5-B6)",
+      "ref": "g(B5-B6)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "B5:N",
+        "B6:S"
+      ],
+      "conflicts": []
+    },
+    "g(B5-C5)": {
+      "id": "g(B5-C5)",
+      "ref": "g(B5-C5)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "B5:E",
+        "C5:W"
+      ],
+      "conflicts": []
+    },
+    "g(C5-C6)": {
+      "id": "g(C5-C6)",
+      "ref": "g(C5-C6)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "C5:N",
+        "C6:S"
+      ],
+      "conflicts": []
+    },
+    "g(C5-D5)": {
+      "id": "g(C5-D5)",
+      "ref": "g(C5-D5)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "C5:E",
+        "D5:W"
+      ],
+      "conflicts": []
+    },
+    "g(D5-D6)": {
+      "id": "g(D5-D6)",
+      "ref": "g(D5-D6)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "D5:N",
+        "D6:S"
+      ],
+      "conflicts": []
+    },
+    "g(D5-E5)": {
+      "id": "g(D5-E5)",
+      "ref": "g(D5-E5)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "D5:E",
+        "E5:W"
+      ],
+      "conflicts": []
+    },
+    "g(E5-E6)": {
+      "id": "g(E5-E6)",
+      "ref": "g(E5-E6)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "E5:N",
+        "E6:S"
+      ],
+      "conflicts": []
+    },
+    "g(E5>)": {
+      "id": "g(E5>)",
+      "ref": "g(E5>)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "E5:E"
+      ],
+      "conflicts": []
+    },
+    "g(A6-A7)": {
+      "id": "g(A6-A7)",
+      "ref": "g(A6-A7)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "A6:N",
+        "A7:S"
+      ],
+      "conflicts": []
+    },
+    "g(A6-B6)": {
+      "id": "g(A6-B6)",
+      "ref": "g(A6-B6)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "A6:E",
+        "B6:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A6)": {
+      "id": "g(<A6)",
+      "ref": "g(<A6)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "A6:W"
+      ],
+      "conflicts": []
+    },
+    "g(B6-B7)": {
+      "id": "g(B6-B7)",
+      "ref": "g(B6-B7)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "B6:N",
+        "B7:S"
+      ],
+      "conflicts": []
+    },
+    "g(B6-C6)": {
+      "id": "g(B6-C6)",
+      "ref": "g(B6-C6)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "B6:E",
+        "C6:W"
+      ],
+      "conflicts": []
+    },
+    "g(C6-C7)": {
+      "id": "g(C6-C7)",
+      "ref": "g(C6-C7)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "C6:N",
+        "C7:S"
+      ],
+      "conflicts": []
+    },
+    "g(C6-D6)": {
+      "id": "g(C6-D6)",
+      "ref": "g(C6-D6)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "C6:E",
+        "D6:W"
+      ],
+      "conflicts": []
+    },
+    "g(D6-D7)": {
+      "id": "g(D6-D7)",
+      "ref": "g(D6-D7)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "D6:N",
+        "D7:S"
+      ],
+      "conflicts": []
+    },
+    "g(D6-E6)": {
+      "id": "g(D6-E6)",
+      "ref": "g(D6-E6)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "D6:E",
+        "E6:W"
+      ],
+      "conflicts": []
+    },
+    "g(E6-E7)": {
+      "id": "g(E6-E7)",
+      "ref": "g(E6-E7)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "E6:N",
+        "E7:S"
+      ],
+      "conflicts": []
+    },
+    "g(E6>)": {
+      "id": "g(E6>)",
+      "ref": "g(E6>)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "E6:E"
+      ],
+      "conflicts": []
+    },
+    "g(A7-A8)": {
+      "id": "g(A7-A8)",
+      "ref": "g(A7-A8)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "A7:N",
+        "A8:S"
+      ],
+      "conflicts": []
+    },
+    "g(A7-B7)": {
+      "id": "g(A7-B7)",
+      "ref": "g(A7-B7)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "A7:E",
+        "B7:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A7)": {
+      "id": "g(<A7)",
+      "ref": "g(<A7)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "A7:W"
+      ],
+      "conflicts": []
+    },
+    "g(B7-B8)": {
+      "id": "g(B7-B8)",
+      "ref": "g(B7-B8)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "B7:N",
+        "B8:S"
+      ],
+      "conflicts": []
+    },
+    "g(B7-C7)": {
+      "id": "g(B7-C7)",
+      "ref": "g(B7-C7)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "B7:E",
+        "C7:W"
+      ],
+      "conflicts": []
+    },
+    "g(C7-C8)": {
+      "id": "g(C7-C8)",
+      "ref": "g(C7-C8)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "C7:N",
+        "C8:S"
+      ],
+      "conflicts": []
+    },
+    "g(C7-D7)": {
+      "id": "g(C7-D7)",
+      "ref": "g(C7-D7)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "C7:E",
+        "D7:W"
+      ],
+      "conflicts": []
+    },
+    "g(D7-D8)": {
+      "id": "g(D7-D8)",
+      "ref": "g(D7-D8)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "D7:N",
+        "D8:S"
+      ],
+      "conflicts": []
+    },
+    "g(D7-E7)": {
+      "id": "g(D7-E7)",
+      "ref": "g(D7-E7)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "D7:E",
+        "E7:W"
+      ],
+      "conflicts": []
+    },
+    "g(E7-E8)": {
+      "id": "g(E7-E8)",
+      "ref": "g(E7-E8)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "E7:N",
+        "E8:S"
+      ],
+      "conflicts": []
+    },
+    "g(E7>)": {
+      "id": "g(E7>)",
+      "ref": "g(E7>)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "E7:E"
+      ],
+      "conflicts": []
+    },
+    "g(A8-A9)": {
+      "id": "g(A8-A9)",
+      "ref": "g(A8-A9)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "A8:N",
+        "A9:S"
+      ],
+      "conflicts": []
+    },
+    "g(A8-B8)": {
+      "id": "g(A8-B8)",
+      "ref": "g(A8-B8)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "A8:E",
+        "B8:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A8)": {
+      "id": "g(<A8)",
+      "ref": "g(<A8)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "A8:W"
+      ],
+      "conflicts": []
+    },
+    "g(B8-B9)": {
+      "id": "g(B8-B9)",
+      "ref": "g(B8-B9)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "B8:N",
+        "B9:S"
+      ],
+      "conflicts": []
+    },
+    "g(B8-C8)": {
+      "id": "g(B8-C8)",
+      "ref": "g(B8-C8)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "B8:E",
+        "C8:W"
+      ],
+      "conflicts": []
+    },
+    "g(C8-C9)": {
+      "id": "g(C8-C9)",
+      "ref": "g(C8-C9)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "C8:N",
+        "C9:S"
+      ],
+      "conflicts": []
+    },
+    "g(C8-D8)": {
+      "id": "g(C8-D8)",
+      "ref": "g(C8-D8)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "C8:E",
+        "D8:W"
+      ],
+      "conflicts": []
+    },
+    "g(D8-D9)": {
+      "id": "g(D8-D9)",
+      "ref": "g(D8-D9)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "D8:N",
+        "D9:S"
+      ],
+      "conflicts": []
+    },
+    "g(D8-E8)": {
+      "id": "g(D8-E8)",
+      "ref": "g(D8-E8)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "D8:E",
+        "E8:W"
+      ],
+      "conflicts": []
+    },
+    "g(E8-E9)": {
+      "id": "g(E8-E9)",
+      "ref": "g(E8-E9)",
+      "color": "yellow",
+      "active": true,
+      "sides": [
+        "E8:N",
+        "E9:S"
+      ],
+      "conflicts": []
+    },
+    "g(E8>)": {
+      "id": "g(E8>)",
+      "ref": "g(E8>)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "E8:E"
+      ],
+      "conflicts": []
+    },
+    "g(^A9)": {
+      "id": "g(^A9)",
+      "ref": "g(^A9)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "A9:N"
+      ],
+      "conflicts": []
+    },
+    "g(A9-B9)": {
+      "id": "g(A9-B9)",
+      "ref": "g(A9-B9)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "A9:E",
+        "B9:W"
+      ],
+      "conflicts": []
+    },
+    "g(<A9)": {
+      "id": "g(<A9)",
+      "ref": "g(<A9)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "A9:W"
+      ],
+      "conflicts": []
+    },
+    "g(^B9)": {
+      "id": "g(^B9)",
+      "ref": "g(^B9)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "B9:N"
+      ],
+      "conflicts": []
+    },
+    "g(B9-C9)": {
+      "id": "g(B9-C9)",
+      "ref": "g(B9-C9)",
+      "color": "orange",
+      "active": true,
+      "sides": [
+        "B9:E",
+        "C9:W"
+      ],
+      "conflicts": []
+    },
+    "g(^C9)": {
+      "id": "g(^C9)",
+      "ref": "g(^C9)",
+      "color": null,
+      "active": true,
+      "sides": [
+        "C9:N"
+      ],
+      "conflicts": []
+    },
+    "g(C9-D9)": {
+      "id": "g(C9-D9)",
+      "ref": "g(C9-D9)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "C9:E",
+        "D9:W"
+      ],
+      "conflicts": []
+    },
+    "g(^D9)": {
+      "id": "g(^D9)",
+      "ref": "g(^D9)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "D9:N"
+      ],
+      "conflicts": []
+    },
+    "g(D9-E9)": {
+      "id": "g(D9-E9)",
+      "ref": "g(D9-E9)",
+      "color": "purple",
+      "active": true,
+      "sides": [
+        "D9:E",
+        "E9:W"
+      ],
+      "conflicts": []
+    },
+    "g(^E9)": {
+      "id": "g(^E9)",
+      "ref": "g(^E9)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "E9:N"
+      ],
+      "conflicts": []
+    },
+    "g(E9>)": {
+      "id": "g(E9>)",
+      "ref": "g(E9>)",
+      "color": "red",
+      "active": true,
+      "sides": [
+        "E9:E"
+      ],
+      "conflicts": []
+    }
+  },
+  "sideToSlot": {
+    "A1:N": "g(A1-A2)",
+    "A1:E": "g(A1-B1)",
+    "A1:W": "g(<A1)",
+    "B1:N": "g(B1-B2)",
+    "B1:E": "g(B1-C1)",
+    "B1:W": "g(A1-B1)",
+    "C1:N": "g(C1-C2)",
+    "C1:E": "g(C1-D1)",
+    "C1:W": "g(B1-C1)",
+    "D1:N": "g(D1-D2)",
+    "D1:E": "g(D1-E1)",
+    "D1:W": "g(C1-D1)",
+    "E1:N": "g(E1-E2)",
+    "E1:E": "g(E1>)",
+    "E1:W": "g(D1-E1)",
+    "A2:N": "g(A2-A3)",
+    "A2:E": "g(A2-B2)",
+    "A2:S": "g(A1-A2)",
+    "A2:W": "g(<A2)",
+    "B2:N": "g(B2-B3)",
+    "B2:E": "g(B2-C2)",
+    "B2:S": "g(B1-B2)",
+    "B2:W": "g(A2-B2)",
+    "C2:N": "g(C2-C3)",
+    "C2:E": "g(C2-D2)",
+    "C2:S": "g(C1-C2)",
+    "C2:W": "g(B2-C2)",
+    "D2:N": "g(D2-D3)",
+    "D2:E": "g(D2-E2)",
+    "D2:S": "g(D1-D2)",
+    "D2:W": "g(C2-D2)",
+    "E2:N": "g(E2-E3)",
+    "E2:E": "g(E2>)",
+    "E2:S": "g(E1-E2)",
+    "E2:W": "g(D2-E2)",
+    "A3:N": "g(A3-A4)",
+    "A3:E": "g(A3-B3)",
+    "A3:S": "g(A2-A3)",
+    "A3:W": "g(<A3)",
+    "B3:N": "g(B3-B4)",
+    "B3:E": "g(B3-C3)",
+    "B3:S": "g(B2-B3)",
+    "B3:W": "g(A3-B3)",
+    "C3:N": "g(C3-C4)",
+    "C3:E": "g(C3-D3)",
+    "C3:S": "g(C2-C3)",
+    "C3:W": "g(B3-C3)",
+    "D3:N": "g(D3-D4)",
+    "D3:E": "g(D3-E3)",
+    "D3:S": "g(D2-D3)",
+    "D3:W": "g(C3-D3)",
+    "E3:N": "g(E3-E4)",
+    "E3:E": "g(E3>)",
+    "E3:S": "g(E2-E3)",
+    "E3:W": "g(D3-E3)",
+    "A4:N": "g(A4-A5)",
+    "A4:E": "g(A4-B4)",
+    "A4:S": "g(A3-A4)",
+    "A4:W": "g(<A4)",
+    "B4:N": "g(B4-B5)",
+    "B4:E": "g(B4-C4)",
+    "B4:S": "g(B3-B4)",
+    "B4:W": "g(A4-B4)",
+    "C4:N": "g(C4-C5)",
+    "C4:E": "g(C4-D4)",
+    "C4:S": "g(C3-C4)",
+    "C4:W": "g(B4-C4)",
+    "D4:N": "g(D4-D5)",
+    "D4:E": "g(D4-E4)",
+    "D4:S": "g(D3-D4)",
+    "D4:W": "g(C4-D4)",
+    "E4:N": "g(E4-E5)",
+    "E4:E": "g(E4>)",
+    "E4:S": "g(E3-E4)",
+    "E4:W": "g(D4-E4)",
+    "A5:N": "g(A5-A6)",
+    "A5:E": "g(A5-B5)",
+    "A5:S": "g(A4-A5)",
+    "A5:W": "g(<A5)",
+    "B5:N": "g(B5-B6)",
+    "B5:E": "g(B5-C5)",
+    "B5:S": "g(B4-B5)",
+    "B5:W": "g(A5-B5)",
+    "C5:N": "g(C5-C6)",
+    "C5:E": "g(C5-D5)",
+    "C5:S": "g(C4-C5)",
+    "C5:W": "g(B5-C5)",
+    "D5:N": "g(D5-D6)",
+    "D5:E": "g(D5-E5)",
+    "D5:S": "g(D4-D5)",
+    "D5:W": "g(C5-D5)",
+    "E5:N": "g(E5-E6)",
+    "E5:E": "g(E5>)",
+    "E5:S": "g(E4-E5)",
+    "E5:W": "g(D5-E5)",
+    "A6:N": "g(A6-A7)",
+    "A6:E": "g(A6-B6)",
+    "A6:S": "g(A5-A6)",
+    "A6:W": "g(<A6)",
+    "B6:N": "g(B6-B7)",
+    "B6:E": "g(B6-C6)",
+    "B6:S": "g(B5-B6)",
+    "B6:W": "g(A6-B6)",
+    "C6:N": "g(C6-C7)",
+    "C6:E": "g(C6-D6)",
+    "C6:S": "g(C5-C6)",
+    "C6:W": "g(B6-C6)",
+    "D6:N": "g(D6-D7)",
+    "D6:E": "g(D6-E6)",
+    "D6:S": "g(D5-D6)",
+    "D6:W": "g(C6-D6)",
+    "E6:N": "g(E6-E7)",
+    "E6:E": "g(E6>)",
+    "E6:S": "g(E5-E6)",
+    "E6:W": "g(D6-E6)",
+    "A7:N": "g(A7-A8)",
+    "A7:E": "g(A7-B7)",
+    "A7:S": "g(A6-A7)",
+    "A7:W": "g(<A7)",
+    "B7:N": "g(B7-B8)",
+    "B7:E": "g(B7-C7)",
+    "B7:S": "g(B6-B7)",
+    "B7:W": "g(A7-B7)",
+    "C7:N": "g(C7-C8)",
+    "C7:E": "g(C7-D7)",
+    "C7:S": "g(C6-C7)",
+    "C7:W": "g(B7-C7)",
+    "D7:N": "g(D7-D8)",
+    "D7:E": "g(D7-E7)",
+    "D7:S": "g(D6-D7)",
+    "D7:W": "g(C7-D7)",
+    "E7:N": "g(E7-E8)",
+    "E7:E": "g(E7>)",
+    "E7:S": "g(E6-E7)",
+    "E7:W": "g(D7-E7)",
+    "A8:N": "g(A8-A9)",
+    "A8:E": "g(A8-B8)",
+    "A8:S": "g(A7-A8)",
+    "A8:W": "g(<A8)",
+    "B8:N": "g(B8-B9)",
+    "B8:E": "g(B8-C8)",
+    "B8:S": "g(B7-B8)",
+    "B8:W": "g(A8-B8)",
+    "C8:N": "g(C8-C9)",
+    "C8:E": "g(C8-D8)",
+    "C8:S": "g(C7-C8)",
+    "C8:W": "g(B8-C8)",
+    "D8:N": "g(D8-D9)",
+    "D8:E": "g(D8-E8)",
+    "D8:S": "g(D7-D8)",
+    "D8:W": "g(C8-D8)",
+    "E8:N": "g(E8-E9)",
+    "E8:E": "g(E8>)",
+    "E8:S": "g(E7-E8)",
+    "E8:W": "g(D8-E8)",
+    "A9:N": "g(^A9)",
+    "A9:E": "g(A9-B9)",
+    "A9:S": "g(A8-A9)",
+    "A9:W": "g(<A9)",
+    "B9:N": "g(^B9)",
+    "B9:E": "g(B9-C9)",
+    "B9:S": "g(B8-B9)",
+    "B9:W": "g(A9-B9)",
+    "C9:N": "g(^C9)",
+    "C9:E": "g(C9-D9)",
+    "C9:S": "g(C8-C9)",
+    "C9:W": "g(B9-C9)",
+    "D9:N": "g(^D9)",
+    "D9:E": "g(D9-E9)",
+    "D9:S": "g(D8-D9)",
+    "D9:W": "g(C9-D9)",
+    "E9:N": "g(^E9)",
+    "E9:E": "g(E9>)",
+    "E9:S": "g(E8-E9)",
+    "E9:W": "g(D9-E9)"
+  },
+  "knownPaths": {
+    "redOnly": {
+      "id": "redOnly",
+      "name": "Known red path",
+      "color": "red",
+      "notation": "start(C0) -> g(C1-D1) -> g(D1-D2) -> g(D2-E2) -> r(E2) -> g(E2>) -> g(E3>) -> g(E4>) -> g(E5>) -> g(E5-E6) -> g(D6-E6) -> g(D7-E7) -> g(D7-D8) -> g(C7-C8) -> g(B7-B8) -> g(A7-A8) -> r(A7) -> g(<A7) -> g(<A8) -> g(<A9) -> r(A9) -> g(A9-B9) -> g(B9-B8) -> r(B8) -> g(B8-C8) -> g(C8-C9) -> r(C9)",
+      "startId": "C0",
+      "endId": "C9",
+      "nodes": [
+        "C0",
+        "g(C1-D1)",
+        "g(D1-D2)",
+        "g(D2-E2)",
+        "E2",
+        "g(E2>)",
+        "g(E3>)",
+        "g(E4>)",
+        "g(E5>)",
+        "g(E5-E6)",
+        "g(D6-E6)",
+        "g(D7-E7)",
+        "g(D7-D8)",
+        "g(C7-C8)",
+        "g(B7-B8)",
+        "g(A7-A8)",
+        "A7",
+        "g(<A7)",
+        "g(<A8)",
+        "g(<A9)",
+        "A9",
+        "g(A9-B9)",
+        "g(B8-B9)",
+        "B8",
+        "g(B8-C8)",
+        "g(C8-C9)",
+        "C9"
+      ]
+    }
+  },
+  "notes": [
+    "Extracted from high-contrast overlay image (file_22).",
+    "Edges are inferred from colored diamonds/segments at room boundaries.",
+    "Row 0 (A0-E0) is synthetic to model the shared external starting area below C1.",
+    "Converted to ILR lattice model (intersection/lantern/room).",
+    "Lantern gaps are explicit hallway nodes between rooms and intersections.",
+    "Bottom row is intersections only (IIIIIIIIIII), matching the entrance strip below rank 1.",
+    "Known paths and lantern-slot sync verified."
+  ]
+}

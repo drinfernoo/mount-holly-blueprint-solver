@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Prince Solver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Gloria+Hallelujah&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main data-settings-mode-root data-settings-mode="solve">
+      <h1>Blue Prince Solver</h1>
+      <p class="sub">
+        Room-grid / graph solver for Mount Holly blueprint constraints (letters, lanterns, turn rules).
+      </p>
+
+      <section class="toolbar mode-toolbar" role="tablist" aria-label="Mode selector">
+        <button type="button" class="settings-tab is-active" data-settings-tab="solve" role="tab" aria-selected="true">Solve</button>
+        <button type="button" class="settings-tab" data-settings-tab="simulate" role="tab" aria-selected="false">Simulate</button>
+        <span class="toolbar-sep" aria-hidden="true">|</span>
+        <button id="solveBtn" class="primary">Go</button>
+        <button id="shareBtn" type="button">Share</button>
+      </section>
+
+      <section class="examples">
+        <span>Example queries:</span>
+        <button data-example="redPath">Red path</button>
+        <button data-example="orangePath">Orange path</button>
+        <button data-example="purplePath">Purple path</button>
+        <button data-example="truePath">True path</button>
+        <button data-example="orderedLetters">Ordered letters</button>
+        <button data-example="simulationExample">Simulation example</button>
+      </section>
+
+      <section class="panel settings-card" data-visible-modes="solve,simulate">
+        <h2>Settings</h2>
+
+        <div class="builder-grid" data-visible-modes="solve,simulate">
+          <label data-visible-modes="solve,simulate">
+            Max steps
+            <input id="maxStepsInput" type="number" min="1" step="1" value="120" />
+          </label>
+
+          <label data-visible-modes="solve">
+            Max states (optional)
+            <input id="maxStatesInput" type="number" min="1" step="1" placeholder="auto" />
+          </label>
+
+          <label data-visible-modes="solve">
+            Search mode
+            <select id="searchModeInput">
+              <option value="">auto</option>
+              <option value="dfs">dfs</option>
+              <option value="bfs">bfs</option>
+            </select>
+          </label>
+
+          <label class="check-inline" data-visible-modes="solve,simulate">
+            <input id="simplePathInput" type="checkbox" checked />
+            Prevent crossing / circuiting (simple path)
+          </label>
+
+          <label data-visible-modes="simulate" hidden>
+            Initial heading
+            <select id="simulationHeadingInput">
+              <option value="">(none)</option>
+              <option value="N">N</option>
+              <option value="E">E</option>
+              <option value="S">S</option>
+              <option value="W">W</option>
+            </select>
+          </label>
+
+          <label class="check-inline" data-visible-modes="simulate" hidden>
+            <input id="simulationStopOnLoopInput" type="checkbox" checked />
+            Stop on loop
+          </label>
+        </div>
+
+      </section>
+
+      <section class="panel settings-card" data-visible-modes="solve,simulate">
+        <h2>Constraints and rules</h2>
+
+        <div class="node-pick-tools">
+          <button id="pickStartBtn" type="button">Pick start on map</button>
+          <button id="pickEndBtn" type="button">Pick end on map</button>
+          <span id="pickHint" class="pick-hint">Tip: use these to click start/end directly on the map.</span>
+        </div>
+
+        <div class="constraint-sections">
+          <article class="constraint-section">
+            <h3>Add constraint</h3>
+            <div class="constraint-row">
+              <select id="constraintTypeInput">
+                <option value="startNode">Start node</option>
+                <option value="endNode">End node</option>
+                <option value="letterMode">Letter mode</option>
+                <option value="mustUseLetters">Must-use letters</option>
+                <option value="startColor">Start lantern color</option>
+                <option value="allowedColor">Allowed lantern color</option>
+              </select>
+              <select id="constraintValueInput"></select>
+              <input id="constraintValueTextInput" class="constraint-value-text" type="text" placeholder="e.g. ROSEWARY" />
+              <button id="addConstraintBtn" type="button">Add constraint</button>
+            </div>
+            <div id="constraintList" class="rule-list" aria-live="polite"></div>
+          </article>
+
+          <article class="constraint-section">
+            <h3>Add turn rule</h3>
+            <div class="constraint-row">
+              <select id="turnRuleKeyInput">
+                <option value="intersection">intersection (no lantern)</option>
+                <option value="blue">blue</option>
+                <option value="red">red</option>
+                <option value="orange">orange</option>
+                <option value="yellow">yellow</option>
+                <option value="green">green</option>
+                <option value="purple">purple</option>
+              </select>
+              <select id="turnRuleValueInput">
+                <option value="left">left</option>
+                <option value="right">right</option>
+                <option value="straight">straight</option>
+                <option value="back">back</option>
+                <option value="any">any</option>
+              </select>
+              <button id="addTurnRuleBtn" type="button">Add turn rule</button>
+            </div>
+            <div id="turnRuleList" class="rule-list" aria-live="polite"></div>
+          </article>
+        </div>
+
+        <div class="legacy-hidden" aria-hidden="true">
+          <select id="startIdInput"></select>
+          <select id="endIdInput"></select>
+          <select id="letterModeInput">
+            <option value="any_order">Any order</option>
+            <option value="ordered">Ordered</option>
+            <option value="ordered_strict">Ordered strict</option>
+          </select>
+          <input id="mustUseLettersInput" type="text" />
+          <select id="runModeInput">
+            <option value="solve">Solve (search)</option>
+            <option value="simulate">Simulation run</option>
+          </select>
+        </div>
+
+        <details class="query-advanced">
+          <summary>Advanced query JSON override</summary>
+          <label class="check-inline">
+            <input id="useQueryOverrideInput" type="checkbox" />
+            Use JSON override instead of builder
+          </label>
+          <textarea id="queryJson" spellcheck="false"></textarea>
+        </details>
+      </section>
+
+      <section class="graph-panel">
+        <h2>Map grid view</h2>
+        <div class="graph-help">
+          Grid-style renderer of the blueprint. Use “Pick start/end on map” in Query Builder to choose endpoints visually.
+        </div>
+        <div class="graph-controls" aria-label="Map metadata view controls">
+          <label class="check-inline graph-toggle">
+            <input id="viewShowRoomIdInput" type="checkbox" checked />
+            Show room file/rank
+          </label>
+          <label class="check-inline graph-toggle">
+            <input id="viewShowRoomLetterInput" type="checkbox" checked />
+            Show room letter
+          </label>
+          <label class="check-inline graph-toggle">
+            <input id="viewShowRoomNameInput" type="checkbox" />
+            Show room name
+          </label>
+          <label class="check-inline graph-toggle">
+            <input id="viewColorBordersByRoomInput" type="checkbox" />
+            Color room borders by room color
+          </label>
+        </div>
+        <svg id="graphSvg" viewBox="0 0 1200 700" role="img" aria-label="Map graph visualization"></svg>
+      </section>
+
+      <section class="results">
+        <h2>Result</h2>
+        <div id="summary" class="summary"></div>
+
+        <div id="resultCards" class="result-cards"></div>
+
+        <div id="resultWarningsWrap" class="result-list-wrap" hidden>
+          <h3>Warnings</h3>
+          <ul id="resultWarningsList" class="result-list"></ul>
+        </div>
+
+        <div id="resultUnmetWrap" class="result-list-wrap" hidden>
+          <h3>Unmet constraints</h3>
+          <ul id="resultUnmetList" class="result-list"></ul>
+        </div>
+
+        <div id="resultSimulationTimelineWrap" class="result-list-wrap result-timeline-wrap" hidden>
+          <h3>Simulation timeline</h3>
+          <ol id="resultSimulationTimeline" class="simulation-timeline"></ol>
+        </div>
+
+        <div class="result-flow-cards">
+          <article id="resultMovesCard" class="result-list-wrap result-flow-card" hidden>
+            <h3>Moves (<span id="resultMovesCount">0</span>)</h3>
+            <div id="resultMovesList" class="move-chip-wrap"></div>
+          </article>
+
+          <article id="resultVisitedRoomsCard" class="result-list-wrap result-flow-card" hidden>
+            <h3>Visited rooms (<span id="resultVisitedRoomsCount">0</span>)</h3>
+            <div id="resultVisitedRooms" class="path-node-wrap"></div>
+          </article>
+        </div>
+
+        <details id="resultPathDetails" class="result-path" hidden>
+          <summary>Path nodes (<span id="resultPathCount">0</span>)</summary>
+          <div id="resultPathNodes" class="path-node-wrap"></div>
+        </details>
+
+        <details class="result-raw" id="resultRawDetails">
+          <summary>Raw result JSON</summary>
+          <pre id="resultJson"></pre>
+        </details>
+      </section>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

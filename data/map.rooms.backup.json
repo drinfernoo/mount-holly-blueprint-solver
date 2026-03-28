@@ -1,0 +1,810 @@
+{
+  "name": "Mount Holly Blueprint (digital overlay extraction v2)",
+  "coordinateSystem": {
+    "files": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "ranks": "0-9 bottom-up (0 is outside entry row)"
+  },
+  "rooms": {
+    "A1": {
+      "letter": "B",
+      "open": [
+        "N",
+        "E"
+      ],
+      "sideLanterns": {
+        "N": "orange",
+        "E": "purple"
+      },
+      "roomName": "Conservatory",
+      "name": "Conservatory",
+      "roomColor": "green"
+    },
+    "B1": {
+      "letter": "L",
+      "open": [
+        "N",
+        "W",
+        "S"
+      ],
+      "sideLanterns": {
+        "N": "purple",
+        "W": "purple",
+        "S": "purple"
+      },
+      "roomName": "Maid's Chamber",
+      "name": "Maid's Chamber",
+      "roomColor": "red"
+    },
+    "C1": {
+      "letter": "E",
+      "open": [
+        "E",
+        "S"
+      ],
+      "sideLanterns": {
+        "E": "red",
+        "S": "red"
+      },
+      "roomName": "Entrance Hall",
+      "name": "Entrance Hall",
+      "roomColor": "blue"
+    },
+    "D1": {
+      "letter": "S",
+      "open": [
+        "N",
+        "E",
+        "W",
+        "S"
+      ],
+      "sideLanterns": {
+        "N": "blue",
+        "W": "red",
+        "E": "blue",
+        "S": "blue"
+      },
+      "roomName": "Pantry",
+      "name": "Pantry",
+      "roomColor": "blue"
+    },
+    "E1": {
+      "letter": "T",
+      "open": [
+        "W",
+        "S"
+      ],
+      "sideLanterns": {
+        "W": "blue",
+        "S": "orange"
+      },
+      "roomName": "Storeroom",
+      "name": "Storeroom",
+      "roomColor": "blue"
+    },
+    "A2": {
+      "letter": "H",
+      "open": [
+        "N",
+        "E",
+        "S"
+      ],
+      "sideLanterns": {
+        "S": "orange",
+        "N": "orange",
+        "E": "green"
+      },
+      "roomName": "Bedroom",
+      "name": "Bedroom",
+      "roomColor": "purple"
+    },
+    "B2": {
+      "letter": "E",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "purple",
+        "W": "green",
+        "E": "yellow"
+      },
+      "roomName": "Drawing Room",
+      "name": "Drawing Room",
+      "roomColor": "blue"
+    },
+    "C2": {
+      "letter": "W",
+      "open": [
+        "N",
+        "E",
+        "W"
+      ],
+      "sideLanterns": {
+        "N": "blue",
+        "W": "yellow",
+        "E": "yellow"
+      },
+      "roomName": "Gallery",
+      "name": "Gallery",
+      "roomColor": "blue"
+    },
+    "D2": {
+      "letter": "A",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "blue",
+        "N": "blue",
+        "W": "yellow",
+        "E": "red"
+      },
+      "roomName": "Library",
+      "name": "Library",
+      "roomColor": "blue"
+    },
+    "E2": {
+      "letter": "M",
+      "open": [
+        "N",
+        "W"
+      ],
+      "sideLanterns": {
+        "N": "orange",
+        "W": "red"
+      },
+      "roomName": "Cloister",
+      "name": "Cloister",
+      "roomColor": "green"
+    },
+    "A3": {
+      "letter": "A",
+      "open": [
+        "N",
+        "E",
+        "S"
+      ],
+      "sideLanterns": {
+        "S": "orange",
+        "N": "purple",
+        "E": "green"
+      },
+      "roomName": "Solarium",
+      "name": "Solarium",
+      "roomColor": "green"
+    },
+    "B3": {
+      "letter": "M",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "green",
+        "W": "green",
+        "E": "orange"
+      },
+      "roomName": "Hallway",
+      "name": "Hallway",
+      "roomColor": "orange"
+    },
+    "C3": {
+      "letter": "O",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "blue",
+        "N": "orange",
+        "W": "orange",
+        "E": "red"
+      },
+      "roomName": "Dining Room",
+      "name": "Dining Room",
+      "roomColor": "blue"
+    },
+    "D3": {
+      "letter": "N",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "blue",
+        "N": "purple",
+        "W": "red",
+        "E": "red"
+      },
+      "roomName": "Observatory",
+      "name": "Observatory",
+      "roomColor": "blue"
+    },
+    "E3": {
+      "letter": "G",
+      "open": [
+        "N",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "orange",
+        "N": "purple",
+        "W": "red"
+      },
+      "roomName": "East Wing Hall",
+      "name": "East Wing Hall",
+      "roomColor": "orange"
+    },
+    "A4": {
+      "letter": "C",
+      "open": [
+        "N",
+        "E",
+        "S"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "orange",
+        "E": "purple"
+      },
+      "roomName": "Nook",
+      "name": "Nook",
+      "roomColor": "blue"
+    },
+    "B4": {
+      "letter": "R",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "green",
+        "N": "orange",
+        "W": "purple",
+        "E": "green"
+      },
+      "roomName": "Kitchen",
+      "name": "Kitchen",
+      "roomColor": "yellow"
+    },
+    "C4": {
+      "letter": "E",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "orange",
+        "N": "red",
+        "W": "green",
+        "E": "orange"
+      },
+      "roomName": "Corridor",
+      "name": "Corridor",
+      "roomColor": "orange"
+    },
+    "D4": {
+      "letter": "S",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "yellow",
+        "W": "orange",
+        "E": "purple"
+      },
+      "roomName": "Music Room",
+      "name": "Music Room",
+      "roomColor": "blue"
+    },
+    "E4": {
+      "letter": "T",
+      "open": [
+        "N",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "yellow",
+        "W": "purple"
+      },
+      "roomName": "Lavatory",
+      "name": "Lavatory",
+      "roomColor": "red"
+    },
+    "A5": {
+      "letter": "B",
+      "open": [
+        "N",
+        "E",
+        "S"
+      ],
+      "sideLanterns": {
+        "S": "orange",
+        "N": "purple",
+        "E": "purple"
+      },
+      "roomName": "Billiard Room",
+      "name": "Billiard Room",
+      "roomColor": "blue"
+    },
+    "B5": {
+      "letter": "A",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "orange",
+        "N": "purple",
+        "W": "purple",
+        "E": "orange"
+      },
+      "roomName": "Trophy Room",
+      "name": "Trophy Room",
+      "roomColor": "blue"
+    },
+    "C5": {
+      "letter": "R",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "red",
+        "N": "purple",
+        "W": "orange",
+        "E": "orange"
+      },
+      "roomName": "The Foundation",
+      "name": "The Foundation",
+      "roomColor": "blue"
+    },
+    "D5": {
+      "letter": "O",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "yellow",
+        "N": "red",
+        "W": "orange",
+        "E": "purple"
+      },
+      "roomName": "Ballroom",
+      "name": "Ballroom",
+      "roomColor": "blue"
+    },
+    "E5": {
+      "letter": "N",
+      "open": [
+        "N",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "yellow",
+        "N": "red",
+        "W": "purple"
+      },
+      "roomName": "Spare Room",
+      "name": "Spare Room",
+      "roomColor": "blue"
+    },
+    "A6": {
+      "letter": "F",
+      "open": [
+        "N",
+        "E",
+        "S"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "orange",
+        "E": "purple"
+      },
+      "roomName": "West Wing Hall",
+      "name": "West Wing Hall",
+      "roomColor": "orange"
+    },
+    "B6": {
+      "letter": "O",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "yellow",
+        "W": "purple",
+        "E": "yellow"
+      },
+      "roomName": "Passageway",
+      "name": "Passageway",
+      "roomColor": "orange"
+    },
+    "C6": {
+      "letter": "R",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "yellow",
+        "W": "yellow",
+        "E": "purple"
+      },
+      "roomName": "Darkroom",
+      "name": "Darkroom",
+      "roomColor": "red"
+    },
+    "D6": {
+      "letter": "G",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "red",
+        "N": "purple",
+        "W": "purple",
+        "E": "red"
+      },
+      "roomName": "Closet",
+      "name": "Closet",
+      "roomColor": "blue"
+    },
+    "E6": {
+      "letter": "E",
+      "open": [
+        "N",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "red",
+        "N": "purple",
+        "W": "red"
+      },
+      "roomName": "Parlor",
+      "name": "Parlor",
+      "roomColor": "blue"
+    },
+    "A7": {
+      "letter": "P",
+      "open": [
+        "N",
+        "E",
+        "S"
+      ],
+      "sideLanterns": {
+        "S": "orange",
+        "N": "red",
+        "E": "orange"
+      },
+      "roomName": "Gymnasium",
+      "name": "Gymnasium",
+      "roomColor": "red"
+    },
+    "B7": {
+      "letter": "L",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "yellow",
+        "N": "red",
+        "W": "orange",
+        "E": "yellow"
+      },
+      "roomName": "Laundry Room",
+      "name": "Laundry Room",
+      "roomColor": "yellow"
+    },
+    "C7": {
+      "letter": "A",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "yellow",
+        "N": "red",
+        "W": "yellow",
+        "E": "yellow"
+      },
+      "roomName": "Guest Bedroom",
+      "name": "Guest Bedroom",
+      "roomColor": "purple"
+    },
+    "D7": {
+      "letter": "N",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "red",
+        "W": "yellow",
+        "E": "red"
+      },
+      "roomName": "Conference Room",
+      "name": "Conference Room",
+      "roomColor": "blue"
+    },
+    "E7": {
+      "letter": "S",
+      "open": [
+        "N",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "N": "purple",
+        "W": "red"
+      },
+      "roomName": "Den",
+      "name": "Den",
+      "roomColor": "blue"
+    },
+    "A8": {
+      "letter": "V",
+      "open": [
+        "N",
+        "E",
+        "S"
+      ],
+      "sideLanterns": {
+        "S": "red",
+        "N": "orange",
+        "E": "orange"
+      },
+      "roomName": "Foyer",
+      "name": "Foyer",
+      "roomColor": "orange"
+    },
+    "B8": {
+      "letter": "Y",
+      "open": [
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "red",
+        "W": "orange",
+        "E": "red"
+      },
+      "roomName": "The Pool",
+      "name": "The Pool",
+      "roomColor": "blue"
+    },
+    "C8": {
+      "letter": "I",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "red",
+        "N": "red",
+        "W": "red",
+        "E": "yellow"
+      },
+      "roomName": "Servant's Quarters",
+      "name": "Servant's Quarters",
+      "roomColor": "purple"
+    },
+    "D8": {
+      "letter": "N",
+      "open": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "red",
+        "N": "purple",
+        "W": "yellow",
+        "E": "purple"
+      },
+      "roomName": "Pump Room",
+      "name": "Pump Room",
+      "roomColor": "blue"
+    },
+    "E8": {
+      "letter": "G",
+      "open": [
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "W": "purple"
+      },
+      "roomName": "Furnace",
+      "name": "Furnace",
+      "roomColor": "red"
+    },
+    "A9": {
+      "letter": "T",
+      "open": [
+        "E",
+        "S"
+      ],
+      "sideLanterns": {
+        "S": "orange",
+        "E": "red"
+      },
+      "roomName": "Archives",
+      "name": "Archives",
+      "roomColor": "red"
+    },
+    "B9": {
+      "letter": "H",
+      "open": [
+        "E",
+        "W"
+      ],
+      "sideLanterns": {
+        "W": "red",
+        "E": "orange"
+      },
+      "roomName": "Chapel",
+      "name": "Chapel",
+      "roomColor": "red"
+    },
+    "C9": {
+      "letter": "E",
+      "open": [
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "red",
+        "W": "orange",
+        "E": "purple"
+      },
+      "roomName": "Vestibule",
+      "name": "Vestibule",
+      "roomColor": "orange"
+    },
+    "D9": {
+      "letter": "S",
+      "open": [
+        "E",
+        "S",
+        "W"
+      ],
+      "sideLanterns": {
+        "S": "purple",
+        "W": "purple",
+        "E": "purple"
+      },
+      "roomName": "Coat Check",
+      "name": "Coat Check",
+      "roomColor": "blue"
+    },
+    "E9": {
+      "letter": "E",
+      "open": [
+        "W"
+      ],
+      "sideLanterns": {
+        "W": "purple"
+      },
+      "roomName": "Aquarium",
+      "name": "Aquarium",
+      "roomColor": "blue"
+    },
+    "A0": {
+      "open": []
+    },
+    "B0": {
+      "open": [
+        "N",
+        "E"
+      ],
+      "sideLanterns": {
+        "E": "purple",
+        "N": "purple"
+      }
+    },
+    "C0": {
+      "open": [
+        "N",
+        "E",
+        "W"
+      ],
+      "sideLanterns": {
+        "W": "purple",
+        "E": "blue",
+        "N": "red"
+      }
+    },
+    "D0": {
+      "open": [
+        "N",
+        "E",
+        "W"
+      ],
+      "sideLanterns": {
+        "W": "blue",
+        "E": "orange",
+        "N": "blue"
+      }
+    },
+    "E0": {
+      "open": [
+        "N",
+        "W"
+      ],
+      "sideLanterns": {
+        "W": "orange",
+        "N": "orange"
+      }
+    }
+  },
+  "startId": "C0",
+  "notes": [
+    "Extracted from high-contrast overlay image (file_22).",
+    "Edges are inferred from colored diamonds/segments at room boundaries.",
+    "Row 0 (A0-E0) is synthetic to model the shared external starting area below C1."
+  ]
+}

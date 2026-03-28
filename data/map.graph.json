@@ -1,0 +1,3963 @@
+{
+  "name": "Mount Holly Blueprint (digital overlay extraction v2) (graph mode)",
+  "coordinateSystem": {
+    "files": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "ranks": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "note": "Room centers use room ids (A1..E9, C0). Side nodes use <room>:<dir> (e.g., C1:N)."
+  },
+  "startId": "C0",
+  "nodes": {
+    "A1": {
+      "id": "A1",
+      "neighbors": {
+        "N": "A1:N",
+        "E": "A1:E"
+      },
+      "letter": "B",
+      "roomId": "A1",
+      "kind": "room-center"
+    },
+    "A1:N": {
+      "id": "A1:N",
+      "neighbors": {
+        "S": "A1",
+        "N": {
+          "to": "A2:S",
+          "lantern": "orange",
+          "lanternRef": "L:A1:N:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A1:N:0"
+          ]
+        },
+        "E": "A1:E"
+      },
+      "roomId": "A1",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "A1:E": {
+      "id": "A1:E",
+      "neighbors": {
+        "W": "A1",
+        "E": {
+          "to": "B1:W",
+          "lantern": "purple",
+          "lanternRef": "L:A1:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:A1:E:0"
+          ]
+        },
+        "N": "A1:N"
+      },
+      "roomId": "A1",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "B1": {
+      "id": "B1",
+      "neighbors": {
+        "N": "B1:N",
+        "W": "B1:W",
+        "S": "B1:S"
+      },
+      "letter": "L",
+      "roomId": "B1",
+      "kind": "room-center"
+    },
+    "B1:N": {
+      "id": "B1:N",
+      "neighbors": {
+        "S": "B1",
+        "N": {
+          "to": "B2:S",
+          "lantern": "purple",
+          "lanternRef": "L:B1:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B1:N:0"
+          ]
+        },
+        "W": "B1:W"
+      },
+      "roomId": "B1",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "B1:W": {
+      "id": "B1:W",
+      "neighbors": {
+        "E": "B1",
+        "W": {
+          "to": "A1:E",
+          "lantern": "purple",
+          "lanternRef": "L:B1:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B1:W:0"
+          ]
+        },
+        "S": "B1:S",
+        "N": "B1:N"
+      },
+      "roomId": "B1",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "B1:S": {
+      "id": "B1:S",
+      "neighbors": {
+        "N": "B1",
+        "S": {
+          "to": "B0:N",
+          "lantern": "purple",
+          "lanternRef": "L:B1:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B1:S:0"
+          ]
+        },
+        "W": "B1:W"
+      },
+      "roomId": "B1",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "C1": {
+      "id": "C1",
+      "neighbors": {
+        "E": "C1:E",
+        "S": "C1:S"
+      },
+      "letter": "E",
+      "roomId": "C1",
+      "kind": "room-center"
+    },
+    "C1:E": {
+      "id": "C1:E",
+      "neighbors": {
+        "W": "C1",
+        "E": {
+          "to": "D1:W",
+          "lantern": "red",
+          "lanternRef": "L:C1:E:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C1:E:0"
+          ]
+        },
+        "S": "C1:S"
+      },
+      "roomId": "C1",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C1:S": {
+      "id": "C1:S",
+      "neighbors": {
+        "N": "C1",
+        "S": {
+          "to": "C0:N",
+          "lantern": "red",
+          "lanternRef": "L:C1:S:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C1:S:0"
+          ]
+        },
+        "E": "C1:E"
+      },
+      "roomId": "C1",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "D1": {
+      "id": "D1",
+      "neighbors": {
+        "N": "D1:N",
+        "E": "D1:E",
+        "W": "D1:W",
+        "S": "D1:S"
+      },
+      "letter": "S",
+      "roomId": "D1",
+      "kind": "room-center"
+    },
+    "D1:N": {
+      "id": "D1:N",
+      "neighbors": {
+        "S": "D1",
+        "N": {
+          "to": "D2:S",
+          "lantern": "blue",
+          "lanternRef": "L:D1:N:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:D1:N:0"
+          ]
+        },
+        "E": "D1:E",
+        "W": "D1:W"
+      },
+      "roomId": "D1",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "D1:E": {
+      "id": "D1:E",
+      "neighbors": {
+        "W": "D1",
+        "E": {
+          "to": "E1:W",
+          "lantern": "blue",
+          "lanternRef": "L:D1:E:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:D1:E:0"
+          ]
+        },
+        "N": "D1:N",
+        "S": "D1:S"
+      },
+      "roomId": "D1",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D1:W": {
+      "id": "D1:W",
+      "neighbors": {
+        "E": "D1",
+        "W": {
+          "to": "C1:E",
+          "lantern": "red",
+          "lanternRef": "L:D1:W:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D1:W:0"
+          ]
+        },
+        "S": "D1:S",
+        "N": "D1:N"
+      },
+      "roomId": "D1",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D1:S": {
+      "id": "D1:S",
+      "neighbors": {
+        "N": "D1",
+        "S": {
+          "to": "D0:N",
+          "lantern": "blue",
+          "lanternRef": "L:D1:S:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:D1:S:0"
+          ]
+        },
+        "E": "D1:E",
+        "W": "D1:W"
+      },
+      "roomId": "D1",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "E1": {
+      "id": "E1",
+      "neighbors": {
+        "W": "E1:W",
+        "S": "E1:S"
+      },
+      "letter": "T",
+      "roomId": "E1",
+      "kind": "room-center"
+    },
+    "E1:W": {
+      "id": "E1:W",
+      "neighbors": {
+        "E": "E1",
+        "W": {
+          "to": "D1:E",
+          "lantern": "blue",
+          "lanternRef": "L:E1:W:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:E1:W:0"
+          ]
+        },
+        "S": "E1:S"
+      },
+      "roomId": "E1",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E1:S": {
+      "id": "E1:S",
+      "neighbors": {
+        "N": "E1",
+        "S": {
+          "to": "E0:N",
+          "lantern": "orange",
+          "lanternRef": "L:E1:S:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:E1:S:0"
+          ]
+        },
+        "W": "E1:W"
+      },
+      "roomId": "E1",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "A2": {
+      "id": "A2",
+      "neighbors": {
+        "N": "A2:N",
+        "E": "A2:E",
+        "S": "A2:S"
+      },
+      "letter": "H",
+      "roomId": "A2",
+      "kind": "room-center"
+    },
+    "A2:N": {
+      "id": "A2:N",
+      "neighbors": {
+        "S": "A2",
+        "N": {
+          "to": "A3:S",
+          "lantern": "orange",
+          "lanternRef": "L:A2:N:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A2:N:0"
+          ]
+        },
+        "E": "A2:E"
+      },
+      "roomId": "A2",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "A2:E": {
+      "id": "A2:E",
+      "neighbors": {
+        "W": "A2",
+        "E": {
+          "to": "B2:W",
+          "lantern": "green",
+          "lanternRef": "L:A2:E:0",
+          "lanterns": [
+            "green"
+          ],
+          "lanternRefs": [
+            "L:A2:E:0"
+          ]
+        },
+        "N": "A2:N",
+        "S": "A2:S"
+      },
+      "roomId": "A2",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "A2:S": {
+      "id": "A2:S",
+      "neighbors": {
+        "N": "A2",
+        "S": {
+          "to": "A1:N",
+          "lantern": "orange",
+          "lanternRef": "L:A2:S:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A2:S:0"
+          ]
+        },
+        "E": "A2:E"
+      },
+      "roomId": "A2",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B2": {
+      "id": "B2",
+      "neighbors": {
+        "N": "B2:N",
+        "E": "B2:E",
+        "S": "B2:S",
+        "W": "B2:W"
+      },
+      "letter": "E",
+      "roomId": "B2",
+      "kind": "room-center"
+    },
+    "B2:N": {
+      "id": "B2:N",
+      "neighbors": {
+        "S": "B2",
+        "N": {
+          "to": "B3:S",
+          "lantern": "purple",
+          "lanternRef": "L:B2:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B2:N:0"
+          ]
+        },
+        "E": "B2:E",
+        "W": "B2:W"
+      },
+      "roomId": "B2",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "B2:E": {
+      "id": "B2:E",
+      "neighbors": {
+        "W": "B2",
+        "E": {
+          "to": "C2:W",
+          "lantern": "yellow",
+          "lanternRef": "L:B2:E:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:B2:E:0"
+          ]
+        },
+        "N": "B2:N",
+        "S": "B2:S"
+      },
+      "roomId": "B2",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "B2:S": {
+      "id": "B2:S",
+      "neighbors": {
+        "N": "B2",
+        "S": {
+          "to": "B1:N",
+          "lantern": "purple",
+          "lanternRef": "L:B2:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B2:S:0"
+          ]
+        },
+        "E": "B2:E",
+        "W": "B2:W"
+      },
+      "roomId": "B2",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B2:W": {
+      "id": "B2:W",
+      "neighbors": {
+        "E": "B2",
+        "W": {
+          "to": "A2:E",
+          "lantern": "green",
+          "lanternRef": "L:B2:W:0",
+          "lanterns": [
+            "green"
+          ],
+          "lanternRefs": [
+            "L:B2:W:0"
+          ]
+        },
+        "S": "B2:S",
+        "N": "B2:N"
+      },
+      "roomId": "B2",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "C2": {
+      "id": "C2",
+      "neighbors": {
+        "N": "C2:N",
+        "E": "C2:E",
+        "W": "C2:W"
+      },
+      "letter": "W",
+      "roomId": "C2",
+      "kind": "room-center"
+    },
+    "C2:N": {
+      "id": "C2:N",
+      "neighbors": {
+        "S": "C2",
+        "N": {
+          "to": "C3:S",
+          "lantern": "blue",
+          "lanternRef": "L:C2:N:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:C2:N:0"
+          ]
+        },
+        "E": "C2:E",
+        "W": "C2:W"
+      },
+      "roomId": "C2",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "C2:E": {
+      "id": "C2:E",
+      "neighbors": {
+        "W": "C2",
+        "E": {
+          "to": "D2:W",
+          "lantern": "yellow",
+          "lanternRef": "L:C2:E:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:C2:E:0"
+          ]
+        },
+        "N": "C2:N"
+      },
+      "roomId": "C2",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C2:W": {
+      "id": "C2:W",
+      "neighbors": {
+        "E": "C2",
+        "W": {
+          "to": "B2:E",
+          "lantern": "yellow",
+          "lanternRef": "L:C2:W:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:C2:W:0"
+          ]
+        },
+        "N": "C2:N"
+      },
+      "roomId": "C2",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D2": {
+      "id": "D2",
+      "neighbors": {
+        "N": "D2:N",
+        "E": "D2:E",
+        "S": "D2:S",
+        "W": "D2:W"
+      },
+      "letter": "A",
+      "roomId": "D2",
+      "kind": "room-center"
+    },
+    "D2:N": {
+      "id": "D2:N",
+      "neighbors": {
+        "S": "D2",
+        "N": {
+          "to": "D3:S",
+          "lantern": "blue",
+          "lanternRef": "L:D2:N:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:D2:N:0"
+          ]
+        },
+        "E": "D2:E",
+        "W": "D2:W"
+      },
+      "roomId": "D2",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "D2:E": {
+      "id": "D2:E",
+      "neighbors": {
+        "W": "D2",
+        "E": {
+          "to": "E2:W",
+          "lantern": "red",
+          "lanternRef": "L:D2:E:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D2:E:0"
+          ]
+        },
+        "N": "D2:N",
+        "S": "D2:S"
+      },
+      "roomId": "D2",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D2:S": {
+      "id": "D2:S",
+      "neighbors": {
+        "N": "D2",
+        "S": {
+          "to": "D1:N",
+          "lantern": "blue",
+          "lanternRef": "L:D2:S:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:D2:S:0"
+          ]
+        },
+        "E": "D2:E",
+        "W": "D2:W"
+      },
+      "roomId": "D2",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "D2:W": {
+      "id": "D2:W",
+      "neighbors": {
+        "E": "D2",
+        "W": {
+          "to": "C2:E",
+          "lantern": "yellow",
+          "lanternRef": "L:D2:W:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:D2:W:0"
+          ]
+        },
+        "S": "D2:S",
+        "N": "D2:N"
+      },
+      "roomId": "D2",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E2": {
+      "id": "E2",
+      "neighbors": {
+        "N": "E2:N",
+        "W": "E2:W"
+      },
+      "letter": "M",
+      "roomId": "E2",
+      "kind": "room-center"
+    },
+    "E2:N": {
+      "id": "E2:N",
+      "neighbors": {
+        "S": "E2",
+        "N": {
+          "to": "E3:S",
+          "lantern": "orange",
+          "lanternRef": "L:E2:N:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:E2:N:0"
+          ]
+        },
+        "W": "E2:W"
+      },
+      "roomId": "E2",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "E2:W": {
+      "id": "E2:W",
+      "neighbors": {
+        "E": "E2",
+        "W": {
+          "to": "D2:E",
+          "lantern": "red",
+          "lanternRef": "L:E2:W:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:E2:W:0"
+          ]
+        },
+        "N": "E2:N"
+      },
+      "roomId": "E2",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "A3": {
+      "id": "A3",
+      "neighbors": {
+        "N": "A3:N",
+        "E": "A3:E",
+        "S": "A3:S"
+      },
+      "letter": "A",
+      "roomId": "A3",
+      "kind": "room-center"
+    },
+    "A3:N": {
+      "id": "A3:N",
+      "neighbors": {
+        "S": "A3",
+        "N": {
+          "to": "A4:S",
+          "lantern": "purple",
+          "lanternRef": "L:A3:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:A3:N:0"
+          ]
+        },
+        "E": "A3:E"
+      },
+      "roomId": "A3",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "A3:E": {
+      "id": "A3:E",
+      "neighbors": {
+        "W": "A3",
+        "E": {
+          "to": "B3:W",
+          "lantern": "green",
+          "lanternRef": "L:A3:E:0",
+          "lanterns": [
+            "green"
+          ],
+          "lanternRefs": [
+            "L:A3:E:0"
+          ]
+        },
+        "N": "A3:N",
+        "S": "A3:S"
+      },
+      "roomId": "A3",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "A3:S": {
+      "id": "A3:S",
+      "neighbors": {
+        "N": "A3",
+        "S": {
+          "to": "A2:N",
+          "lantern": "orange",
+          "lanternRef": "L:A3:S:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A3:S:0"
+          ]
+        },
+        "E": "A3:E"
+      },
+      "roomId": "A3",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B3": {
+      "id": "B3",
+      "neighbors": {
+        "N": "B3:N",
+        "E": "B3:E",
+        "S": "B3:S",
+        "W": "B3:W"
+      },
+      "letter": "M",
+      "roomId": "B3",
+      "kind": "room-center"
+    },
+    "B3:N": {
+      "id": "B3:N",
+      "neighbors": {
+        "S": "B3",
+        "N": {
+          "to": "B4:S",
+          "lantern": "green",
+          "lanternRef": "L:B3:N:0",
+          "lanterns": [
+            "green"
+          ],
+          "lanternRefs": [
+            "L:B3:N:0"
+          ]
+        },
+        "E": "B3:E",
+        "W": "B3:W"
+      },
+      "roomId": "B3",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "B3:E": {
+      "id": "B3:E",
+      "neighbors": {
+        "W": "B3",
+        "E": {
+          "to": "C3:W",
+          "lantern": "orange",
+          "lanternRef": "L:B3:E:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:B3:E:0"
+          ]
+        },
+        "N": "B3:N",
+        "S": "B3:S"
+      },
+      "roomId": "B3",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "B3:S": {
+      "id": "B3:S",
+      "neighbors": {
+        "N": "B3",
+        "S": {
+          "to": "B2:N",
+          "lantern": "purple",
+          "lanternRef": "L:B3:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B3:S:0"
+          ]
+        },
+        "E": "B3:E",
+        "W": "B3:W"
+      },
+      "roomId": "B3",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B3:W": {
+      "id": "B3:W",
+      "neighbors": {
+        "E": "B3",
+        "W": {
+          "to": "A3:E",
+          "lantern": "green",
+          "lanternRef": "L:B3:W:0",
+          "lanterns": [
+            "green"
+          ],
+          "lanternRefs": [
+            "L:B3:W:0"
+          ]
+        },
+        "S": "B3:S",
+        "N": "B3:N"
+      },
+      "roomId": "B3",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "C3": {
+      "id": "C3",
+      "neighbors": {
+        "N": "C3:N",
+        "E": "C3:E",
+        "S": "C3:S",
+        "W": "C3:W"
+      },
+      "letter": "O",
+      "roomId": "C3",
+      "kind": "room-center"
+    },
+    "C3:N": {
+      "id": "C3:N",
+      "neighbors": {
+        "S": "C3",
+        "N": {
+          "to": "C4:S",
+          "lantern": "orange",
+          "lanternRef": "L:C3:N:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:C3:N:0"
+          ]
+        },
+        "E": "C3:E",
+        "W": "C3:W"
+      },
+      "roomId": "C3",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "C3:E": {
+      "id": "C3:E",
+      "neighbors": {
+        "W": "C3",
+        "E": {
+          "to": "D3:W",
+          "lantern": "red",
+          "lanternRef": "L:C3:E:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C3:E:0"
+          ]
+        },
+        "N": "C3:N",
+        "S": "C3:S"
+      },
+      "roomId": "C3",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C3:S": {
+      "id": "C3:S",
+      "neighbors": {
+        "N": "C3",
+        "S": {
+          "to": "C2:N",
+          "lantern": "blue",
+          "lanternRef": "L:C3:S:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:C3:S:0"
+          ]
+        },
+        "E": "C3:E",
+        "W": "C3:W"
+      },
+      "roomId": "C3",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "C3:W": {
+      "id": "C3:W",
+      "neighbors": {
+        "E": "C3",
+        "W": {
+          "to": "B3:E",
+          "lantern": "orange",
+          "lanternRef": "L:C3:W:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:C3:W:0"
+          ]
+        },
+        "S": "C3:S",
+        "N": "C3:N"
+      },
+      "roomId": "C3",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D3": {
+      "id": "D3",
+      "neighbors": {
+        "N": "D3:N",
+        "E": "D3:E",
+        "S": "D3:S",
+        "W": "D3:W"
+      },
+      "letter": "N",
+      "roomId": "D3",
+      "kind": "room-center"
+    },
+    "D3:N": {
+      "id": "D3:N",
+      "neighbors": {
+        "S": "D3",
+        "N": {
+          "to": "D4:S",
+          "lantern": "purple",
+          "lanternRef": "L:D3:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D3:N:0"
+          ]
+        },
+        "E": "D3:E",
+        "W": "D3:W"
+      },
+      "roomId": "D3",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "D3:E": {
+      "id": "D3:E",
+      "neighbors": {
+        "W": "D3",
+        "E": {
+          "to": "E3:W",
+          "lantern": "red",
+          "lanternRef": "L:D3:E:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D3:E:0"
+          ]
+        },
+        "N": "D3:N",
+        "S": "D3:S"
+      },
+      "roomId": "D3",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D3:S": {
+      "id": "D3:S",
+      "neighbors": {
+        "N": "D3",
+        "S": {
+          "to": "D2:N",
+          "lantern": "blue",
+          "lanternRef": "L:D3:S:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:D3:S:0"
+          ]
+        },
+        "E": "D3:E",
+        "W": "D3:W"
+      },
+      "roomId": "D3",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "D3:W": {
+      "id": "D3:W",
+      "neighbors": {
+        "E": "D3",
+        "W": {
+          "to": "C3:E",
+          "lantern": "red",
+          "lanternRef": "L:D3:W:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D3:W:0"
+          ]
+        },
+        "S": "D3:S",
+        "N": "D3:N"
+      },
+      "roomId": "D3",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E3": {
+      "id": "E3",
+      "neighbors": {
+        "N": "E3:N",
+        "S": "E3:S",
+        "W": "E3:W"
+      },
+      "letter": "G",
+      "roomId": "E3",
+      "kind": "room-center"
+    },
+    "E3:N": {
+      "id": "E3:N",
+      "neighbors": {
+        "S": "E3",
+        "N": {
+          "to": "E4:S",
+          "lantern": "purple",
+          "lanternRef": "L:E3:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E3:N:0"
+          ]
+        },
+        "W": "E3:W"
+      },
+      "roomId": "E3",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "E3:S": {
+      "id": "E3:S",
+      "neighbors": {
+        "N": "E3",
+        "S": {
+          "to": "E2:N",
+          "lantern": "orange",
+          "lanternRef": "L:E3:S:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:E3:S:0"
+          ]
+        },
+        "W": "E3:W"
+      },
+      "roomId": "E3",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "E3:W": {
+      "id": "E3:W",
+      "neighbors": {
+        "E": "E3",
+        "W": {
+          "to": "D3:E",
+          "lantern": "red",
+          "lanternRef": "L:E3:W:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:E3:W:0"
+          ]
+        },
+        "S": "E3:S",
+        "N": "E3:N"
+      },
+      "roomId": "E3",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "A4": {
+      "id": "A4",
+      "neighbors": {
+        "N": "A4:N",
+        "E": "A4:E",
+        "S": "A4:S"
+      },
+      "letter": "C",
+      "roomId": "A4",
+      "kind": "room-center"
+    },
+    "A4:N": {
+      "id": "A4:N",
+      "neighbors": {
+        "S": "A4",
+        "N": {
+          "to": "A5:S",
+          "lantern": "orange",
+          "lanternRef": "L:A4:N:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A4:N:0"
+          ]
+        },
+        "E": "A4:E"
+      },
+      "roomId": "A4",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "A4:E": {
+      "id": "A4:E",
+      "neighbors": {
+        "W": "A4",
+        "E": {
+          "to": "B4:W",
+          "lantern": "purple",
+          "lanternRef": "L:A4:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:A4:E:0"
+          ]
+        },
+        "N": "A4:N",
+        "S": "A4:S"
+      },
+      "roomId": "A4",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "A4:S": {
+      "id": "A4:S",
+      "neighbors": {
+        "N": "A4",
+        "S": {
+          "to": "A3:N",
+          "lantern": "purple",
+          "lanternRef": "L:A4:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:A4:S:0"
+          ]
+        },
+        "E": "A4:E"
+      },
+      "roomId": "A4",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B4": {
+      "id": "B4",
+      "neighbors": {
+        "N": "B4:N",
+        "E": "B4:E",
+        "S": "B4:S",
+        "W": "B4:W"
+      },
+      "letter": "R",
+      "roomId": "B4",
+      "kind": "room-center"
+    },
+    "B4:N": {
+      "id": "B4:N",
+      "neighbors": {
+        "S": "B4",
+        "N": {
+          "to": "B5:S",
+          "lantern": "orange",
+          "lanternRef": "L:B4:N:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:B4:N:0"
+          ]
+        },
+        "E": "B4:E",
+        "W": "B4:W"
+      },
+      "roomId": "B4",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "B4:E": {
+      "id": "B4:E",
+      "neighbors": {
+        "W": "B4",
+        "E": {
+          "to": "C4:W",
+          "lantern": "green",
+          "lanternRef": "L:B4:E:0",
+          "lanterns": [
+            "green"
+          ],
+          "lanternRefs": [
+            "L:B4:E:0"
+          ]
+        },
+        "N": "B4:N",
+        "S": "B4:S"
+      },
+      "roomId": "B4",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "B4:S": {
+      "id": "B4:S",
+      "neighbors": {
+        "N": "B4",
+        "S": {
+          "to": "B3:N",
+          "lantern": "green",
+          "lanternRef": "L:B4:S:0",
+          "lanterns": [
+            "green"
+          ],
+          "lanternRefs": [
+            "L:B4:S:0"
+          ]
+        },
+        "E": "B4:E",
+        "W": "B4:W"
+      },
+      "roomId": "B4",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B4:W": {
+      "id": "B4:W",
+      "neighbors": {
+        "E": "B4",
+        "W": {
+          "to": "A4:E",
+          "lantern": "purple",
+          "lanternRef": "L:B4:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B4:W:0"
+          ]
+        },
+        "S": "B4:S",
+        "N": "B4:N"
+      },
+      "roomId": "B4",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "C4": {
+      "id": "C4",
+      "neighbors": {
+        "N": "C4:N",
+        "E": "C4:E",
+        "S": "C4:S",
+        "W": "C4:W"
+      },
+      "letter": "E",
+      "roomId": "C4",
+      "kind": "room-center"
+    },
+    "C4:N": {
+      "id": "C4:N",
+      "neighbors": {
+        "S": "C4",
+        "N": {
+          "to": "C5:S",
+          "lantern": "red",
+          "lanternRef": "L:C4:N:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C4:N:0"
+          ]
+        },
+        "E": "C4:E",
+        "W": "C4:W"
+      },
+      "roomId": "C4",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "C4:E": {
+      "id": "C4:E",
+      "neighbors": {
+        "W": "C4",
+        "E": {
+          "to": "D4:W",
+          "lantern": "orange",
+          "lanternRef": "L:C4:E:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:C4:E:0"
+          ]
+        },
+        "N": "C4:N",
+        "S": "C4:S"
+      },
+      "roomId": "C4",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C4:S": {
+      "id": "C4:S",
+      "neighbors": {
+        "N": "C4",
+        "S": {
+          "to": "C3:N",
+          "lantern": "orange",
+          "lanternRef": "L:C4:S:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:C4:S:0"
+          ]
+        },
+        "E": "C4:E",
+        "W": "C4:W"
+      },
+      "roomId": "C4",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "C4:W": {
+      "id": "C4:W",
+      "neighbors": {
+        "E": "C4",
+        "W": {
+          "to": "B4:E",
+          "lantern": "green",
+          "lanternRef": "L:C4:W:0",
+          "lanterns": [
+            "green"
+          ],
+          "lanternRefs": [
+            "L:C4:W:0"
+          ]
+        },
+        "S": "C4:S",
+        "N": "C4:N"
+      },
+      "roomId": "C4",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D4": {
+      "id": "D4",
+      "neighbors": {
+        "N": "D4:N",
+        "E": "D4:E",
+        "S": "D4:S",
+        "W": "D4:W"
+      },
+      "letter": "S",
+      "roomId": "D4",
+      "kind": "room-center"
+    },
+    "D4:N": {
+      "id": "D4:N",
+      "neighbors": {
+        "S": "D4",
+        "N": {
+          "to": "D5:S",
+          "lantern": "yellow",
+          "lanternRef": "L:D4:N:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:D4:N:0"
+          ]
+        },
+        "E": "D4:E",
+        "W": "D4:W"
+      },
+      "roomId": "D4",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "D4:E": {
+      "id": "D4:E",
+      "neighbors": {
+        "W": "D4",
+        "E": {
+          "to": "E4:W",
+          "lantern": "purple",
+          "lanternRef": "L:D4:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D4:E:0"
+          ]
+        },
+        "N": "D4:N",
+        "S": "D4:S"
+      },
+      "roomId": "D4",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D4:S": {
+      "id": "D4:S",
+      "neighbors": {
+        "N": "D4",
+        "S": {
+          "to": "D3:N",
+          "lantern": "purple",
+          "lanternRef": "L:D4:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D4:S:0"
+          ]
+        },
+        "E": "D4:E",
+        "W": "D4:W"
+      },
+      "roomId": "D4",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "D4:W": {
+      "id": "D4:W",
+      "neighbors": {
+        "E": "D4",
+        "W": {
+          "to": "C4:E",
+          "lantern": "orange",
+          "lanternRef": "L:D4:W:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:D4:W:0"
+          ]
+        },
+        "S": "D4:S",
+        "N": "D4:N"
+      },
+      "roomId": "D4",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E4": {
+      "id": "E4",
+      "neighbors": {
+        "N": "E4:N",
+        "S": "E4:S",
+        "W": "E4:W"
+      },
+      "letter": "T",
+      "roomId": "E4",
+      "kind": "room-center"
+    },
+    "E4:N": {
+      "id": "E4:N",
+      "neighbors": {
+        "S": "E4",
+        "N": {
+          "to": "E5:S",
+          "lantern": "yellow",
+          "lanternRef": "L:E4:N:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:E4:N:0"
+          ]
+        },
+        "W": "E4:W"
+      },
+      "roomId": "E4",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "E4:S": {
+      "id": "E4:S",
+      "neighbors": {
+        "N": "E4",
+        "S": {
+          "to": "E3:N",
+          "lantern": "purple",
+          "lanternRef": "L:E4:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E4:S:0"
+          ]
+        },
+        "W": "E4:W"
+      },
+      "roomId": "E4",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "E4:W": {
+      "id": "E4:W",
+      "neighbors": {
+        "E": "E4",
+        "W": {
+          "to": "D4:E",
+          "lantern": "purple",
+          "lanternRef": "L:E4:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E4:W:0"
+          ]
+        },
+        "S": "E4:S",
+        "N": "E4:N"
+      },
+      "roomId": "E4",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "A5": {
+      "id": "A5",
+      "neighbors": {
+        "N": "A5:N",
+        "E": "A5:E",
+        "S": "A5:S"
+      },
+      "letter": "B",
+      "roomId": "A5",
+      "kind": "room-center"
+    },
+    "A5:N": {
+      "id": "A5:N",
+      "neighbors": {
+        "S": "A5",
+        "N": {
+          "to": "A6:S",
+          "lantern": "purple",
+          "lanternRef": "L:A5:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:A5:N:0"
+          ]
+        },
+        "E": "A5:E"
+      },
+      "roomId": "A5",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "A5:E": {
+      "id": "A5:E",
+      "neighbors": {
+        "W": "A5",
+        "E": {
+          "to": "B5:W",
+          "lantern": "purple",
+          "lanternRef": "L:A5:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:A5:E:0"
+          ]
+        },
+        "N": "A5:N",
+        "S": "A5:S"
+      },
+      "roomId": "A5",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "A5:S": {
+      "id": "A5:S",
+      "neighbors": {
+        "N": "A5",
+        "S": {
+          "to": "A4:N",
+          "lantern": "orange",
+          "lanternRef": "L:A5:S:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A5:S:0"
+          ]
+        },
+        "E": "A5:E"
+      },
+      "roomId": "A5",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B5": {
+      "id": "B5",
+      "neighbors": {
+        "N": "B5:N",
+        "E": "B5:E",
+        "S": "B5:S",
+        "W": "B5:W"
+      },
+      "letter": "A",
+      "roomId": "B5",
+      "kind": "room-center"
+    },
+    "B5:N": {
+      "id": "B5:N",
+      "neighbors": {
+        "S": "B5",
+        "N": {
+          "to": "B6:S",
+          "lantern": "purple",
+          "lanternRef": "L:B5:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B5:N:0"
+          ]
+        },
+        "E": "B5:E",
+        "W": "B5:W"
+      },
+      "roomId": "B5",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "B5:E": {
+      "id": "B5:E",
+      "neighbors": {
+        "W": "B5",
+        "E": {
+          "to": "C5:W",
+          "lantern": "orange",
+          "lanternRef": "L:B5:E:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:B5:E:0"
+          ]
+        },
+        "N": "B5:N",
+        "S": "B5:S"
+      },
+      "roomId": "B5",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "B5:S": {
+      "id": "B5:S",
+      "neighbors": {
+        "N": "B5",
+        "S": {
+          "to": "B4:N",
+          "lantern": "orange",
+          "lanternRef": "L:B5:S:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:B5:S:0"
+          ]
+        },
+        "E": "B5:E",
+        "W": "B5:W"
+      },
+      "roomId": "B5",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B5:W": {
+      "id": "B5:W",
+      "neighbors": {
+        "E": "B5",
+        "W": {
+          "to": "A5:E",
+          "lantern": "purple",
+          "lanternRef": "L:B5:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B5:W:0"
+          ]
+        },
+        "S": "B5:S",
+        "N": "B5:N"
+      },
+      "roomId": "B5",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "C5": {
+      "id": "C5",
+      "neighbors": {
+        "N": "C5:N",
+        "E": "C5:E",
+        "S": "C5:S",
+        "W": "C5:W"
+      },
+      "letter": "R",
+      "roomId": "C5",
+      "kind": "room-center"
+    },
+    "C5:N": {
+      "id": "C5:N",
+      "neighbors": {
+        "S": "C5",
+        "N": {
+          "to": "C6:S",
+          "lantern": "purple",
+          "lanternRef": "L:C5:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:C5:N:0"
+          ]
+        },
+        "E": "C5:E",
+        "W": "C5:W"
+      },
+      "roomId": "C5",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "C5:E": {
+      "id": "C5:E",
+      "neighbors": {
+        "W": "C5",
+        "E": {
+          "to": "D5:W",
+          "lantern": "orange",
+          "lanternRef": "L:C5:E:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:C5:E:0"
+          ]
+        },
+        "N": "C5:N",
+        "S": "C5:S"
+      },
+      "roomId": "C5",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C5:S": {
+      "id": "C5:S",
+      "neighbors": {
+        "N": "C5",
+        "S": {
+          "to": "C4:N",
+          "lantern": "red",
+          "lanternRef": "L:C5:S:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C5:S:0"
+          ]
+        },
+        "E": "C5:E",
+        "W": "C5:W"
+      },
+      "roomId": "C5",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "C5:W": {
+      "id": "C5:W",
+      "neighbors": {
+        "E": "C5",
+        "W": {
+          "to": "B5:E",
+          "lantern": "orange",
+          "lanternRef": "L:C5:W:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:C5:W:0"
+          ]
+        },
+        "S": "C5:S",
+        "N": "C5:N"
+      },
+      "roomId": "C5",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D5": {
+      "id": "D5",
+      "neighbors": {
+        "N": "D5:N",
+        "E": "D5:E",
+        "S": "D5:S",
+        "W": "D5:W"
+      },
+      "letter": "O",
+      "roomId": "D5",
+      "kind": "room-center"
+    },
+    "D5:N": {
+      "id": "D5:N",
+      "neighbors": {
+        "S": "D5",
+        "N": {
+          "to": "D6:S",
+          "lantern": "red",
+          "lanternRef": "L:D5:N:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D5:N:0"
+          ]
+        },
+        "E": "D5:E",
+        "W": "D5:W"
+      },
+      "roomId": "D5",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "D5:E": {
+      "id": "D5:E",
+      "neighbors": {
+        "W": "D5",
+        "E": {
+          "to": "E5:W",
+          "lantern": "purple",
+          "lanternRef": "L:D5:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D5:E:0"
+          ]
+        },
+        "N": "D5:N",
+        "S": "D5:S"
+      },
+      "roomId": "D5",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D5:S": {
+      "id": "D5:S",
+      "neighbors": {
+        "N": "D5",
+        "S": {
+          "to": "D4:N",
+          "lantern": "yellow",
+          "lanternRef": "L:D5:S:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:D5:S:0"
+          ]
+        },
+        "E": "D5:E",
+        "W": "D5:W"
+      },
+      "roomId": "D5",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "D5:W": {
+      "id": "D5:W",
+      "neighbors": {
+        "E": "D5",
+        "W": {
+          "to": "C5:E",
+          "lantern": "orange",
+          "lanternRef": "L:D5:W:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:D5:W:0"
+          ]
+        },
+        "S": "D5:S",
+        "N": "D5:N"
+      },
+      "roomId": "D5",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E5": {
+      "id": "E5",
+      "neighbors": {
+        "N": "E5:N",
+        "S": "E5:S",
+        "W": "E5:W"
+      },
+      "letter": "N",
+      "roomId": "E5",
+      "kind": "room-center"
+    },
+    "E5:N": {
+      "id": "E5:N",
+      "neighbors": {
+        "S": "E5",
+        "N": {
+          "to": "E6:S",
+          "lantern": "red",
+          "lanternRef": "L:E5:N:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:E5:N:0"
+          ]
+        },
+        "W": "E5:W"
+      },
+      "roomId": "E5",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "E5:S": {
+      "id": "E5:S",
+      "neighbors": {
+        "N": "E5",
+        "S": {
+          "to": "E4:N",
+          "lantern": "yellow",
+          "lanternRef": "L:E5:S:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:E5:S:0"
+          ]
+        },
+        "W": "E5:W"
+      },
+      "roomId": "E5",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "E5:W": {
+      "id": "E5:W",
+      "neighbors": {
+        "E": "E5",
+        "W": {
+          "to": "D5:E",
+          "lantern": "purple",
+          "lanternRef": "L:E5:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E5:W:0"
+          ]
+        },
+        "S": "E5:S",
+        "N": "E5:N"
+      },
+      "roomId": "E5",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "A6": {
+      "id": "A6",
+      "neighbors": {
+        "N": "A6:N",
+        "E": "A6:E",
+        "S": "A6:S"
+      },
+      "letter": "F",
+      "roomId": "A6",
+      "kind": "room-center"
+    },
+    "A6:N": {
+      "id": "A6:N",
+      "neighbors": {
+        "S": "A6",
+        "N": {
+          "to": "A7:S",
+          "lantern": "orange",
+          "lanternRef": "L:A6:N:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A6:N:0"
+          ]
+        },
+        "E": "A6:E"
+      },
+      "roomId": "A6",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "A6:E": {
+      "id": "A6:E",
+      "neighbors": {
+        "W": "A6",
+        "E": {
+          "to": "B6:W",
+          "lantern": "purple",
+          "lanternRef": "L:A6:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:A6:E:0"
+          ]
+        },
+        "N": "A6:N",
+        "S": "A6:S"
+      },
+      "roomId": "A6",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "A6:S": {
+      "id": "A6:S",
+      "neighbors": {
+        "N": "A6",
+        "S": {
+          "to": "A5:N",
+          "lantern": "purple",
+          "lanternRef": "L:A6:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:A6:S:0"
+          ]
+        },
+        "E": "A6:E"
+      },
+      "roomId": "A6",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B6": {
+      "id": "B6",
+      "neighbors": {
+        "N": "B6:N",
+        "E": "B6:E",
+        "S": "B6:S",
+        "W": "B6:W"
+      },
+      "letter": "O",
+      "roomId": "B6",
+      "kind": "room-center"
+    },
+    "B6:N": {
+      "id": "B6:N",
+      "neighbors": {
+        "S": "B6",
+        "N": {
+          "to": "B7:S",
+          "lantern": "yellow",
+          "lanternRef": "L:B6:N:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:B6:N:0"
+          ]
+        },
+        "E": "B6:E",
+        "W": "B6:W"
+      },
+      "roomId": "B6",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "B6:E": {
+      "id": "B6:E",
+      "neighbors": {
+        "W": "B6",
+        "E": {
+          "to": "C6:W",
+          "lantern": "yellow",
+          "lanternRef": "L:B6:E:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:B6:E:0"
+          ]
+        },
+        "N": "B6:N",
+        "S": "B6:S"
+      },
+      "roomId": "B6",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "B6:S": {
+      "id": "B6:S",
+      "neighbors": {
+        "N": "B6",
+        "S": {
+          "to": "B5:N",
+          "lantern": "purple",
+          "lanternRef": "L:B6:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B6:S:0"
+          ]
+        },
+        "E": "B6:E",
+        "W": "B6:W"
+      },
+      "roomId": "B6",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B6:W": {
+      "id": "B6:W",
+      "neighbors": {
+        "E": "B6",
+        "W": {
+          "to": "A6:E",
+          "lantern": "purple",
+          "lanternRef": "L:B6:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B6:W:0"
+          ]
+        },
+        "S": "B6:S",
+        "N": "B6:N"
+      },
+      "roomId": "B6",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "C6": {
+      "id": "C6",
+      "neighbors": {
+        "N": "C6:N",
+        "E": "C6:E",
+        "S": "C6:S",
+        "W": "C6:W"
+      },
+      "letter": "R",
+      "roomId": "C6",
+      "kind": "room-center"
+    },
+    "C6:N": {
+      "id": "C6:N",
+      "neighbors": {
+        "S": "C6",
+        "N": {
+          "to": "C7:S",
+          "lantern": "yellow",
+          "lanternRef": "L:C6:N:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:C6:N:0"
+          ]
+        },
+        "E": "C6:E",
+        "W": "C6:W"
+      },
+      "roomId": "C6",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "C6:E": {
+      "id": "C6:E",
+      "neighbors": {
+        "W": "C6",
+        "E": {
+          "to": "D6:W",
+          "lantern": "purple",
+          "lanternRef": "L:C6:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:C6:E:0"
+          ]
+        },
+        "N": "C6:N",
+        "S": "C6:S"
+      },
+      "roomId": "C6",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C6:S": {
+      "id": "C6:S",
+      "neighbors": {
+        "N": "C6",
+        "S": {
+          "to": "C5:N",
+          "lantern": "purple",
+          "lanternRef": "L:C6:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:C6:S:0"
+          ]
+        },
+        "E": "C6:E",
+        "W": "C6:W"
+      },
+      "roomId": "C6",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "C6:W": {
+      "id": "C6:W",
+      "neighbors": {
+        "E": "C6",
+        "W": {
+          "to": "B6:E",
+          "lantern": "yellow",
+          "lanternRef": "L:C6:W:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:C6:W:0"
+          ]
+        },
+        "S": "C6:S",
+        "N": "C6:N"
+      },
+      "roomId": "C6",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D6": {
+      "id": "D6",
+      "neighbors": {
+        "N": "D6:N",
+        "E": "D6:E",
+        "S": "D6:S",
+        "W": "D6:W"
+      },
+      "letter": "G",
+      "roomId": "D6",
+      "kind": "room-center"
+    },
+    "D6:N": {
+      "id": "D6:N",
+      "neighbors": {
+        "S": "D6",
+        "N": {
+          "to": "D7:S",
+          "lantern": "purple",
+          "lanternRef": "L:D6:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D6:N:0"
+          ]
+        },
+        "E": "D6:E",
+        "W": "D6:W"
+      },
+      "roomId": "D6",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "D6:E": {
+      "id": "D6:E",
+      "neighbors": {
+        "W": "D6",
+        "E": {
+          "to": "E6:W",
+          "lantern": "red",
+          "lanternRef": "L:D6:E:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D6:E:0"
+          ]
+        },
+        "N": "D6:N",
+        "S": "D6:S"
+      },
+      "roomId": "D6",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D6:S": {
+      "id": "D6:S",
+      "neighbors": {
+        "N": "D6",
+        "S": {
+          "to": "D5:N",
+          "lantern": "red",
+          "lanternRef": "L:D6:S:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D6:S:0"
+          ]
+        },
+        "E": "D6:E",
+        "W": "D6:W"
+      },
+      "roomId": "D6",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "D6:W": {
+      "id": "D6:W",
+      "neighbors": {
+        "E": "D6",
+        "W": {
+          "to": "C6:E",
+          "lantern": "purple",
+          "lanternRef": "L:D6:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D6:W:0"
+          ]
+        },
+        "S": "D6:S",
+        "N": "D6:N"
+      },
+      "roomId": "D6",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E6": {
+      "id": "E6",
+      "neighbors": {
+        "N": "E6:N",
+        "S": "E6:S",
+        "W": "E6:W"
+      },
+      "letter": "E",
+      "roomId": "E6",
+      "kind": "room-center"
+    },
+    "E6:N": {
+      "id": "E6:N",
+      "neighbors": {
+        "S": "E6",
+        "N": {
+          "to": "E7:S",
+          "lantern": "purple",
+          "lanternRef": "L:E6:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E6:N:0"
+          ]
+        },
+        "W": "E6:W"
+      },
+      "roomId": "E6",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "E6:S": {
+      "id": "E6:S",
+      "neighbors": {
+        "N": "E6",
+        "S": {
+          "to": "E5:N",
+          "lantern": "red",
+          "lanternRef": "L:E6:S:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:E6:S:0"
+          ]
+        },
+        "W": "E6:W"
+      },
+      "roomId": "E6",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "E6:W": {
+      "id": "E6:W",
+      "neighbors": {
+        "E": "E6",
+        "W": {
+          "to": "D6:E",
+          "lantern": "red",
+          "lanternRef": "L:E6:W:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:E6:W:0"
+          ]
+        },
+        "S": "E6:S",
+        "N": "E6:N"
+      },
+      "roomId": "E6",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "A7": {
+      "id": "A7",
+      "neighbors": {
+        "N": "A7:N",
+        "E": "A7:E",
+        "S": "A7:S"
+      },
+      "letter": "P",
+      "roomId": "A7",
+      "kind": "room-center"
+    },
+    "A7:N": {
+      "id": "A7:N",
+      "neighbors": {
+        "S": "A7",
+        "N": {
+          "to": "A8:S",
+          "lantern": "red",
+          "lanternRef": "L:A7:N:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:A7:N:0"
+          ]
+        },
+        "E": "A7:E"
+      },
+      "roomId": "A7",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "A7:E": {
+      "id": "A7:E",
+      "neighbors": {
+        "W": "A7",
+        "E": {
+          "to": "B7:W",
+          "lantern": "orange",
+          "lanternRef": "L:A7:E:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A7:E:0"
+          ]
+        },
+        "N": "A7:N",
+        "S": "A7:S"
+      },
+      "roomId": "A7",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "A7:S": {
+      "id": "A7:S",
+      "neighbors": {
+        "N": "A7",
+        "S": {
+          "to": "A6:N",
+          "lantern": "orange",
+          "lanternRef": "L:A7:S:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A7:S:0"
+          ]
+        },
+        "E": "A7:E"
+      },
+      "roomId": "A7",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B7": {
+      "id": "B7",
+      "neighbors": {
+        "N": "B7:N",
+        "E": "B7:E",
+        "S": "B7:S",
+        "W": "B7:W"
+      },
+      "letter": "L",
+      "roomId": "B7",
+      "kind": "room-center"
+    },
+    "B7:N": {
+      "id": "B7:N",
+      "neighbors": {
+        "S": "B7",
+        "N": {
+          "to": "B8:S",
+          "lantern": "red",
+          "lanternRef": "L:B7:N:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:B7:N:0"
+          ]
+        },
+        "E": "B7:E",
+        "W": "B7:W"
+      },
+      "roomId": "B7",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "B7:E": {
+      "id": "B7:E",
+      "neighbors": {
+        "W": "B7",
+        "E": {
+          "to": "C7:W",
+          "lantern": "yellow",
+          "lanternRef": "L:B7:E:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:B7:E:0"
+          ]
+        },
+        "N": "B7:N",
+        "S": "B7:S"
+      },
+      "roomId": "B7",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "B7:S": {
+      "id": "B7:S",
+      "neighbors": {
+        "N": "B7",
+        "S": {
+          "to": "B6:N",
+          "lantern": "yellow",
+          "lanternRef": "L:B7:S:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:B7:S:0"
+          ]
+        },
+        "E": "B7:E",
+        "W": "B7:W"
+      },
+      "roomId": "B7",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B7:W": {
+      "id": "B7:W",
+      "neighbors": {
+        "E": "B7",
+        "W": {
+          "to": "A7:E",
+          "lantern": "orange",
+          "lanternRef": "L:B7:W:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:B7:W:0"
+          ]
+        },
+        "S": "B7:S",
+        "N": "B7:N"
+      },
+      "roomId": "B7",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "C7": {
+      "id": "C7",
+      "neighbors": {
+        "N": "C7:N",
+        "E": "C7:E",
+        "S": "C7:S",
+        "W": "C7:W"
+      },
+      "letter": "A",
+      "roomId": "C7",
+      "kind": "room-center"
+    },
+    "C7:N": {
+      "id": "C7:N",
+      "neighbors": {
+        "S": "C7",
+        "N": {
+          "to": "C8:S",
+          "lantern": "red",
+          "lanternRef": "L:C7:N:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C7:N:0"
+          ]
+        },
+        "E": "C7:E",
+        "W": "C7:W"
+      },
+      "roomId": "C7",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "C7:E": {
+      "id": "C7:E",
+      "neighbors": {
+        "W": "C7",
+        "E": {
+          "to": "D7:W",
+          "lantern": "yellow",
+          "lanternRef": "L:C7:E:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:C7:E:0"
+          ]
+        },
+        "N": "C7:N",
+        "S": "C7:S"
+      },
+      "roomId": "C7",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C7:S": {
+      "id": "C7:S",
+      "neighbors": {
+        "N": "C7",
+        "S": {
+          "to": "C6:N",
+          "lantern": "yellow",
+          "lanternRef": "L:C7:S:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:C7:S:0"
+          ]
+        },
+        "E": "C7:E",
+        "W": "C7:W"
+      },
+      "roomId": "C7",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "C7:W": {
+      "id": "C7:W",
+      "neighbors": {
+        "E": "C7",
+        "W": {
+          "to": "B7:E",
+          "lantern": "yellow",
+          "lanternRef": "L:C7:W:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:C7:W:0"
+          ]
+        },
+        "S": "C7:S",
+        "N": "C7:N"
+      },
+      "roomId": "C7",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D7": {
+      "id": "D7",
+      "neighbors": {
+        "N": "D7:N",
+        "E": "D7:E",
+        "S": "D7:S",
+        "W": "D7:W"
+      },
+      "letter": "N",
+      "roomId": "D7",
+      "kind": "room-center"
+    },
+    "D7:N": {
+      "id": "D7:N",
+      "neighbors": {
+        "S": "D7",
+        "N": {
+          "to": "D8:S",
+          "lantern": "red",
+          "lanternRef": "L:D7:N:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D7:N:0"
+          ]
+        },
+        "E": "D7:E",
+        "W": "D7:W"
+      },
+      "roomId": "D7",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "D7:E": {
+      "id": "D7:E",
+      "neighbors": {
+        "W": "D7",
+        "E": {
+          "to": "E7:W",
+          "lantern": "red",
+          "lanternRef": "L:D7:E:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D7:E:0"
+          ]
+        },
+        "N": "D7:N",
+        "S": "D7:S"
+      },
+      "roomId": "D7",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D7:S": {
+      "id": "D7:S",
+      "neighbors": {
+        "N": "D7",
+        "S": {
+          "to": "D6:N",
+          "lantern": "purple",
+          "lanternRef": "L:D7:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D7:S:0"
+          ]
+        },
+        "E": "D7:E",
+        "W": "D7:W"
+      },
+      "roomId": "D7",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "D7:W": {
+      "id": "D7:W",
+      "neighbors": {
+        "E": "D7",
+        "W": {
+          "to": "C7:E",
+          "lantern": "yellow",
+          "lanternRef": "L:D7:W:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:D7:W:0"
+          ]
+        },
+        "S": "D7:S",
+        "N": "D7:N"
+      },
+      "roomId": "D7",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E7": {
+      "id": "E7",
+      "neighbors": {
+        "N": "E7:N",
+        "S": "E7:S",
+        "W": "E7:W"
+      },
+      "letter": "S",
+      "roomId": "E7",
+      "kind": "room-center"
+    },
+    "E7:N": {
+      "id": "E7:N",
+      "neighbors": {
+        "S": "E7",
+        "N": {
+          "to": "E8:S",
+          "lantern": "purple",
+          "lanternRef": "L:E7:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E7:N:0"
+          ]
+        },
+        "W": "E7:W"
+      },
+      "roomId": "E7",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "E7:S": {
+      "id": "E7:S",
+      "neighbors": {
+        "N": "E7",
+        "S": {
+          "to": "E6:N",
+          "lantern": "purple",
+          "lanternRef": "L:E7:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E7:S:0"
+          ]
+        },
+        "W": "E7:W"
+      },
+      "roomId": "E7",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "E7:W": {
+      "id": "E7:W",
+      "neighbors": {
+        "E": "E7",
+        "W": {
+          "to": "D7:E",
+          "lantern": "red",
+          "lanternRef": "L:E7:W:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:E7:W:0"
+          ]
+        },
+        "S": "E7:S",
+        "N": "E7:N"
+      },
+      "roomId": "E7",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "A8": {
+      "id": "A8",
+      "neighbors": {
+        "N": "A8:N",
+        "E": "A8:E",
+        "S": "A8:S"
+      },
+      "letter": "V",
+      "roomId": "A8",
+      "kind": "room-center"
+    },
+    "A8:N": {
+      "id": "A8:N",
+      "neighbors": {
+        "S": "A8",
+        "N": {
+          "to": "A9:S",
+          "lantern": "orange",
+          "lanternRef": "L:A8:N:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A8:N:0"
+          ]
+        },
+        "E": "A8:E"
+      },
+      "roomId": "A8",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "A8:E": {
+      "id": "A8:E",
+      "neighbors": {
+        "W": "A8",
+        "E": {
+          "to": "B8:W",
+          "lantern": "orange",
+          "lanternRef": "L:A8:E:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A8:E:0"
+          ]
+        },
+        "N": "A8:N",
+        "S": "A8:S"
+      },
+      "roomId": "A8",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "A8:S": {
+      "id": "A8:S",
+      "neighbors": {
+        "N": "A8",
+        "S": {
+          "to": "A7:N",
+          "lantern": "red",
+          "lanternRef": "L:A8:S:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:A8:S:0"
+          ]
+        },
+        "E": "A8:E"
+      },
+      "roomId": "A8",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B8": {
+      "id": "B8",
+      "neighbors": {
+        "E": "B8:E",
+        "S": "B8:S",
+        "W": "B8:W"
+      },
+      "letter": "Y",
+      "roomId": "B8",
+      "kind": "room-center"
+    },
+    "B8:E": {
+      "id": "B8:E",
+      "neighbors": {
+        "W": "B8",
+        "E": {
+          "to": "C8:W",
+          "lantern": "red",
+          "lanternRef": "L:B8:E:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:B8:E:0"
+          ]
+        },
+        "S": "B8:S"
+      },
+      "roomId": "B8",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "B8:S": {
+      "id": "B8:S",
+      "neighbors": {
+        "N": "B8",
+        "S": {
+          "to": "B7:N",
+          "lantern": "red",
+          "lanternRef": "L:B8:S:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:B8:S:0"
+          ]
+        },
+        "E": "B8:E",
+        "W": "B8:W"
+      },
+      "roomId": "B8",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B8:W": {
+      "id": "B8:W",
+      "neighbors": {
+        "E": "B8",
+        "W": {
+          "to": "A8:E",
+          "lantern": "orange",
+          "lanternRef": "L:B8:W:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:B8:W:0"
+          ]
+        },
+        "S": "B8:S"
+      },
+      "roomId": "B8",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "C8": {
+      "id": "C8",
+      "neighbors": {
+        "N": "C8:N",
+        "E": "C8:E",
+        "S": "C8:S",
+        "W": "C8:W"
+      },
+      "letter": "I",
+      "roomId": "C8",
+      "kind": "room-center"
+    },
+    "C8:N": {
+      "id": "C8:N",
+      "neighbors": {
+        "S": "C8",
+        "N": {
+          "to": "C9:S",
+          "lantern": "red",
+          "lanternRef": "L:C8:N:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C8:N:0"
+          ]
+        },
+        "E": "C8:E",
+        "W": "C8:W"
+      },
+      "roomId": "C8",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "C8:E": {
+      "id": "C8:E",
+      "neighbors": {
+        "W": "C8",
+        "E": {
+          "to": "D8:W",
+          "lantern": "yellow",
+          "lanternRef": "L:C8:E:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:C8:E:0"
+          ]
+        },
+        "N": "C8:N",
+        "S": "C8:S"
+      },
+      "roomId": "C8",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C8:S": {
+      "id": "C8:S",
+      "neighbors": {
+        "N": "C8",
+        "S": {
+          "to": "C7:N",
+          "lantern": "red",
+          "lanternRef": "L:C8:S:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C8:S:0"
+          ]
+        },
+        "E": "C8:E",
+        "W": "C8:W"
+      },
+      "roomId": "C8",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "C8:W": {
+      "id": "C8:W",
+      "neighbors": {
+        "E": "C8",
+        "W": {
+          "to": "B8:E",
+          "lantern": "red",
+          "lanternRef": "L:C8:W:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C8:W:0"
+          ]
+        },
+        "S": "C8:S",
+        "N": "C8:N"
+      },
+      "roomId": "C8",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D8": {
+      "id": "D8",
+      "neighbors": {
+        "N": "D8:N",
+        "E": "D8:E",
+        "S": "D8:S",
+        "W": "D8:W"
+      },
+      "letter": "N",
+      "roomId": "D8",
+      "kind": "room-center"
+    },
+    "D8:N": {
+      "id": "D8:N",
+      "neighbors": {
+        "S": "D8",
+        "N": {
+          "to": "D9:S",
+          "lantern": "purple",
+          "lanternRef": "L:D8:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D8:N:0"
+          ]
+        },
+        "E": "D8:E",
+        "W": "D8:W"
+      },
+      "roomId": "D8",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "D8:E": {
+      "id": "D8:E",
+      "neighbors": {
+        "W": "D8",
+        "E": {
+          "to": "E8:W",
+          "lantern": "purple",
+          "lanternRef": "L:D8:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D8:E:0"
+          ]
+        },
+        "N": "D8:N",
+        "S": "D8:S"
+      },
+      "roomId": "D8",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D8:S": {
+      "id": "D8:S",
+      "neighbors": {
+        "N": "D8",
+        "S": {
+          "to": "D7:N",
+          "lantern": "red",
+          "lanternRef": "L:D8:S:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:D8:S:0"
+          ]
+        },
+        "E": "D8:E",
+        "W": "D8:W"
+      },
+      "roomId": "D8",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "D8:W": {
+      "id": "D8:W",
+      "neighbors": {
+        "E": "D8",
+        "W": {
+          "to": "C8:E",
+          "lantern": "yellow",
+          "lanternRef": "L:D8:W:0",
+          "lanterns": [
+            "yellow"
+          ],
+          "lanternRefs": [
+            "L:D8:W:0"
+          ]
+        },
+        "S": "D8:S",
+        "N": "D8:N"
+      },
+      "roomId": "D8",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E8": {
+      "id": "E8",
+      "neighbors": {
+        "S": "E8:S",
+        "W": "E8:W"
+      },
+      "letter": "G",
+      "roomId": "E8",
+      "kind": "room-center"
+    },
+    "E8:S": {
+      "id": "E8:S",
+      "neighbors": {
+        "N": "E8",
+        "S": {
+          "to": "E7:N",
+          "lantern": "purple",
+          "lanternRef": "L:E8:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E8:S:0"
+          ]
+        },
+        "W": "E8:W"
+      },
+      "roomId": "E8",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "E8:W": {
+      "id": "E8:W",
+      "neighbors": {
+        "E": "E8",
+        "W": {
+          "to": "D8:E",
+          "lantern": "purple",
+          "lanternRef": "L:E8:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E8:W:0"
+          ]
+        },
+        "S": "E8:S"
+      },
+      "roomId": "E8",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "A9": {
+      "id": "A9",
+      "neighbors": {
+        "E": "A9:E",
+        "S": "A9:S"
+      },
+      "letter": "T",
+      "roomId": "A9",
+      "kind": "room-center"
+    },
+    "A9:E": {
+      "id": "A9:E",
+      "neighbors": {
+        "W": "A9",
+        "E": {
+          "to": "B9:W",
+          "lantern": "red",
+          "lanternRef": "L:A9:E:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:A9:E:0"
+          ]
+        },
+        "S": "A9:S"
+      },
+      "roomId": "A9",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "A9:S": {
+      "id": "A9:S",
+      "neighbors": {
+        "N": "A9",
+        "S": {
+          "to": "A8:N",
+          "lantern": "orange",
+          "lanternRef": "L:A9:S:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:A9:S:0"
+          ]
+        },
+        "E": "A9:E"
+      },
+      "roomId": "A9",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "B9": {
+      "id": "B9",
+      "neighbors": {
+        "E": "B9:E",
+        "W": "B9:W"
+      },
+      "letter": "H",
+      "roomId": "B9",
+      "kind": "room-center"
+    },
+    "B9:E": {
+      "id": "B9:E",
+      "neighbors": {
+        "W": "B9",
+        "E": {
+          "to": "C9:W",
+          "lantern": "orange",
+          "lanternRef": "L:B9:E:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:B9:E:0"
+          ]
+        }
+      },
+      "roomId": "B9",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "B9:W": {
+      "id": "B9:W",
+      "neighbors": {
+        "E": "B9",
+        "W": {
+          "to": "A9:E",
+          "lantern": "red",
+          "lanternRef": "L:B9:W:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:B9:W:0"
+          ]
+        }
+      },
+      "roomId": "B9",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "C9": {
+      "id": "C9",
+      "neighbors": {
+        "E": "C9:E",
+        "S": "C9:S",
+        "W": "C9:W"
+      },
+      "letter": "E",
+      "roomId": "C9",
+      "kind": "room-center"
+    },
+    "C9:E": {
+      "id": "C9:E",
+      "neighbors": {
+        "W": "C9",
+        "E": {
+          "to": "D9:W",
+          "lantern": "purple",
+          "lanternRef": "L:C9:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:C9:E:0"
+          ]
+        },
+        "S": "C9:S"
+      },
+      "roomId": "C9",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C9:S": {
+      "id": "C9:S",
+      "neighbors": {
+        "N": "C9",
+        "S": {
+          "to": "C8:N",
+          "lantern": "red",
+          "lanternRef": "L:C9:S:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C9:S:0"
+          ]
+        },
+        "E": "C9:E",
+        "W": "C9:W"
+      },
+      "roomId": "C9",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "C9:W": {
+      "id": "C9:W",
+      "neighbors": {
+        "E": "C9",
+        "W": {
+          "to": "B9:E",
+          "lantern": "orange",
+          "lanternRef": "L:C9:W:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:C9:W:0"
+          ]
+        },
+        "S": "C9:S"
+      },
+      "roomId": "C9",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D9": {
+      "id": "D9",
+      "neighbors": {
+        "E": "D9:E",
+        "S": "D9:S",
+        "W": "D9:W"
+      },
+      "letter": "S",
+      "roomId": "D9",
+      "kind": "room-center"
+    },
+    "D9:E": {
+      "id": "D9:E",
+      "neighbors": {
+        "W": "D9",
+        "E": {
+          "to": "E9:W",
+          "lantern": "purple",
+          "lanternRef": "L:D9:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D9:E:0"
+          ]
+        },
+        "S": "D9:S"
+      },
+      "roomId": "D9",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D9:S": {
+      "id": "D9:S",
+      "neighbors": {
+        "N": "D9",
+        "S": {
+          "to": "D8:N",
+          "lantern": "purple",
+          "lanternRef": "L:D9:S:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D9:S:0"
+          ]
+        },
+        "E": "D9:E",
+        "W": "D9:W"
+      },
+      "roomId": "D9",
+      "side": "S",
+      "kind": "room-side"
+    },
+    "D9:W": {
+      "id": "D9:W",
+      "neighbors": {
+        "E": "D9",
+        "W": {
+          "to": "C9:E",
+          "lantern": "purple",
+          "lanternRef": "L:D9:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:D9:W:0"
+          ]
+        },
+        "S": "D9:S"
+      },
+      "roomId": "D9",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E9": {
+      "id": "E9",
+      "neighbors": {
+        "W": "E9:W"
+      },
+      "letter": "E",
+      "roomId": "E9",
+      "kind": "room-center"
+    },
+    "E9:W": {
+      "id": "E9:W",
+      "neighbors": {
+        "E": "E9",
+        "W": {
+          "to": "D9:E",
+          "lantern": "purple",
+          "lanternRef": "L:E9:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:E9:W:0"
+          ]
+        }
+      },
+      "roomId": "E9",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "A0": {
+      "id": "A0",
+      "neighbors": {},
+      "letter": null,
+      "roomId": "A0",
+      "kind": "room-center"
+    },
+    "B0": {
+      "id": "B0",
+      "neighbors": {
+        "N": "B0:N",
+        "E": "B0:E"
+      },
+      "letter": null,
+      "roomId": "B0",
+      "kind": "room-center"
+    },
+    "B0:N": {
+      "id": "B0:N",
+      "neighbors": {
+        "S": "B0",
+        "N": {
+          "to": "B1:S",
+          "lantern": "purple",
+          "lanternRef": "L:B0:N:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B0:N:0"
+          ]
+        },
+        "E": "B0:E"
+      },
+      "roomId": "B0",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "B0:E": {
+      "id": "B0:E",
+      "neighbors": {
+        "W": "B0",
+        "E": {
+          "to": "C0:W",
+          "lantern": "purple",
+          "lanternRef": "L:B0:E:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:B0:E:0"
+          ]
+        },
+        "N": "B0:N"
+      },
+      "roomId": "B0",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C0": {
+      "id": "C0",
+      "neighbors": {
+        "N": "C0:N",
+        "E": "C0:E",
+        "W": "C0:W"
+      },
+      "letter": null,
+      "roomId": "C0",
+      "kind": "room-center"
+    },
+    "C0:N": {
+      "id": "C0:N",
+      "neighbors": {
+        "S": "C0",
+        "N": {
+          "to": "C1:S",
+          "lantern": "red",
+          "lanternRef": "L:C0:N:0",
+          "lanterns": [
+            "red"
+          ],
+          "lanternRefs": [
+            "L:C0:N:0"
+          ]
+        },
+        "E": "C0:E",
+        "W": "C0:W"
+      },
+      "roomId": "C0",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "C0:E": {
+      "id": "C0:E",
+      "neighbors": {
+        "W": "C0",
+        "E": {
+          "to": "D0:W",
+          "lantern": "blue",
+          "lanternRef": "L:C0:E:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:C0:E:0"
+          ]
+        },
+        "N": "C0:N"
+      },
+      "roomId": "C0",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "C0:W": {
+      "id": "C0:W",
+      "neighbors": {
+        "E": "C0",
+        "W": {
+          "to": "B0:E",
+          "lantern": "purple",
+          "lanternRef": "L:C0:W:0",
+          "lanterns": [
+            "purple"
+          ],
+          "lanternRefs": [
+            "L:C0:W:0"
+          ]
+        },
+        "N": "C0:N"
+      },
+      "roomId": "C0",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "D0": {
+      "id": "D0",
+      "neighbors": {
+        "N": "D0:N",
+        "E": "D0:E",
+        "W": "D0:W"
+      },
+      "letter": null,
+      "roomId": "D0",
+      "kind": "room-center"
+    },
+    "D0:N": {
+      "id": "D0:N",
+      "neighbors": {
+        "S": "D0",
+        "N": {
+          "to": "D1:S",
+          "lantern": "blue",
+          "lanternRef": "L:D0:N:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:D0:N:0"
+          ]
+        },
+        "E": "D0:E",
+        "W": "D0:W"
+      },
+      "roomId": "D0",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "D0:E": {
+      "id": "D0:E",
+      "neighbors": {
+        "W": "D0",
+        "E": {
+          "to": "E0:W",
+          "lantern": "orange",
+          "lanternRef": "L:D0:E:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:D0:E:0"
+          ]
+        },
+        "N": "D0:N"
+      },
+      "roomId": "D0",
+      "side": "E",
+      "kind": "room-side"
+    },
+    "D0:W": {
+      "id": "D0:W",
+      "neighbors": {
+        "E": "D0",
+        "W": {
+          "to": "C0:E",
+          "lantern": "blue",
+          "lanternRef": "L:D0:W:0",
+          "lanterns": [
+            "blue"
+          ],
+          "lanternRefs": [
+            "L:D0:W:0"
+          ]
+        },
+        "N": "D0:N"
+      },
+      "roomId": "D0",
+      "side": "W",
+      "kind": "room-side"
+    },
+    "E0": {
+      "id": "E0",
+      "neighbors": {
+        "N": "E0:N",
+        "W": "E0:W"
+      },
+      "letter": null,
+      "roomId": "E0",
+      "kind": "room-center"
+    },
+    "E0:N": {
+      "id": "E0:N",
+      "neighbors": {
+        "S": "E0",
+        "N": {
+          "to": "E1:S",
+          "lantern": "orange",
+          "lanternRef": "L:E0:N:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:E0:N:0"
+          ]
+        },
+        "W": "E0:W"
+      },
+      "roomId": "E0",
+      "side": "N",
+      "kind": "room-side"
+    },
+    "E0:W": {
+      "id": "E0:W",
+      "neighbors": {
+        "E": "E0",
+        "W": {
+          "to": "D0:E",
+          "lantern": "orange",
+          "lanternRef": "L:E0:W:0",
+          "lanterns": [
+            "orange"
+          ],
+          "lanternRefs": [
+            "L:E0:W:0"
+          ]
+        },
+        "N": "E0:N"
+      },
+      "roomId": "E0",
+      "side": "W",
+      "kind": "room-side"
+    }
+  },
+  "notes": [
+    "Extracted from high-contrast overlay image (file_22).",
+    "Edges are inferred from colored diamonds/segments at room boundaries.",
+    "Row 0 (A0-E0) is synthetic to model the shared external starting area below C1.",
+    "Auto-converted from room grid to graph nodes with explicit side positions.",
+    "Use lanternRef / lanternRefs / passLanternRefs to constrain exact lantern-node positions.",
+    "Intra-room adjacent side edges were added to allow hallway movement without entering room centers."
+  ]
+}
