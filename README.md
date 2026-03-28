@@ -1,4 +1,4 @@
-# Blue Prince Solver
+# Mount Holly Blueprint Solver
 
 Local solver + web UI for Mount Holly blueprint constraints.
 
