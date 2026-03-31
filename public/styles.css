@@ -73,11 +73,6 @@ button.primary {
   border-color: #2f66ad;
 }
 
-button.toggle-on {
-  background: #2f5f33;
-  border-color: #4f8d55;
-}
-
 .panel,
 .graph-panel,
 .results {
@@ -140,12 +135,6 @@ button.toggle-on {
   margin: 0 0 10px;
   color: var(--muted);
   font-size: 13px;
-}
-
-.edit-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 .builder-grid {
@@ -341,12 +330,63 @@ pre {
 }
 
 .graph-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   color: #d2e8ff !important;
   font-size: 12px !important;
+  padding: 4px 0;
 }
 
-.graph-toggle input[type='checkbox'] {
-  accent-color: #7dbdf2;
+/* Aesthetic Toggle (Switch) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #202632;
+  transition: .3s;
+  border-radius: 18px;
+  border: 1px solid #37445a;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #7186aa;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #23456f;
+  border-color: #3f73ad;
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+  background-color: #f1f7ff;
 }
 
 #graphSvg {

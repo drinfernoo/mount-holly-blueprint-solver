@@ -36,7 +36,7 @@
       </section>
 
       <section class="panel settings-card" data-visible-modes="solve,simulate">
-        <h2>Settings</h2>
+        <h2 id="settingsTitle">Solver Settings</h2>
 
         <div class="builder-grid" data-visible-modes="solve,simulate">
           <label data-visible-modes="solve,simulate">
@@ -56,11 +56,6 @@
               <option value="dfs">dfs</option>
               <option value="bfs">bfs</option>
             </select>
-          </label>
-
-          <label class="check-inline" data-visible-modes="solve,simulate">
-            <input id="simplePathInput" type="checkbox" checked />
-            Prevent crossing / circuiting (simple path)
           </label>
 
           <label data-visible-modes="simulate" hidden>
@@ -102,6 +97,7 @@
                 <option value="mustUseLetters">Must-use letters</option>
                 <option value="startColor">Start lantern color</option>
                 <option value="allowedColor">Allowed lantern color</option>
+                <option value="simplePath">Simple path (no loops)</option>
               </select>
               <select id="constraintValueInput"></select>
               <input id="constraintValueTextInput" class="constraint-value-text" type="text" placeholder="e.g. ROSEWARY" />
@@ -160,28 +156,44 @@
         </details>
       </section>
 
+      <section class="panel settings-card">
+        <h2>View Settings</h2>
+        <div class="graph-controls" aria-label="Map metadata view controls">
+          <label class="graph-toggle">
+            <span>Show room file/rank</span>
+            <label class="switch">
+              <input id="viewShowRoomIdInput" type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </label>
+          <label class="graph-toggle">
+            <span>Show room letter</span>
+            <label class="switch">
+              <input id="viewShowRoomLetterInput" type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+          </label>
+          <label class="graph-toggle">
+            <span>Show room name</span>
+            <label class="switch">
+              <input id="viewShowRoomNameInput" type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </label>
+          <label class="graph-toggle">
+            <span>Color borders by room color</span>
+            <label class="switch">
+              <input id="viewColorBordersByRoomInput" type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </label>
+        </div>
+      </section>
+
       <section class="graph-panel">
         <h2>Map grid view</h2>
         <div class="graph-help">
           Grid-style renderer of the blueprint. Use “Pick start/end on map” in Query Builder to choose endpoints visually.
-        </div>
-        <div class="graph-controls" aria-label="Map metadata view controls">
-          <label class="check-inline graph-toggle">
-            <input id="viewShowRoomIdInput" type="checkbox" checked />
-            Show room file/rank
-          </label>
-          <label class="check-inline graph-toggle">
-            <input id="viewShowRoomLetterInput" type="checkbox" checked />
-            Show room letter
-          </label>
-          <label class="check-inline graph-toggle">
-            <input id="viewShowRoomNameInput" type="checkbox" />
-            Show room name
-          </label>
-          <label class="check-inline graph-toggle">
-            <input id="viewColorBordersByRoomInput" type="checkbox" />
-            Color room borders by room color
-          </label>
         </div>
         <svg id="graphSvg" viewBox="0 0 1200 700" role="img" aria-label="Map graph visualization"></svg>
       </section>

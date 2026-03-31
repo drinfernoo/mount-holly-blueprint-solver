@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Local solver for Mount Holly blueprint constraints",
-  "main": "server.js",
+  "main": "public/index.html",
   "scripts": {
-    "start": "node server.js",
+    "start": "cd public && python3 -m http.server 4312",
     "serve": "cd public && python3 -m http.server 4312",
     "build:graph-map": "node build-graph-map.js data/map.rooms.backup.json data/map.default.json",
     "populate:known-paths": "node populate-known-paths.js data/map.default.json data/map.default.json",

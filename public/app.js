@@ -28,8 +28,7 @@ const resultRawDetailsEl = document.getElementById('resultRawDetails');
 const loadDefaultBtn = document.getElementById('loadDefaultBtn');
 const solveBtn = document.getElementById('solveBtn');
 const shareBtn = document.getElementById('shareBtn');
-const editModeBtn = document.getElementById('editModeBtn');
-const saveMapBtn = document.getElementById('saveMapBtn');
+const settingsTitle = document.getElementById('settingsTitle');
 
 const startIdInput = document.getElementById('startIdInput');
 const endIdInput = document.getElementById('endIdInput');
@@ -38,7 +37,6 @@ const maxStatesInput = document.getElementById('maxStatesInput');
 const letterModeInput = document.getElementById('letterModeInput');
 const mustUseLettersInput = document.getElementById('mustUseLettersInput');
 const runModeInput = document.getElementById('runModeInput');
-const simplePathInput = document.getElementById('simplePathInput');
 const searchModeInput = document.getElementById('searchModeInput');
 const simulationHeadingInput = document.getElementById('simulationHeadingInput');
 const simulationStopOnLoopInput = document.getElementById('simulationStopOnLoopInput');
@@ -61,21 +59,18 @@ const pickHint = document.getElementById('pickHint');
 const settingsTabButtons = [...document.querySelectorAll('[data-settings-tab]')];
 const settingsModeSections = [...document.querySelectorAll('[data-visible-modes]')];
 const settingsPanelRoot = document.querySelector('[data-settings-mode-root]');
-const saveMapCardBtn = document.getElementById('saveMapCardBtn');
 
 let examples = {};
 let currentMap = null;
 let lastPathNodes = [];
 let lastRunInfo = null;
 let lastResult = null;
-let editMode = false;
 let nodePickMode = null;
 let settingsMode = 'solve';
 let builderConstraints = [];
 let builderTurnRules = [];
 let defaultMapTemplate = null;
 let browserSolve = null;
-let mapSaveHandle = null;
 
 const SHARE_TOKEN_PREFIX = 's1.';
 const MAX_STATIC_SHARE_CHARS = 7000;
@@ -170,6 +165,10 @@ function setSettingsMode(modeRaw, { syncRunMode = true } = {}) {
     settingsPanelRoot.setAttribute('data-settings-mode', mode);
   }
 
+  if (settingsTitle) {
+    settingsTitle.textContent = mode === 'simulate' ? 'Simulation Settings' : 'Solver Settings';
+  }
+
   for (const btn of settingsTabButtons) {
     const isActive = normalizeSettingsMode(btn.getAttribute('data-settings-tab')) === mode;
     btn.classList.toggle('is-active', isActive);
@@ -189,33 +188,8 @@ function setSettingsMode(modeRaw, { syncRunMode = true } = {}) {
     runModeInput.value = mode === 'simulate' ? 'simulate' : 'solve';
   }
 
-  setEditModeState(false, { silent: true });
-
   if (!useQueryOverrideInput?.checked) {
     syncQueryPreview();
-  }
-}
-
-function setEditModeState(nextEditMode, { silent = false } = {}) {
-  const desired = !!nextEditMode;
-  if (editMode === desired) {
-    updateEditModeButton();
-    return;
-  }
-
-  editMode = desired;
-
-  if (editMode && nodePickMode) {
-    nodePickMode = null;
-    if (!silent) {
-      setSummary('Exited start/end pick mode because edit mode is on.');
-    }
-  }
-
-  updateEditModeButton();
-
-  if (currentMap) {
-    renderGraph(currentMap, lastPathNodes);
   }
 }
 
@@ -728,11 +702,6 @@ function maskToDirs(mask) {
   return out;
 }
 
-function nodeSupportsEditableConnections(node) {
-  if (!node || typeof node !== 'object') return false;
-  return node.kind === 'room' || node.kind === 'room-center' || node.kind === 'intersection';
-}
-
 function getNodeEnabledDirs(node) {
   if (!node || typeof node !== 'object') return DIRS.slice();
 
@@ -742,34 +711,7 @@ function getNodeEnabledDirs(node) {
         .filter((d) => DIRS.includes(d))
     : [];
 
-  if (dirs.length > 0) return [...new Set(dirs)];
-  if (nodeSupportsEditableConnections(node)) return DIRS.slice();
-  return DIRS.slice();
-}
-
-function setNodeEnabledDirs(nodeId, dirs) {
-  if (!currentMap?.nodes?.[nodeId]) return;
-  const node = currentMap.nodes[nodeId];
-  const normalized = [...new Set((dirs || []).map((d) => String(d || '').toUpperCase()))]
-    .filter((d) => DIRS.includes(d));
-
-  if (!normalized.length) return;
-  node.enabledDirs = normalized;
-}
-
-function cycleNodeConnections(nodeId) {
-  if (!currentMap?.nodes?.[nodeId]) return null;
-
-  const node = currentMap.nodes[nodeId];
-  if (!nodeSupportsEditableConnections(node)) return null;
-
-  const currentMask = dirsToMask(getNodeEnabledDirs(node));
-  const idx = DIR_MASK_VALUES.indexOf(currentMask);
-  const nextMask = DIR_MASK_VALUES[(idx + 1 + DIR_MASK_VALUES.length) % DIR_MASK_VALUES.length];
-  const nextDirs = maskToDirs(nextMask);
-
-  setNodeEnabledDirs(nodeId, nextDirs);
-  return nextDirs;
+  return dirs.length > 0 ? [...new Set(dirs)] : DIRS.slice();
 }
 
 function isNodeDirEnabled(node, dir) {
@@ -789,10 +731,6 @@ function ensureMapStructures(map) {
     map.nodes[nodeId] = node;
 
     if (!node.neighbors || typeof node.neighbors !== 'object') node.neighbors = {};
-
-    if (nodeSupportsEditableConnections(node) && !Array.isArray(node.enabledDirs)) {
-      node.enabledDirs = DIRS.slice();
-    }
   }
 
   for (const [slotId, slotRaw] of Object.entries(map.lanternSlots)) {
@@ -850,146 +788,7 @@ function applyResultState(result, { isHttpOk = true, summaryText = '', isError =
 }
 
 function updateEditModeButton() {
-  if (editModeBtn) {
-    editModeBtn.textContent = `Edit gaps: ${editMode ? 'On' : 'Off'}`;
-    editModeBtn.classList.toggle('toggle-on', editMode);
-  }
-
   updateNodePickUI();
-}
-
-function setSlotColor(slotId, color) {
-  if (!currentMap?.lanternSlots?.[slotId]) return;
-
-  const slot = currentMap.lanternSlots[slotId];
-  const normalized = String(color || '').trim().toLowerCase();
-
-  slot.color = normalized || SLOT_COLOR_CYCLE[0];
-
-  if (currentMap.nodes?.[slotId]) {
-    currentMap.nodes[slotId].lantern = slot.color;
-    currentMap.nodes[slotId].lanternRef = slot.ref || slotId;
-  }
-}
-
-function cycleSlotColor(slotId, step = 1) {
-  if (!currentMap?.lanternSlots?.[slotId]) return null;
-
-  const slot = currentMap.lanternSlots[slotId];
-  const current = String(slot.color || '').trim().toLowerCase();
-  const idx = SLOT_COLOR_CYCLE.indexOf(current);
-
-  let nextIdx;
-  if (idx < 0) {
-    nextIdx = step >= 0 ? 0 : SLOT_COLOR_CYCLE.length - 1;
-  } else {
-    const delta = step >= 0 ? 1 : -1;
-    nextIdx = (idx + delta + SLOT_COLOR_CYCLE.length) % SLOT_COLOR_CYCLE.length;
-  }
-
-  const next = SLOT_COLOR_CYCLE[nextIdx];
-  setSlotColor(slotId, next);
-  return next;
-}
-
-function handleSlotDotClick(slotId, event) {
-  if (!editMode || !slotId || !currentMap) return;
-
-  event.preventDefault();
-
-  const slot = currentMap?.lanternSlots?.[slotId];
-  if (!slot) return;
-
-  const next = cycleSlotColor(slotId, event.shiftKey ? -1 : 1);
-  setSummary(`Gap ${slotId} color=${next || SLOT_COLOR_CYCLE[0]}`);
-
-  renderGraph(currentMap, lastPathNodes);
-}
-
-function handleNodeClick(nodeId, event) {
-  if (!editMode || !nodeId || !currentMap?.nodes?.[nodeId]) return;
-
-  const node = currentMap.nodes[nodeId];
-  if (!nodeSupportsEditableConnections(node)) return;
-
-  event.preventDefault();
-
-  const dirs = cycleNodeConnections(nodeId);
-  if (!dirs) return;
-
-  setSummary(`Node ${nodeId} dirs=${dirs.join('')}`);
-  renderGraph(currentMap, lastPathNodes);
-}
-
-function downloadTextFile(filename, text) {
-  const blob = new Blob([String(text || '')], { type: 'application/json' });
-  const href = URL.createObjectURL(blob);
-
-  const a = document.createElement('a');
-  a.href = href;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-
-  URL.revokeObjectURL(href);
-}
-
-async function pickMapSaveHandle() {
-  if (typeof window.showSaveFilePicker !== 'function') return null;
-
-  try {
-    return await window.showSaveFilePicker({
-      suggestedName: 'map.default.json',
-      excludeAcceptAllOption: false,
-      types: [
-        {
-          description: 'JSON files',
-          accept: {
-            'application/json': ['.json'],
-          },
-        },
-      ],
-    });
-  } catch (err) {
-    if (err && err.name === 'AbortError') return null;
-    throw err;
-  }
-}
-
-async function writeTextToFileHandle(handle, text) {
-  const writer = await handle.createWritable();
-  await writer.write(String(text || ''));
-  await writer.close();
-}
-
-async function saveMapToServer() {
-  if (!currentMap || typeof currentMap !== 'object') {
-    setSummary('No map loaded to save.', true);
-    return;
-  }
-
-  const text = `${pretty(currentMap)}\n`;
-
-  if (typeof window.showSaveFilePicker === 'function') {
-    try {
-      if (!mapSaveHandle) {
-        mapSaveHandle = await pickMapSaveHandle();
-      }
-
-      if (mapSaveHandle) {
-        await writeTextToFileHandle(mapSaveHandle, text);
-        setSummary('Saved map.default.json.');
-        return;
-      }
-    } catch (err) {
-      mapSaveHandle = null;
-      setSummary(`Save picker failed (${err.message || String(err)}). Downloading instead...`, true);
-    }
-  }
-
-  downloadTextFile('map.default.json', text);
-  setSummary('Downloaded map.default.json (static mode).');
 }
 
 function buildShareUrl(shareToken) {
@@ -1528,11 +1327,11 @@ function renderGraph(map, pathNodes = []) {
     };
   }
 
-  const effectivePathNodes = editMode ? [] : (pathNodes || []);
+  const effectivePathNodes = pathNodes || [];
 
   const pathEdgeSet = new Set();
   const pathNodeSet = new Set(effectivePathNodes);
-  const selectedStartId = editMode ? null : (startIdInput?.value || null);
+  const selectedStartId = startIdInput?.value || null;
 
   const selectedEndInputId = endIdInput?.value || null;
   const lastMode = String(lastRunInfo?.mode || '').toLowerCase();
@@ -1543,7 +1342,7 @@ function renderGraph(map, pathNodes = []) {
       ? lastRunInfo.simulatedEndNode
       : null;
 
-  const selectedEndId = editMode ? null : (selectedEndInputId || inferredSimulationEndId || null);
+  const selectedEndId = selectedEndInputId || inferredSimulationEndId || null;
   const selectedEndLabel = inferredSimulationEndId ? 'SIM END' : 'END';
 
   const screenPosById = new Map();
@@ -1649,16 +1448,12 @@ function renderGraph(map, pathNodes = []) {
       fill: hasLetter ? blueprint.roomFillLetter : blueprint.roomFill,
       stroke: 'none',
       rx: 0,
-      cursor: (editMode || nodePickMode) ? 'pointer' : 'default',
+      cursor: nodePickMode ? 'pointer' : 'default',
     });
 
     addSvgTitle(roomRect, getNodeOptionText(id, node));
 
-    if (editMode) {
-      roomRect.addEventListener('click', (event) => handleNodeClick(id, event));
-    } else {
-      maybeAttachNodePick(roomRect, id);
-    }
+    maybeAttachNodePick(roomRect, id);
 
     roomGroup.appendChild(roomRect);
 
@@ -1827,21 +1622,6 @@ function renderGraph(map, pathNodes = []) {
       fileRankText.textContent = id;
       roomGroup.appendChild(fileRankText);
     }
-
-    if (editMode && nodeSupportsEditableConnections(node)) {
-      const conn = makeSvg('text', {
-        x: s.x + roomW * 0.2,
-        y: s.y - roomH * 0.3,
-        fill: blueprint.roomConnText,
-        'font-size': Math.max(8, Math.floor(Math.min(roomW, roomH) * 0.1)),
-        'font-family': blueprint.mapTextFont,
-        'text-anchor': 'middle',
-        'pointer-events': 'none',
-        opacity: 0.9,
-      });
-      conn.textContent = getNodeEnabledDirs(node).join('');
-      roomGroup.appendChild(conn);
-    }
   }
   graphSvg.appendChild(roomGroup);
 
@@ -1868,19 +1648,6 @@ function renderGraph(map, pathNodes = []) {
       continue;
     }
 
-    if (editMode) {
-      const hit = makeSvg('circle', {
-        cx: s.x,
-        cy: s.y,
-        r: 9,
-        fill: '#ffffff',
-        opacity: 0,
-        cursor: 'pointer',
-      });
-      hit.addEventListener('click', (event) => handleNodeClick(id, event));
-      intersectionGroup.appendChild(hit);
-    }
-
     const marker = makeSvg('circle', {
       cx: s.x,
       cy: s.y,
@@ -1889,16 +1656,12 @@ function renderGraph(map, pathNodes = []) {
       opacity: 0.95,
       stroke: inPath ? '#ffffff' : blueprint.intersectionStroke,
       'stroke-width': inPath ? 1.6 : 0.9,
-      cursor: (editMode || nodePickMode) ? 'pointer' : 'default',
+      cursor: nodePickMode ? 'pointer' : 'default',
     });
 
     addSvgTitle(marker, getNodeOptionText(id, node));
 
-    if (editMode) {
-      marker.addEventListener('click', (event) => handleNodeClick(id, event));
-    } else {
-      maybeAttachNodePick(marker, id);
-    }
+    maybeAttachNodePick(marker, id);
 
     intersectionGroup.appendChild(marker);
   }
@@ -2042,20 +1805,6 @@ function renderGraph(map, pathNodes = []) {
     const inPath = pathNodeSet.has(slotId);
     const fill = color ? colorForLantern(color) : blueprint.slotFallback;
 
-    if (editMode) {
-      const hit = makeSvg('circle', {
-        cx: s.x,
-        cy: s.y,
-        r: 10,
-        fill: '#ffffff',
-        opacity: 0,
-        cursor: 'pointer',
-      });
-
-      hit.addEventListener('click', (event) => handleSlotDotClick(slotId, event));
-      dotGroup.appendChild(hit);
-    }
-
     const dot = makeSvg('circle', {
       cx: s.x,
       cy: s.y,
@@ -2064,16 +1813,12 @@ function renderGraph(map, pathNodes = []) {
       stroke: inPath ? '#ffffff' : blueprint.slotStroke,
       'stroke-width': inPath ? 1.8 : 1.25,
       opacity: 0.98,
-      cursor: (editMode || nodePickMode) ? 'pointer' : 'default',
+      cursor: nodePickMode ? 'pointer' : 'default',
     });
 
     addSvgTitle(dot, getNodeOptionText(slotId, map.nodes?.[slotId] || slot));
 
-    if (editMode) {
-      dot.addEventListener('click', (event) => handleSlotDotClick(slotId, event));
-    } else {
-      maybeAttachNodePick(dot, slotId);
-    }
+    maybeAttachNodePick(dot, slotId);
 
     dotGroup.appendChild(dot);
     screenPosById.set(slotId, s);
@@ -2278,6 +2023,13 @@ function buildConstraintSelectOptions(type) {
     return LANTERN_COLORS.map((color) => ({ value: color, label: color }));
   }
 
+  if (type === 'simplePath') {
+    return [
+      { value: 'true', label: 'Enabled (no loops)' },
+      { value: 'false', label: 'Disabled (allow loops)' },
+    ];
+  }
+
   return [];
 }
 
@@ -2342,9 +2094,10 @@ function renderConstraintList() {
     mustUseLetters: 'Must-use letters',
     startColor: 'Start lantern color',
     allowedColor: 'Allowed lantern color',
+    simplePath: 'Simple path',
   };
 
-  const order = ['startNode', 'endNode', 'letterMode', 'mustUseLetters', 'startColor', 'allowedColor'];
+  const order = ['startNode', 'endNode', 'letterMode', 'mustUseLetters', 'startColor', 'allowedColor', 'simplePath'];
   const indexed = builderConstraints.map((item, index) => ({ item, index }));
   indexed.sort((a, b) => {
     const ai = order.indexOf(a.item.type);
@@ -2368,6 +2121,8 @@ function renderConstraintList() {
       valueText = normalizeBuilderLetterMode(item.value).replace('_', ' ');
     } else if (item.type === 'mustUseLetters') {
       valueText = Array.isArray(item.value) ? item.value.join('') : '';
+    } else if (item.type === 'simplePath') {
+      valueText = item.value === 'false' ? 'Disabled' : 'Enabled';
     } else {
       valueText = String(item.value || '');
     }
@@ -2469,6 +2224,9 @@ function addConstraintFromControls() {
     if (!builderConstraints.some((x) => x.type === 'allowedColor' && x.value === value)) {
       builderConstraints.push({ type: 'allowedColor', value });
     }
+  } else if (type === 'simplePath') {
+    const value = String(constraintValueInput.value || 'true');
+    setConstraintItem('simplePath', value);
   } else {
     return;
   }
@@ -2524,6 +2282,12 @@ function loadConstraintStateFromQuery(query) {
   );
   if (letters.length) {
     setConstraintItem('mustUseLetters', letters);
+  }
+
+  if (q.simplePath === false) {
+    setConstraintItem('simplePath', 'false');
+  } else if (q.simplePath === true) {
+    setConstraintItem('simplePath', 'true');
   }
 
   const startColor = normalizeLanternColor(lantern.startColor || q.startLanternColor || null);
@@ -2759,9 +2523,7 @@ function updateNodePickUI() {
   }
 
   if (pickHint) {
-    if (editMode && nodePickMode) {
-      pickHint.textContent = 'Turn off edit mode to pick start/end from the map.';
-    } else if (nodePickMode === 'start') {
+    if (nodePickMode === 'start') {
       pickHint.textContent = 'Click a node on the map to set the start node.';
     } else if (nodePickMode === 'end') {
       pickHint.textContent = 'Click a node on the map to set the end node.';
@@ -2772,18 +2534,13 @@ function updateNodePickUI() {
 }
 
 function setNodePickMode(mode) {
-  if (editMode) {
-    setSummary('Turn off edit mode before selecting start/end from the map.', true);
-    return;
-  }
-
   nodePickMode = nodePickMode === mode ? null : mode;
   updateNodePickUI();
   if (currentMap) renderGraph(currentMap, lastPathNodes);
 }
 
 function handleGraphNodePick(nodeId, event) {
-  if (!nodePickMode || editMode) return false;
+  if (!nodePickMode) return false;
   if (!nodeId) return false;
 
   if (event) {
@@ -2816,7 +2573,7 @@ function handleGraphNodePick(nodeId, event) {
 
 function maybeAttachNodePick(el, nodeId) {
   if (!el || !nodeId) return;
-  if (!nodePickMode || editMode) return;
+  if (!nodePickMode) return;
 
   el.setAttribute('cursor', 'crosshair');
   el.addEventListener('click', (event) => {
@@ -2851,15 +2608,16 @@ function buildQueryFromBuilder() {
   const letterMode = normalizeBuilderLetterMode(getConstraintItem('letterMode')?.value || 'any_order');
   query.letterMode = letterMode;
 
+  const simplePathItem = getConstraintItem('simplePath');
+  if (simplePathItem && simplePathItem.value === 'false') {
+    query.simplePath = false;
+  }
+
   const letters = Array.isArray(getConstraintItem('mustUseLetters')?.value)
     ? getConstraintItem('mustUseLetters').value
     : [];
   if (letters.length) {
     query.mustUseLetters = letters;
-  }
-
-  if (simplePathInput && !simplePathInput.checked) {
-    query.simplePath = false;
   }
 
   if (searchModeInput?.value) {
@@ -2940,12 +2698,6 @@ function setBuilderFromQuery(queryRaw) {
     maxStatesInput.value = Number.isFinite(Number(query.maxStates)) && Number(query.maxStates) > 0
       ? Math.floor(Number(query.maxStates))
       : '';
-  }
-
-
-  if (simplePathInput) {
-    const simplePathDefault = !(query.allowCrossing || query.allowCircuit || query.allowCircuits || query.allowLoops);
-    simplePathInput.checked = query.simplePath !== false && simplePathDefault;
   }
 
   if (searchModeInput) {
@@ -3216,16 +2968,6 @@ if (shareBtn) {
   });
 }
 
-if (saveMapBtn) {
-  saveMapBtn.addEventListener('click', async () => {
-    try {
-      await saveMapToServer();
-    } catch (err) {
-      setSummary(err.message || String(err), true);
-    }
-  });
-}
-
 if (pickStartBtn) {
   pickStartBtn.addEventListener('click', () => {
     setNodePickMode('start');
@@ -3251,16 +2993,6 @@ if (runModeInput) {
   });
 }
 
-if (saveMapCardBtn) {
-  saveMapCardBtn.addEventListener('click', async () => {
-    try {
-      await saveMapToServer();
-    } catch (err) {
-      setSummary(err.message || String(err), true);
-    }
-  });
-}
-
 for (const selectEl of [
   startIdInput,
   endIdInput,
@@ -3280,7 +3012,6 @@ const builderInputs = [
   maxStepsInput,
   maxStatesInput,
   runModeInput,
-  simplePathInput,
   searchModeInput,
   simulationHeadingInput,
   simulationStopOnLoopInput,
@@ -3361,7 +3092,6 @@ window.addEventListener('resize', () => {
 
 (async () => {
   try {
-    updateEditModeButton();
     await loadDefaults();
     wireExamples();
     await hydrateFromShareIfPresent();
