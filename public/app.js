@@ -44,6 +44,7 @@ const simulationStopOnLoopInput = document.getElementById('simulationStopOnLoopI
 const constraintTypeInput = document.getElementById('constraintTypeInput');
 const constraintValueInput = document.getElementById('constraintValueInput');
 const constraintValueTextInput = document.getElementById('constraintValueTextInput');
+const constraintTypeHelpEl = document.getElementById('constraintTypeHelp');
 const addConstraintBtn = document.getElementById('addConstraintBtn');
 const constraintListEl = document.getElementById('constraintList');
 
@@ -168,6 +169,10 @@ function setSettingsMode(modeRaw, { syncRunMode = true } = {}) {
 
   if (settingsTitle) {
     settingsTitle.textContent = mode === 'simulate' ? 'Simulation Settings' : 'Solver Settings';
+  }
+
+  if (solveBtn) {
+    solveBtn.textContent = mode === 'simulate' ? 'Run simulation' : 'Solve route';
   }
 
   for (const btn of settingsTabButtons) {
@@ -2054,17 +2059,40 @@ function buildConstraintSelectOptions(type) {
   return [];
 }
 
+function describeConstraintType(typeRaw) {
+  const type = String(typeRaw || '').trim();
+  const descriptions = {
+    startNode: 'Start node chooses where traversal begins.',
+    endNode: 'End node is your target destination. Leave blank in Simulate mode to run until stop conditions.',
+    mustUseRoom: 'Required room forces the route to pass through one or more chosen rooms.',
+    letterMode: 'Letter mode controls how required letters must be matched (any order vs strict order).',
+    mustUseLetters: 'Must-use letters are the letter sequence/set the route must collect.',
+    startColor: 'Start lantern color sets the current lantern color before the first move.',
+    allowedColor: 'Allowed lantern color restricts traversal to one or more lantern colors.',
+    simplePath: 'Simple path prevents revisiting nodes (no loops/crossing). Disable only when intentionally exploring loops.',
+  };
+  return descriptions[type] || 'Add a rule to narrow the route search.';
+}
+
+function updateConstraintTypeHelp(type) {
+  if (!constraintTypeHelpEl) return;
+  constraintTypeHelpEl.textContent = describeConstraintType(type);
+}
+
 function updateConstraintValueOptions() {
   if (!constraintTypeInput || !constraintValueInput || !constraintValueTextInput) return;
 
   const type = String(constraintTypeInput.value || 'startNode');
   const useTextInput = type === 'mustUseLetters';
 
+  updateConstraintTypeHelp(type);
+
   constraintValueInput.hidden = useTextInput;
   constraintValueTextInput.style.display = useTextInput ? 'block' : 'none';
 
   if (useTextInput) {
     const existing = getConstraintItem('mustUseLetters');
+    constraintValueTextInput.placeholder = 'e.g. MPTYE or M,P,T,Y,E';
     constraintValueTextInput.value = Array.isArray(existing?.value)
       ? formatLettersForInput(existing.value)
       : '';
@@ -2574,7 +2602,7 @@ function updateNodePickUI() {
     } else if (nodePickMode === 'mustUseRoom') {
       pickHint.textContent = 'Click a room on the map to add it as a required room.';
     } else {
-      pickHint.textContent = 'Tip: use these to click start/end directly on the map.';
+      pickHint.textContent = 'Tip: use these to click start/end/required rooms directly on the map.';
     }
   }
 }
@@ -2825,7 +2853,7 @@ async function loadDefaults() {
   }
 
   setBuilderFromQuery(DEFAULT_QUERY);
-  setSummary('Ready (static mode). Build a query and click Solve.');
+  setSummary('Ready (static mode). Choose constraints, then click Solve route.');
 }
 
 function parseJsonFromTextarea(el, label) {
@@ -2917,7 +2945,8 @@ async function runSolve() {
     return;
   }
 
-  setSummary('Solving...');
+  const runMode = normalizeSettingsMode(runModeInput?.value || query.mode || 'solve');
+  setSummary(runMode === 'simulate' ? 'Running simulation...' : 'Solving...');
   resultEl.textContent = '';
   clearResultPanels();
   lastPathNodes = [];

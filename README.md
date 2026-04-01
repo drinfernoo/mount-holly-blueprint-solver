@@ -1,175 +1,109 @@
 # Mount Holly Blueprint Solver
 
-Local solver + web UI for Mount Holly blueprint constraints.
+A browser app for finding valid routes through the Mount Holly blueprint.
 
-## Run (static)
+It can:
+- search for a route that matches your constraints (**Solve** mode), or
+- run a deterministic step-by-step traversal with your rules (**Simulate** mode).
 
-Serve the `public/` folder with any static host.
+---
 
-Quick local preview:
+## Quick start (normal usage)
 
 ```bash
-cd public
-python3 -m http.server 4312
+npm start
 ```
 
-Open: `http://localhost:4312`
+Then open:
 
-Default map is now graph mode (`data/map.default.json`) generated from the room-grid backup (`data/map.rooms.backup.json`).
-It includes `knownPaths` with node-order sequences for the four reference solutions.
+`http://localhost:4312`
 
-## Static deployment (GitHub Pages)
+That’s it.
 
-The app supports static-only hosting:
+---
 
-- Solver runs in-browser (`public/solver.browser.js`)
-- Defaults/examples load from static assets (`public/data/map.default.json`, `public/data/examples.json`)
-- Share links work without backend via URL payload tokens (`?share=s1.<token>`)
+## How to use the app
+
+1. **Pick a mode**
+   - **Solve**: search for a valid route from start to end.
+   - **Simulate**: follow one run path under your current rules.
+
+2. **Set Start / End**
+   - Use **Add constraint → Start node / End node**, or
+   - click **Pick start on map** / **Pick end on map**.
+
+3. **Add optional constraints**
+   - **Required room**: force the route through specific rooms.
+   - **Must-use letters** + **Letter mode**: constrain collected letters.
+   - **Start lantern color** / **Allowed lantern color**.
+   - **Simple path**: keep enabled to avoid loops and revisits.
+
+4. **Add turn rules (optional)**
+   - Example: `red → right`, `intersection → straight`.
+   - These apply when traversing that lantern color (or no-lantern intersections).
+
+5. **Run it**
+   - Click **Solve route** in Solve mode.
+   - Click **Run simulation** in Simulate mode.
+
+6. **Read results**
+   - **Summary** = high-level status.
+   - **Cards** = key stats.
+   - **Warnings / Unmet constraints** = why a route failed your rules.
+   - **Moves / Visited rooms / Path nodes** = full route trace.
+
+---
+
+## Constraint cheat sheet
+
+- **Start node**: where traversal begins.
+- **End node**: target destination (optional in simulation).
+- **Required room**: one or more rooms that must appear in the route.
+- **Letter mode**:
+  - `any_order` (default): required letters can appear in any order.
+  - `ordered`: letters must be encountered in order.
+  - `ordered_strict`: strict ordered behavior.
+- **Must-use letters**: letters the route must collect.
+- **Start lantern color**: initial color state before movement.
+- **Allowed lantern color**: whitelist of lantern colors the route may use.
+- **Simple path**:
+  - `Enabled` (recommended): no node revisits/loops.
+  - `Disabled`: allows loopier search space.
+
+---
+
+## Sharing
+
+Use **Share** in the top toolbar.
+
+- The app creates a URL token (`?share=s1.<token>`).
+- Opening that URL restores map/query state.
+- If payload is too large, result details may be trimmed while keeping map/query.
+
+---
+
+## Developer notes (supplemental)
+
+The app is static-host friendly:
+- solver runs in-browser (`public/solver.browser.js`)
+- map/examples are static JSON assets (`public/data/*.json`)
+
+### Useful scripts
+
+```bash
+npm start                       # local static preview (port 4312)
+npm run serve                   # same as start
+npm run build:graph-map         # regenerate graph map from room-grid source
+npm run populate:known-paths    # fill known path metadata
+npm run rebuild:map             # run both map rebuild steps
+npm run apply-notation-path     # apply notation path helper
+```
+
+### Data files
+
+- `public/data/map.default.json` → current map graph used by the app
+- `public/data/examples.json` → example queries shown in UI
 
 ### Map updates
 
-Edit `public/data/map.default.json` directly when map corrections are needed.
-
-To regenerate graph data from room-grid sources:
-
-```bash
-npm run build:graph-map
-```
-
-## Sharing (static)
-
-- Click **Share** in the top toolbar to create a share link.
-- The link is copied to clipboard when available.
-- Link format is `?share=s1.<token>`.
-- Opening that link reloads shared map/query/result state.
-- If the URL would be too long, result payload may be omitted while keeping map/query.
-
-## Backend API (legacy)
-
-This project now targets static hosting. Backend API routes are not required for deployment.
-
-## Map formats
-
-### Room grid mode
-
-- Use `map.rooms`
-- Room IDs are chess-like (`A1`..`E9`) plus optional entry nodes like `C0` (below `C1`)
-- Each room can have:
-  - `letter`
-  - `lantern` (optional node-level lantern)
-  - `open`: array of `N/E/S/W`
-  - `sideLanterns`: per-exit lantern color(s), e.g. `{ "N": "purple", "E": ["red", "orange"] }`
-  - `sideLanternRefs`: optional per-exit IDs for lantern positions, e.g. `{ "E": ["L:C1:E:0", "L:C1:E:1"] }`
-  - `passLanterns`: extra lanterns encountered while moving past an edge (without entering nearest doorway), e.g. `{ "N": ["yellow"], "E": ["red", "purple"] }`
-  - `passLanternRefs`: optional IDs for pass-by lantern positions, aligned with `passLanterns`
-  - `neighbors`: explicit directional override (`"E": "B2"` or `"E": {"to": "B2", "lantern": "red", "lanternRef": "L:C1:E:0", "passLanterns": ["yellow"], "passLanternRefs": ["L:C1:E:P0"]}`)
-
-If `map.defaultOpen` is `"all"`, adjacent room exits are open unless overridden.
-
-### Graph mode
-
-Use `map.nodes` for arbitrary intersection-level modeling (recommended when moves can occur between rooms or at hallway intersections):
-
-```json
-{
-  "nodes": {
-    "C0": { "neighbors": { "N": "C0:N" } },
-    "C0:N": {
-      "neighbors": {
-        "S": "C0",
-        "N": {
-          "to": "C1:S",
-          "lantern": "red",
-          "lanternRef": "L:C0:N:0",
-          "passLanterns": ["yellow"],
-          "passLanternRefs": ["P:C0:N:0"]
-        }
-      }
-    },
-    "C1:S": { "neighbors": { "S": "C0:N", "N": "C1" } },
-    "C1": { "letter": "E", "neighbors": { "S": "C1:S", "E": "C1:E" } },
-    "C1:E": { "neighbors": { "W": "C1", "E": "D1:W" } },
-    "D1:W": { "neighbors": { "W": "C1:E", "E": "D1" } },
-    "D1": { "letter": "S", "neighbors": { "W": "D1:W" } }
-  }
-}
-```
-
-Then constrain by position/lantern nodes with query keys like:
-- `mustUseLanternRefs: ["L:C1:S:0"]`
-- `lanternRefOrder: ["L:C1:S:0", "L:C2:E:1"]`
-
-## Letter mode options
-
-`query.letterMode` supports:
-
-- `"any_order"` (default) / `"any"`:
-  - Exact multiset matching when letter requirements are provided
-  - No extra letter visits are allowed beyond required counts
-- `"ordered"` / `"ordered_strict"` / `"strict"`:
-  - Exact ordered matching
-  - Every visited letter room must match the next required letter
-  - No extra letters are allowed after the sequence is complete
-- `"ordered_subsequence"` / `"subsequence"`:
-  - Backward-compatible alias of ordered mode (also no extra letters)
-
-Letter list aliases: `mustUseLetters`, `orderedLetters`, `letterOrder`, or `letters`.
-
-Note: letters are counted when a room node is visited, including the `endId` room if it has a letter.
-
-## Path-shape controls (crossing / circuit behavior)
-
-- `simplePath: true` (default): disallow revisiting previously visited nodes
-  - Prevents self-crossing and most circuiting loops
-- `simplePath: false`: allow revisits (legacy permissive behavior)
-
-Aliases to relax simple-path mode:
-- `allowCrossing: true`
-- `allowCircuit: true` / `allowCircuits: true`
-- `allowLoops: true`
-
-Search controls:
-- `searchMode: "dfs" | "bfs"` (auto-selects DFS for ordered-letter + simple-path queries)
-- `maxStates` (hard-capped to 250000 for memory safety)
-
-## Turn-rule keys
-
-`query.lantern.turnRules` supports color keys (`blue`, `red`, `orange`, `yellow`, `green`, `purple`) and an intersection/no-lantern key:
-
-- `intersection` (preferred)
-- aliases: `no_lantern`, `no-lantern`, `none`, `default`, `hallway`
-
-Example:
-
-```json
-{
-  "lantern": {
-    "turnRules": {
-      "blue": "left",
-      "red": "left",
-      "intersection": "straight"
-    }
-  }
-}
-```
-
-## Simulation mode
-
-Run a deterministic simulation without solving for an objective:
-
-```json
-{
-  "mode": "simulate",
-  "startId": "g(vC1)",
-  "maxSteps": 180,
-  "simulation": {
-    "initialHeading": "N",
-    "stopOnLoop": true
-  }
-}
-```
-
-Notes:
-- `maxSteps` / `maxMoves` controls simulation length.
-- Simulation follows the first valid transition under the current direction priority.
-- `path.steps` counts room in/out moves; `path.moveCount` is total moves.
+If map logic changes, update `public/data/map.default.json` directly or rebuild with scripts above.

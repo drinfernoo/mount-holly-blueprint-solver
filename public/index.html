@@ -14,14 +14,14 @@
     <main data-settings-mode-root data-settings-mode="solve">
       <h1>Mount Holly Blueprint Solver</h1>
       <p class="sub">
-        Room-grid / graph solver for Mount Holly blueprint constraints (letters, lanterns, turn rules).
+        Find valid routes through the blueprint using room, letter, lantern, and turn constraints.
       </p>
 
       <section class="toolbar mode-toolbar" role="tablist" aria-label="Mode selector">
         <button type="button" class="settings-tab is-active" data-settings-tab="solve" role="tab" aria-selected="true">Solve</button>
         <button type="button" class="settings-tab" data-settings-tab="simulate" role="tab" aria-selected="false">Simulate</button>
         <span class="toolbar-sep" aria-hidden="true">|</span>
-        <button id="solveBtn" class="primary">Go</button>
+        <button id="solveBtn" class="primary">Solve route</button>
         <button id="shareBtn" type="button">Share</button>
       </section>
 
@@ -33,6 +33,17 @@
         <button data-example="truePath">True path</button>
         <button data-example="orderedLetters">Ordered letters</button>
         <button data-example="simulationExample">Simulation example</button>
+      </section>
+
+      <section class="panel quickstart-panel">
+        <h2>How to use this</h2>
+        <ol class="quickstart-list">
+          <li><strong>Pick a mode:</strong> <em>Solve</em> searches for a valid route; <em>Simulate</em> follows one path step-by-step.</li>
+          <li><strong>Set Start/End:</strong> add constraints, or click <em>Pick start/end on map</em>.</li>
+          <li><strong>Add rules:</strong> optional letter, lantern, required-room, and turn rules narrow the route.</li>
+          <li><strong>Run:</strong> click <em>Solve route</em> (or <em>Run simulation</em> in Simulate mode).</li>
+          <li><strong>Refine:</strong> use result warnings/unmet constraints to adjust and rerun.</li>
+        </ol>
       </section>
 
       <section class="panel settings-card" data-visible-modes="solve,simulate">
@@ -84,12 +95,13 @@
           <button id="pickStartBtn" type="button">Pick start on map</button>
           <button id="pickEndBtn" type="button">Pick end on map</button>
           <button id="pickRequiredBtn" type="button">Pick required on map</button>
-          <span id="pickHint" class="pick-hint">Tip: use these to click start/end directly on the map.</span>
+          <span id="pickHint" class="pick-hint">Tip: use these to click start/end/required rooms directly on the map.</span>
         </div>
 
         <div class="constraint-sections">
           <article class="constraint-section">
             <h3>Add constraint</h3>
+            <p id="constraintTypeHelp" class="helper-text">Start node chooses where traversal begins.</p>
             <div class="constraint-row">
               <select id="constraintTypeInput">
                 <option value="startNode">Start node</option>
@@ -110,6 +122,7 @@
 
           <article class="constraint-section">
             <h3>Add turn rule</h3>
+            <p class="helper-text">Turn rules are applied when entering that lantern color (or at an intersection with no lantern).</p>
             <div class="constraint-row">
               <select id="turnRuleKeyInput">
                 <option value="intersection">intersection (no lantern)</option>
@@ -195,13 +208,14 @@
       <section class="graph-panel">
         <h2>Map grid view</h2>
         <div class="graph-help">
-          Grid-style renderer of the blueprint. Use “Pick start/end on map” in Query Builder to choose endpoints visually.
+          Grid-style renderer of the blueprint. Use the pick buttons above to choose start/end/required rooms visually.
         </div>
         <svg id="graphSvg" viewBox="0 0 1200 700" role="img" aria-label="Map graph visualization"></svg>
       </section>
 
       <section class="results">
         <h2>Result</h2>
+        <p class="helper-text results-help">Summary gives the quick status; cards/lists below show the exact route, moves, and unmet rules.</p>
         <div id="summary" class="summary"></div>
 
         <div id="resultCards" class="result-cards"></div>
