@@ -55,6 +55,7 @@ const turnRuleListEl = document.getElementById('turnRuleList');
 const useQueryOverrideInput = document.getElementById('useQueryOverrideInput');
 const pickStartBtn = document.getElementById('pickStartBtn');
 const pickEndBtn = document.getElementById('pickEndBtn');
+const pickRequiredBtn = document.getElementById('pickRequiredBtn');
 const pickHint = document.getElementById('pickHint');
 const settingsTabButtons = [...document.querySelectorAll('[data-settings-tab]')];
 const settingsModeSections = [...document.querySelectorAll('[data-visible-modes]')];
@@ -1345,6 +1346,11 @@ function renderGraph(map, pathNodes = []) {
   const selectedEndId = selectedEndInputId || inferredSimulationEndId || null;
   const selectedEndLabel = inferredSimulationEndId ? 'SIM END' : 'END';
 
+  const requiredRooms = builderConstraints
+    .filter((x) => x.type === 'mustUseRoom')
+    .map((x) => x.value)
+    .filter(Boolean);
+
   const screenPosById = new Map();
 
   for (let i = 0; i < effectivePathNodes.length - 1; i += 1) {
@@ -1884,6 +1890,11 @@ function renderGraph(map, pathNodes = []) {
   drawEndpointMarker(selectedStartId, '#7cff9a', 'START');
   drawEndpointMarker(selectedEndId, '#ffd166', selectedEndLabel);
 
+  for (const roomId of requiredRooms) {
+    if (roomId === selectedStartId || roomId === selectedEndId) continue;
+    drawEndpointMarker(roomId, '#4da3ff', 'REQ');
+  }
+
   graphSvg.appendChild(endpointGroup);
 }
 
@@ -2011,6 +2022,16 @@ function buildConstraintSelectOptions(type) {
     return opts;
   }
 
+  if (type === 'mustUseRoom') {
+    const opts = [];
+    for (const opt of (startIdInput?.querySelectorAll('option') || [])) {
+      const value = String(opt.value || '').trim();
+      if (!value) continue;
+      opts.push({ value, label: opt.textContent || value });
+    }
+    return opts;
+  }
+
   if (type === 'letterMode') {
     return [
       { value: 'any_order', label: 'Any order' },
@@ -2090,6 +2111,7 @@ function renderConstraintList() {
   const typeLabels = {
     startNode: 'Start node',
     endNode: 'End node',
+    mustUseRoom: 'Required room',
     letterMode: 'Letter mode',
     mustUseLetters: 'Must-use letters',
     startColor: 'Start lantern color',
@@ -2097,7 +2119,7 @@ function renderConstraintList() {
     simplePath: 'Simple path',
   };
 
-  const order = ['startNode', 'endNode', 'letterMode', 'mustUseLetters', 'startColor', 'allowedColor', 'simplePath'];
+  const order = ['startNode', 'endNode', 'mustUseRoom', 'letterMode', 'mustUseLetters', 'startColor', 'allowedColor', 'simplePath'];
   const indexed = builderConstraints.map((item, index) => ({ item, index }));
   indexed.sort((a, b) => {
     const ai = order.indexOf(a.item.type);
@@ -2114,7 +2136,7 @@ function renderConstraintList() {
     text.className = 'rule-item-text';
 
     let valueText = '';
-    if (item.type === 'startNode' || item.type === 'endNode') {
+    if (item.type === 'startNode' || item.type === 'endNode' || item.type === 'mustUseRoom') {
       const node = currentMap?.nodes?.[item.value];
       valueText = node ? getNodeOptionText(item.value, node) : String(item.value || '(none)');
     } else if (item.type === 'letterMode') {
@@ -2224,6 +2246,12 @@ function addConstraintFromControls() {
     if (!builderConstraints.some((x) => x.type === 'allowedColor' && x.value === value)) {
       builderConstraints.push({ type: 'allowedColor', value });
     }
+  } else if (type === 'mustUseRoom') {
+    const value = String(constraintValueInput.value || '').trim();
+    if (!value) return;
+    if (!builderConstraints.some((x) => x.type === 'mustUseRoom' && x.value === value)) {
+      builderConstraints.push({ type: 'mustUseRoom', value });
+    }
   } else if (type === 'simplePath') {
     const value = String(constraintValueInput.value || 'true');
     setConstraintItem('simplePath', value);
@@ -2288,6 +2316,19 @@ function loadConstraintStateFromQuery(query) {
     setConstraintItem('simplePath', 'false');
   } else if (q.simplePath === true) {
     setConstraintItem('simplePath', 'true');
+  }
+
+  const mustUseRooms = Array.isArray(q.mustUseRooms)
+    ? q.mustUseRooms
+    : Array.isArray(q.mustUseNodes)
+      ? q.mustUseNodes
+      : [];
+
+  for (const roomId of mustUseRooms) {
+    const id = String(roomId).trim();
+    if (id && !builderConstraints.some((x) => x.type === 'mustUseRoom' && x.value === id)) {
+      builderConstraints.push({ type: 'mustUseRoom', value: id });
+    }
   }
 
   const startColor = normalizeLanternColor(lantern.startColor || q.startLanternColor || null);
@@ -2521,12 +2562,17 @@ function updateNodePickUI() {
   if (pickEndBtn) {
     pickEndBtn.classList.toggle('pick-active', nodePickMode === 'end');
   }
+  if (pickRequiredBtn) {
+    pickRequiredBtn.classList.toggle('pick-active', nodePickMode === 'mustUseRoom');
+  }
 
   if (pickHint) {
     if (nodePickMode === 'start') {
       pickHint.textContent = 'Click a node on the map to set the start node.';
     } else if (nodePickMode === 'end') {
       pickHint.textContent = 'Click a node on the map to set the end node.';
+    } else if (nodePickMode === 'mustUseRoom') {
+      pickHint.textContent = 'Click a room on the map to add it as a required room.';
     } else {
       pickHint.textContent = 'Tip: use these to click start/end directly on the map.';
     }
@@ -2552,6 +2598,10 @@ function handleGraphNodePick(nodeId, event) {
     setConstraintItem('startNode', nodeId);
   } else if (nodePickMode === 'end') {
     setConstraintItem('endNode', nodeId);
+  } else if (nodePickMode === 'mustUseRoom') {
+    if (!builderConstraints.some((x) => x.type === 'mustUseRoom' && x.value === nodeId)) {
+      builderConstraints.push({ type: 'mustUseRoom', value: nodeId });
+    }
   }
 
   const pickedMode = nodePickMode;
@@ -2589,6 +2639,14 @@ function buildQueryFromBuilder() {
 
   const endNode = getConstraintItem('endNode')?.value;
   if (endNode) query.endId = String(endNode);
+
+  const mustUseRooms = builderConstraints
+    .filter((x) => x.type === 'mustUseRoom')
+    .map((x) => x.value)
+    .filter(Boolean);
+  if (mustUseRooms.length) {
+    query.mustUseRooms = [...new Set(mustUseRooms)];
+  }
 
   const maxSteps = Number(maxStepsInput?.value);
   if (Number.isFinite(maxSteps) && maxSteps > 0) {
@@ -2977,6 +3035,12 @@ if (pickStartBtn) {
 if (pickEndBtn) {
   pickEndBtn.addEventListener('click', () => {
     setNodePickMode('end');
+  });
+}
+
+if (pickRequiredBtn) {
+  pickRequiredBtn.addEventListener('click', () => {
+    setNodePickMode('mustUseRoom');
   });
 }
 
